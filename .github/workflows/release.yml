@@ -84,12 +84,18 @@ jobs:
         shell: pwsh
         run: |
           tzutil /s "India Standard Time"
+          if ($LASTEXITCODE -ne 0) { throw 'Windows time zone configuration failed.' }
           $iscc = Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6/ISCC.exe'
-          if (-not (Test-Path -LiteralPath $iscc)) {
+          if (-not (Test-Path -LiteralPath $iscc -PathType Leaf)) {
             choco install innosetup --version=6.4.3 --yes --no-progress
             if ($LASTEXITCODE -ne 0) { throw 'Inno Setup installation failed.' }
           }
-          & $iscc /?
+          if (-not (Test-Path -LiteralPath $iscc -PathType Leaf)) {
+            throw "Inno Setup compiler not found at $iscc."
+          }
+          # ISCC /? prints help but exits with code 1, which fails a pwsh step.
+          $isccVersion = (Get-Item -LiteralPath $iscc).VersionInfo.FileVersion
+          Write-Host "Inno Setup compiler: $iscc (version $isccVersion)"
       - run: uv sync --locked --extra dev
       - name: Compile and verify relocated application, PDFs, and backups
         run: uv run --frozen python packaging/build.py --jobs 2
