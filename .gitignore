@@ -31,6 +31,7 @@ application.lock
 /migration-backups/
 /recovery-*/
 /restore-state.json
+/logs/
 *.log
 *.zip
 *.tar.gz
