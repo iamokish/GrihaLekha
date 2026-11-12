@@ -161,7 +161,7 @@ jobs:
             libglvnd mesa libdrm libx11 libxext libxfixes libxrender libxi \
             libxrandr libxdamage libxcomposite libxtst libxcb xcb-util-cursor \
             xcb-util-wm xcb-util-image xcb-util-keysyms xcb-util-renderutil \
-            libxkbcommon libxkbcommon-x11 wayland
+            libxkbfile libxkbcommon libxkbcommon-x11 wayland
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false

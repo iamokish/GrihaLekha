@@ -151,6 +151,77 @@ def test_verification_preserves_failure_report(tmp_path):
     assert previous.read_text() == "Preserve me"
 
 
+@pytest.mark.parametrize("renderer, used_renderer, fallback_reason", [
+    ("auto", "native", "Could not start PDF export: libxkbfile.so.1: cannot open shared object file: No such file or directory"),
+    ("auto", "webengine", None),
+    ("native", "native", None),
+])
+def test_pdf_process_diagnostics_only_include_current_fallback(tmp_path, monkeypatch, renderer, used_renderer, fallback_reason):
+    account = tmp_path / "account"
+    app_log = account / "logs" / "grihalekha.log"
+    app_log.parent.mkdir(parents=True)
+    app_log.write_text("WARNING Chromium PDF unavailable; using native Qt: previous run failed\n", encoding="utf-8")
+
+    class ApplicationProcess:
+        returncode = 0
+
+        def __init__(self, command, **options):
+            screenshot = Path(command[command.index("--screenshot") + 1])
+            shutil.copy2(verifier.ROOT / "icons" / "grihalekha-icon-512.png", screenshot)
+            with app_log.open("a", encoding="utf-8") as stream:
+                if fallback_reason:
+                    stream.write(f"WARNING Chromium PDF unavailable; using native Qt: {fallback_reason}\n")
+                stream.write(f"INFO Packaged PDF check completed using {used_renderer}\n")
+
+        def communicate(self, timeout):
+            return b"", b"Runtime diagnostic\n"
+
+    monkeypatch.setattr(verifier.subprocess, "Popen", ApplicationProcess)
+    result = verifier._run_application(tmp_path / "GrihaLekha", tmp_path, account, "pdf-check", renderer=renderer, pdf=account / "statement.pdf")
+    assert result["renderer_requested"] == renderer
+    assert result["renderer_used"] == used_renderer
+    assert result.get("fallback_reason") == fallback_reason
+    diagnostics = json.loads((tmp_path / "pdf-check.process.json").read_text(encoding="utf-8"))
+    assert diagnostics.get("fallback_reason") == fallback_reason
+    assert Path(result["stderr_log"]).read_bytes() == b"Runtime diagnostic\n"
+    assert "previous run failed" not in Path(result["application_log"]).read_text(encoding="utf-8")
+
+
+@pytest.mark.parametrize("used_renderer, require_chromium", [("native", True), ("native", False), ("webengine", True)])
+def test_release_verification_retains_chromium_requirement_and_fallback_diagnostics(tmp_path, monkeypatch, used_renderer, require_chromium):
+    bundle = tmp_path / "bundle"
+    bundle.mkdir()
+    (bundle / ("GrihaLekha.exe" if os.name == "nt" else "GrihaLekha")).write_bytes(b"Fixture executable")
+    reason = "Could not start PDF export: libxkbfile.so.1: cannot open shared object file: No such file or directory"
+
+    def run_application(executable, run_dir, data_dir, label, renderer="auto", pdf=None):
+        result = {"renderer_used": "native" if renderer == "native" else used_renderer}
+        if renderer == "auto" and pdf is not None and used_renderer == "native":
+            result["fallback_reason"] = reason
+        return result
+
+    monkeypatch.setattr(verifier, "_run_application", run_application)
+    monkeypatch.setattr(verifier, "_check_resources", lambda bundle: {})
+    monkeypatch.setattr(verifier, "_check_empty_account", lambda directory: {})
+    monkeypatch.setattr(verifier, "_prepare_account", lambda directory: {})
+    monkeypatch.setattr(verifier, "_inspect_pdf", lambda *args: {})
+    monkeypatch.setattr(verifier, "_check_populated_account", lambda *args: {})
+    monkeypatch.setattr(verifier, "_check_backup", lambda *args: {})
+    if require_chromium and used_renderer == "native":
+        with pytest.raises(verifier.BundleVerificationError, match="requires the Chromium PDF renderer") as caught:
+            verifier.verify_bundle(bundle, tmp_path / "reports", require_chromium=True)
+        report = json.loads(caught.value.report_path.read_text(encoding="utf-8"))
+        assert report["ok"] is False
+        assert reason in str(caught.value)
+        assert reason in report["error"]
+        assert report["checks"]["auto_startup"]["fallback_reason"] == reason
+    else:
+        report = verifier.verify_bundle(bundle, tmp_path / "reports", require_chromium=require_chromium)
+        assert report["ok"] is True
+    assert report["chromium_runtime_verified"] is (used_renderer == "webengine")
+    assert report["checks"]["native_startup"]["renderer_used"] == "native"
+
+
 def test_child_environment_cannot_borrow_source_paths_or_disable_sandbox(tmp_path, monkeypatch):
     monkeypatch.setenv("PYTHONPATH", "source-package")
     monkeypatch.setenv("QT_PLUGIN_PATH", "source-qt")

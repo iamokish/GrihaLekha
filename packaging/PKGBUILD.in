@@ -11,7 +11,7 @@ depends=('glibc' 'gcc-libs' 'glib2' 'dbus' 'fontconfig' 'freetype2'
          'libx11' 'libxext' 'libxfixes' 'libxrender' 'libxi' 'libxrandr'
          'libxdamage' 'libxcomposite' 'libxtst' 'libxcb' 'xcb-util-cursor'
          'xcb-util-wm' 'xcb-util-image' 'xcb-util-keysyms' 'xcb-util-renderutil'
-         'libxkbcommon' 'libxkbcommon-x11' 'wayland')
+         'libxkbfile' 'libxkbcommon' 'libxkbcommon-x11' 'wayland')
 options=('!strip' '!debug')
 source=('bundle.tar')
 sha256sums=('@SHA256@')

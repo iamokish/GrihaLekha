@@ -265,6 +265,9 @@ def _run_application(executable: Path, run_dir: Path, data_dir: Path, label: str
             app_log = stream.read().decode("utf-8", errors="replace")
     (run_dir / f"{label}.application.log").write_text(app_log, encoding="utf-8")
     details = {"command": command, "exit_code": process.returncode, "seconds": round(time.monotonic() - started, 3), "stdout_log": str(stdout_path), "stderr_log": str(stderr_path), "application_log": str(run_dir / f"{label}.application.log"), "screenshot": str(screenshot), "renderer_requested": renderer}
+    fallback_reasons = re.findall(r"Chromium PDF unavailable; using native Qt: ([^\r\n]+)", app_log)
+    if fallback_reasons:
+        details["fallback_reason"] = fallback_reasons[-1]
     (run_dir / f"{label}.process.json").write_text(json.dumps(details, indent=2), encoding="utf-8")
     _require(not timed_out, f"Compiled {label} check timed out after {PROCESS_TIMEOUT} seconds; see {stderr_path}.")
     _require(process.returncode == 0, f"Compiled {label} check exited with code {process.returncode}; see {stderr_path} and its application log.")
@@ -405,7 +408,11 @@ def verify_bundle(bundle: Path, output_dir: Path, *, require_chromium: bool = Fa
         if not report["chromium_runtime_verified"]:
             report["limitations"].append("The default PDF check used native fallback. Bundled Chromium resources were verified, but Chromium execution was not established in this environment.")
         if require_chromium:
-            _require(report["chromium_runtime_verified"], "This release check requires the Chromium PDF renderer; native fallback alone is insufficient.")
+            message = "This release check requires the Chromium PDF renderer; native fallback alone is insufficient."
+            fallback_reason = report["checks"]["auto_startup"].get("fallback_reason")
+            if fallback_reason:
+                message += f" Chromium fallback: {fallback_reason}"
+            _require(report["chromium_runtime_verified"], message)
         report["ok"] = True
     except Exception as error:
         report["error"] = f"{type(error).__name__}: {error}"

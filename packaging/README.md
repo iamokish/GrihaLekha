@@ -41,7 +41,10 @@ The `.deb` declares its required system libraries in `release.py` and `apt`
 installs them. Arch dependencies are in `PKGBUILD.in` and installed by `pacman`.
 Portable Linux users need the same runtime libraries: glibc, libstdc++, GLib,
 D-Bus, Fontconfig/FreeType, NSS/NSPR, ALSA, CUPS, OpenGL/EGL, X11/XCB,
-libxkbcommon, and Wayland client libraries. A supported desktop/display session
+libxkbfile, libxkbcommon, and Wayland client libraries. The XKB file library is
+provided by `libxkbfile1` on Debian/Ubuntu and `libxkbfile` on Arch; Qt WebEngine
+requires its `libxkbfile.so.1` even for offscreen PDF rendering.
+A supported desktop/display session
 is required for normal interactive use. Running Chromium as root is unsupported;
 the workflows run the app and makepkg as an unprivileged user.
 
@@ -176,6 +179,8 @@ uv run --frozen python packaging/verify_build.py dist/GrihaLekha --output-dir bu
 ```
 
 `--require-chromium` fails when default PDF generation falls back to native Qt.
+The verification report includes the logged fallback reason so missing system
+libraries can be identified directly in the CI output.
 Local build verification records fallback as a limitation, but `release.py`
 always requires successful Chromium execution. The workflow rechecks extracted
 portable archives and installed packages. Windows installer lifecycle checks
