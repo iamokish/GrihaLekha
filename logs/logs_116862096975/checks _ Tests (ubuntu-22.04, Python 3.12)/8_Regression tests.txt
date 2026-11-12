@@ -1,0 +1,134 @@
+﻿2026-11-12T04:28:05.1233053Z ##[group]Run uv run --frozen pytest --junitxml=build/test-results.xml
+2026-11-12T04:28:05.1233557Z [36;1muv run --frozen pytest --junitxml=build/test-results.xml[0m
+2026-11-12T04:28:05.1300632Z shell: /usr/bin/bash -e {0}
+2026-11-12T04:28:05.1300899Z env:
+2026-11-12T04:28:05.1301109Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:28:05.1301393Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:28:05.1301653Z   TZ: Asia/Kolkata
+2026-11-12T04:28:05.1301859Z   UV_PYTHON: 3.12
+2026-11-12T04:28:05.1302147Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:28:05.1302527Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:28:05.1302832Z ##[endgroup]
+2026-11-12T04:28:07.7354715Z ============================= test session starts ==============================
+2026-11-12T04:28:07.7355512Z platform linux -- Python 3.12.14, pytest-9.2.0, pluggy-1.7.0
+2026-11-12T04:28:07.7356159Z PySide6 6.12.0 -- Qt runtime 6.12.0 -- Qt compiled 6.12.0
+2026-11-12T04:28:07.7356717Z rootdir: /home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:28:07.7357348Z configfile: pyproject.toml
+2026-11-12T04:28:07.7357886Z testpaths: tests
+2026-11-12T04:28:07.7358156Z plugins: qt-4.5.0
+2026-11-12T04:28:07.7358441Z collected 886 items
+2026-11-12T04:28:07.7358631Z 
+2026-11-12T04:28:09.9092145Z tests/test_account_actions_ui.py ........                                [  0%]
+2026-11-12T04:28:10.8007787Z tests/test_backdated_move_out.py ..........                              [  2%]
+2026-11-12T04:28:11.1717215Z tests/test_backups.py ...............                                    [  3%]
+2026-11-12T04:28:12.8328265Z tests/test_balance_to_deposit.py ..................................      [  7%]
+2026-11-12T04:28:13.7897336Z tests/test_balance_workflow.py ...............                           [  9%]
+2026-11-12T04:28:15.8211085Z tests/test_bill_corrections_ui.py .......                                [ 10%]
+2026-11-12T04:28:16.6462074Z tests/test_bill_deletion.py .................                            [ 11%]
+2026-11-12T04:28:18.1234212Z tests/test_bill_deletion_reports.py .......                              [ 12%]
+2026-11-12T04:28:18.9219612Z tests/test_bill_replace.py .............                                 [ 14%]
+2026-11-12T04:28:19.9762306Z tests/test_bill_restore.py ................                              [ 16%]
+2026-11-12T04:28:20.5055253Z tests/test_bill_ui.py ..                                                 [ 16%]
+2026-11-12T04:28:21.0619953Z tests/test_bill_workflow.py ..........                                   [ 17%]
+2026-11-12T04:28:21.0686304Z tests/test_build_documentation.py ..                                     [ 17%]
+2026-11-12T04:28:21.5864398Z tests/test_bundle_verification.py ..........                             [ 18%]
+2026-11-12T04:28:21.7497793Z tests/test_currencies.py ............................................... [ 24%]
+2026-11-12T04:28:21.7839782Z ........................................................................ [ 32%]
+2026-11-12T04:28:21.7869290Z .....                                                                    [ 32%]
+2026-11-12T04:28:22.1782896Z tests/test_currency_reports.py ......................................... [ 37%]
+2026-11-12T04:28:22.5555020Z ...........                                                              [ 38%]
+2026-11-12T04:28:25.0259569Z tests/test_currency_settings.py .....................                    [ 40%]
+2026-11-12T04:28:27.9254602Z tests/test_currency_ui.py ........................                       [ 43%]
+2026-11-12T04:28:29.5324233Z tests/test_date_input.py ............                                    [ 45%]
+2026-11-12T04:28:29.8788646Z tests/test_distribution.py ..............................                [ 48%]
+2026-11-12T04:28:37.9329633Z tests/test_dropdown_properties.py .......                                [ 49%]
+2026-11-12T04:28:38.0746314Z tests/test_electricity_correction_chronology.py ..                       [ 49%]
+2026-11-12T04:28:39.2128366Z tests/test_electricity_deferral.py ................                      [ 51%]
+2026-11-12T04:28:39.5690345Z tests/test_electricity_exports.py ...................                    [ 53%]
+2026-11-12T04:28:42.3143708Z tests/test_electricity_readings_ui.py ..........                         [ 54%]
+2026-11-12T04:28:42.5771289Z tests/test_electricity_review.py ...                                     [ 54%]
+2026-11-12T04:28:44.4393292Z tests/test_ledger.py .............................                       [ 58%]
+2026-11-12T04:28:44.5288617Z tests/test_license_notices.py ...F.                                      [ 58%]
+2026-11-12T04:29:46.4891269Z tests/test_lifecycle_ui.py ............                                  [ 60%]
+2026-11-12T04:29:46.7558519Z tests/test_meter_readings.py ................................            [ 63%]
+2026-11-12T04:29:46.7648440Z tests/test_money_dates.py ..................                             [ 65%]
+2026-11-12T04:30:32.5126991Z tests/test_move_out_cycle_ui.py ......                                   [ 66%]
+2026-11-12T04:30:32.7385787Z tests/test_move_out_edge_cases.py ....                                   [ 66%]
+2026-11-12T04:30:34.3674567Z tests/test_moveout_cycles.py ...................                         [ 68%]
+2026-11-12T04:30:34.4245661Z tests/test_release_packaging.py ...........................              [ 72%]
+2026-11-12T04:30:35.0290787Z tests/test_reports.py ................................                   [ 75%]
+2026-11-12T04:30:37.1060747Z tests/test_required_bill_corrections.py ................................ [ 79%]
+2026-11-12T04:30:37.2394038Z ...                                                                      [ 79%]
+2026-11-12T04:30:39.6778776Z tests/test_required_bill_ui.py ..........                                [ 80%]
+2026-11-12T04:30:40.6468712Z tests/test_schema_migration.py ............                              [ 82%]
+2026-11-12T04:30:43.1603855Z tests/test_startup.py ..                                                 [ 82%]
+2026-11-12T04:30:43.4078429Z tests/test_statement_current.py .....                                    [ 82%]
+2026-11-12T04:30:44.2005967Z tests/test_statement_cycles.py ...........                               [ 84%]
+2026-11-12T04:30:45.0869822Z tests/test_table_resize.py .............                                 [ 85%]
+2026-11-12T04:30:48.4318185Z tests/test_tenancy_deletion.py ..................                        [ 87%]
+2026-11-12T04:30:49.4395600Z tests/test_tenancy_deletion_guards.py ............                       [ 88%]
+2026-11-12T04:31:21.1544457Z tests/test_tenancy_deletion_ui.py .............                          [ 90%]
+2026-11-12T04:31:21.7720912Z tests/test_tenancy_lifecycle.py .............                            [ 91%]
+2026-11-12T04:32:15.0453834Z tests/test_theme.py ...........                                          [ 93%]
+2026-11-12T04:32:25.5800093Z tests/test_ui.py ................                                        [ 94%]
+2026-11-12T04:32:26.7180532Z tests/test_unpaid_bill_correction.py ....................                [ 97%]
+2026-11-12T04:32:28.4373854Z tests/test_upcoming_cancellation.py .........................            [100%]
+2026-11-12T04:32:28.4374270Z 
+2026-11-12T04:32:28.4374624Z =================================== FAILURES ===================================
+2026-11-12T04:32:28.4377353Z _____ test_notice_collection_records_runtime_licenses_and_source_revision ______
+2026-11-12T04:32:28.4378183Z 
+2026-11-12T04:32:28.4378572Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-0/test_notice_collection_records0')
+2026-11-12T04:32:28.4379229Z monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ffa15cfce60>
+2026-11-12T04:32:28.4379534Z 
+2026-11-12T04:32:28.4379811Z     def test_notice_collection_records_runtime_licenses_and_source_revision(tmp_path, monkeypatch):
+2026-11-12T04:32:28.4380337Z         monkeypatch.setenv("GITHUB_REPOSITORY", "iamokish/GrihaLekha")
+2026-11-12T04:32:28.4380718Z         monkeypatch.setenv("GITHUB_SHA", "a" * 40)
+2026-11-12T04:32:28.4381044Z >       result = notices.collect_notices(tmp_path)
+2026-11-12T04:32:28.4381766Z                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-11-12T04:32:28.4381943Z 
+2026-11-12T04:32:28.4382051Z tests/test_license_notices.py:52: 
+2026-11-12T04:32:28.4382364Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-11-12T04:32:28.4382744Z packaging/license_notices.py:205: in collect_notices
+2026-11-12T04:32:28.4383220Z     components = [_distribution_notices(item, destination) for item in runtime_distributions()]
+2026-11-12T04:32:28.4383668Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-11-12T04:32:28.4384003Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-11-12T04:32:28.4384227Z 
+2026-11-12T04:32:28.4384449Z installed = <importlib.metadata.PathDistribution object at 0x7ffa08c08830>
+2026-11-12T04:32:28.4385042Z destination = PosixPath('/tmp/pytest-of-runner/pytest-0/test_notice_collection_records0/licenses')
+2026-11-12T04:32:28.4385407Z 
+2026-11-12T04:32:28.4385621Z     def _distribution_notices(installed, destination: Path) -> dict:
+2026-11-12T04:32:28.4386000Z         name = installed.metadata["Name"]
+2026-11-12T04:32:28.4386325Z         component_dir = destination / canonicalize_name(name)
+2026-11-12T04:32:28.4386680Z         component_dir.mkdir(parents=True, exist_ok=True)
+2026-11-12T04:32:28.4386976Z         copied = []
+2026-11-12T04:32:28.4387429Z         for entry in installed.files or []:
+2026-11-12T04:32:28.4388036Z             relative = PurePosixPath(str(entry).replace("\\", "/"))
+2026-11-12T04:32:28.4388649Z             if relative.is_absolute() or ".." in relative.parts:
+2026-11-12T04:32:28.4389124Z                 continue
+2026-11-12T04:32:28.4389462Z             if not any(part.endswith(".dist-info") for part in relative.parts):
+2026-11-12T04:32:28.4389812Z                 continue
+2026-11-12T04:32:28.4390053Z             filename = relative.name.lower()
+2026-11-12T04:32:28.4390409Z             is_notice = "licenses" in relative.parts or filename.startswith(
+2026-11-12T04:32:28.4390810Z                 ("license", "copying", "notice", "authors")
+2026-11-12T04:32:28.4391095Z             )
+2026-11-12T04:32:28.4391292Z             if not is_notice:
+2026-11-12T04:32:28.4391518Z                 continue
+2026-11-12T04:32:28.4410507Z             source = Path(installed.locate_file(entry))
+2026-11-12T04:32:28.4411022Z             if not source.is_file():
+2026-11-12T04:32:28.4411704Z                 raise RuntimeError(f"Installed redistribution notice is missing: {name}/{relative.name}")
+2026-11-12T04:32:28.4412371Z             # Preserve directory structure below .dist-info to avoid basename clashes.
+2026-11-12T04:32:28.4413154Z             index = next(i for i, part in enumerate(relative.parts) if part.endswith(".dist-info"))
+2026-11-12T04:32:28.4413886Z             target = component_dir.joinpath(*relative.parts[index + 1:])
+2026-11-12T04:32:28.4414288Z             target.parent.mkdir(parents=True, exist_ok=True)
+2026-11-12T04:32:28.4414615Z             shutil.copyfile(source, target)
+2026-11-12T04:32:28.4415009Z             copied.append(target.relative_to(destination.parent).as_posix())
+2026-11-12T04:32:28.4415383Z         if not copied:
+2026-11-12T04:32:28.4415802Z >           raise RuntimeError(f"No redistribution notices found for installed runtime component {name}.")
+2026-11-12T04:32:28.4416430Z E           RuntimeError: No redistribution notices found for installed runtime component PySide6.
+2026-11-12T04:32:28.4416780Z 
+2026-11-12T04:32:28.4416915Z packaging/license_notices.py:79: RuntimeError
+2026-11-12T04:32:28.4417362Z - generated xml file: /home/runner/work/GrihaLekha/GrihaLekha/build/test-results.xml -
+2026-11-12T04:32:28.4418078Z =========================== short test summary info ============================
+2026-11-12T04:32:28.4418916Z FAILED tests/test_license_notices.py::test_notice_collection_records_runtime_licenses_and_source_revision - RuntimeError: No redistribution notices found for installed runtime component PySide6.
+2026-11-12T04:32:28.4419715Z ================== 1 failed, 885 passed in 262.35s (0:04:22) ===================
+2026-11-12T04:32:29.2385709Z ##[error]Process completed with exit code 1.

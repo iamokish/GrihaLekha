@@ -1,0 +1,418 @@
+﻿2026-11-12T04:25:34.9412252Z ##[group]Run uv build --out-dir dist/python
+2026-11-12T04:25:34.9412566Z [36;1muv build --out-dir dist/python[0m
+2026-11-12T04:25:34.9465689Z shell: /usr/bin/bash -e {0}
+2026-11-12T04:25:34.9465907Z env:
+2026-11-12T04:25:34.9466099Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:25:34.9466317Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:25:34.9466526Z   TZ: Asia/Kolkata
+2026-11-12T04:25:34.9466755Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:25:34.9467026Z   UV_PYTHON: 3.12
+2026-11-12T04:25:34.9467230Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:25:34.9467467Z ##[endgroup]
+2026-11-12T04:25:34.9936758Z Building source distribution...
+2026-11-12T04:25:35.2803152Z running egg_info
+2026-11-12T04:25:35.2811634Z writing src/grihalekha.egg-info/PKG-INFO
+2026-11-12T04:25:35.2819058Z writing dependency_links to src/grihalekha.egg-info/dependency_links.txt
+2026-11-12T04:25:35.2821423Z writing entry points to src/grihalekha.egg-info/entry_points.txt
+2026-11-12T04:25:35.2825642Z writing requirements to src/grihalekha.egg-info/requires.txt
+2026-11-12T04:25:35.2826705Z writing top-level names to src/grihalekha.egg-info/top_level.txt
+2026-11-12T04:25:35.2859453Z reading manifest file 'src/grihalekha.egg-info/SOURCES.txt'
+2026-11-12T04:25:35.2871302Z reading manifest template 'MANIFEST.in'
+2026-11-12T04:25:35.2906477Z warning: no files found matching '*.yaml' under directory '.github'
+2026-11-12T04:25:35.2910609Z warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+2026-11-12T04:25:35.2915511Z adding license file 'LICENSE'
+2026-11-12T04:25:35.2915899Z adding license file 'THIRD_PARTY_NOTICES.md'
+2026-11-12T04:25:35.2916405Z adding license file 'src/grihalekha/assets/fonts/OFL-Devanagari.txt'
+2026-11-12T04:25:35.2916986Z adding license file 'src/grihalekha/assets/fonts/OFL-NotoSans.txt'
+2026-11-12T04:25:35.2927510Z writing manifest file 'src/grihalekha.egg-info/SOURCES.txt'
+2026-11-12T04:25:35.4117777Z running sdist
+2026-11-12T04:25:35.4118081Z running egg_info
+2026-11-12T04:25:35.4133784Z writing src/grihalekha.egg-info/PKG-INFO
+2026-11-12T04:25:35.4142319Z writing dependency_links to src/grihalekha.egg-info/dependency_links.txt
+2026-11-12T04:25:35.4145774Z writing entry points to src/grihalekha.egg-info/entry_points.txt
+2026-11-12T04:25:35.4150319Z writing requirements to src/grihalekha.egg-info/requires.txt
+2026-11-12T04:25:35.4152704Z writing top-level names to src/grihalekha.egg-info/top_level.txt
+2026-11-12T04:25:35.4184927Z reading manifest file 'src/grihalekha.egg-info/SOURCES.txt'
+2026-11-12T04:25:35.4196162Z reading manifest template 'MANIFEST.in'
+2026-11-12T04:25:35.4231263Z warning: no files found matching '*.yaml' under directory '.github'
+2026-11-12T04:25:35.4234923Z warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+2026-11-12T04:25:35.4235485Z adding license file 'LICENSE'
+2026-11-12T04:25:35.4235824Z adding license file 'THIRD_PARTY_NOTICES.md'
+2026-11-12T04:25:35.4236295Z adding license file 'src/grihalekha/assets/fonts/OFL-Devanagari.txt'
+2026-11-12T04:25:35.4236865Z adding license file 'src/grihalekha/assets/fonts/OFL-NotoSans.txt'
+2026-11-12T04:25:35.4250681Z writing manifest file 'src/grihalekha.egg-info/SOURCES.txt'
+2026-11-12T04:25:35.4253417Z running check
+2026-11-12T04:25:35.4274127Z creating grihalekha-0.1.0
+2026-11-12T04:25:35.4277462Z creating grihalekha-0.1.0/.github
+2026-11-12T04:25:35.4278581Z creating grihalekha-0.1.0/.github/ISSUE_TEMPLATE
+2026-11-12T04:25:35.4279583Z creating grihalekha-0.1.0/.github/workflows
+2026-11-12T04:25:35.4280504Z creating grihalekha-0.1.0/docs
+2026-11-12T04:25:35.4281459Z creating grihalekha-0.1.0/docs/images
+2026-11-12T04:25:35.4282390Z creating grihalekha-0.1.0/icons
+2026-11-12T04:25:35.4283202Z creating grihalekha-0.1.0/packaging
+2026-11-12T04:25:35.4284053Z creating grihalekha-0.1.0/packaging/licenses
+2026-11-12T04:25:35.4285018Z creating grihalekha-0.1.0/scripts
+2026-11-12T04:25:35.4285989Z creating grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4287529Z creating grihalekha-0.1.0/src/grihalekha.egg-info
+2026-11-12T04:25:35.4288419Z creating grihalekha-0.1.0/src/grihalekha/assets/fonts
+2026-11-12T04:25:35.4289883Z creating grihalekha-0.1.0/src/grihalekha/assets/ui
+2026-11-12T04:25:35.4290714Z creating grihalekha-0.1.0/src/grihalekha/ui
+2026-11-12T04:25:35.4291545Z creating grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4292203Z copying files to grihalekha-0.1.0...
+2026-11-12T04:25:35.4292797Z copying .gitignore -> grihalekha-0.1.0
+2026-11-12T04:25:35.4294198Z copying CHANGELOG.md -> grihalekha-0.1.0
+2026-11-12T04:25:35.4295629Z copying CONTRIBUTING.md -> grihalekha-0.1.0
+2026-11-12T04:25:35.4296707Z copying LICENSE -> grihalekha-0.1.0
+2026-11-12T04:25:35.4298277Z copying MANIFEST.in -> grihalekha-0.1.0
+2026-11-12T04:25:35.4299357Z copying README.md -> grihalekha-0.1.0
+2026-11-12T04:25:35.4300498Z copying SECURITY.md -> grihalekha-0.1.0
+2026-11-12T04:25:35.4301601Z copying THIRD_PARTY_NOTICES.md -> grihalekha-0.1.0
+2026-11-12T04:25:35.4302637Z copying USER_GUIDE.md -> grihalekha-0.1.0
+2026-11-12T04:25:35.4303953Z copying pyproject.toml -> grihalekha-0.1.0
+2026-11-12T04:25:35.4305156Z copying setup.py -> grihalekha-0.1.0
+2026-11-12T04:25:35.4306384Z copying uv.lock -> grihalekha-0.1.0
+2026-11-12T04:25:35.4308418Z copying .github/dependabot.yml -> grihalekha-0.1.0/.github
+2026-11-12T04:25:35.4309512Z copying .github/pull_request_template.md -> grihalekha-0.1.0/.github
+2026-11-12T04:25:35.4310659Z copying .github/ISSUE_TEMPLATE/bug_report.yml -> grihalekha-0.1.0/.github/ISSUE_TEMPLATE
+2026-11-12T04:25:35.4311707Z copying .github/ISSUE_TEMPLATE/config.yml -> grihalekha-0.1.0/.github/ISSUE_TEMPLATE
+2026-11-12T04:25:35.4312800Z copying .github/ISSUE_TEMPLATE/feature_request.yml -> grihalekha-0.1.0/.github/ISSUE_TEMPLATE
+2026-11-12T04:25:35.4313823Z copying .github/workflows/check.yml -> grihalekha-0.1.0/.github/workflows
+2026-11-12T04:25:35.4315050Z copying .github/workflows/release.yml -> grihalekha-0.1.0/.github/workflows
+2026-11-12T04:25:35.4316320Z copying docs/API_CONTRACT.md -> grihalekha-0.1.0/docs
+2026-11-12T04:25:35.4317772Z copying docs/ARCHITECTURE.md -> grihalekha-0.1.0/docs
+2026-11-12T04:25:35.4319068Z copying docs/RELEASING.md -> grihalekha-0.1.0/docs
+2026-11-12T04:25:35.4320244Z copying docs/images/overview.png -> grihalekha-0.1.0/docs/images
+2026-11-12T04:25:35.4322289Z copying docs/images/statement.png -> grihalekha-0.1.0/docs/images
+2026-11-12T04:25:35.4325738Z copying docs/images/tenant-account.png -> grihalekha-0.1.0/docs/images
+2026-11-12T04:25:35.4327925Z copying icons/grihalekha-icon-512.png -> grihalekha-0.1.0/icons
+2026-11-12T04:25:35.4329236Z copying icons/grihalekha.ico -> grihalekha-0.1.0/icons
+2026-11-12T04:25:35.4330643Z copying packaging/PKGBUILD.in -> grihalekha-0.1.0/packaging
+2026-11-12T04:25:35.4331685Z copying packaging/README.md -> grihalekha-0.1.0/packaging
+2026-11-12T04:25:35.4332868Z copying packaging/build.py -> grihalekha-0.1.0/packaging
+2026-11-12T04:25:35.4334053Z copying packaging/grihalekha.desktop -> grihalekha-0.1.0/packaging
+2026-11-12T04:25:35.4335296Z copying packaging/license_notices.py -> grihalekha-0.1.0/packaging
+2026-11-12T04:25:35.4336458Z copying packaging/release.py -> grihalekha-0.1.0/packaging
+2026-11-12T04:25:35.4337769Z copying packaging/update_qt_notices.py -> grihalekha-0.1.0/packaging
+2026-11-12T04:25:35.4338870Z copying packaging/verify_build.py -> grihalekha-0.1.0/packaging
+2026-11-12T04:25:35.4340253Z copying packaging/verify_windows_installer.py -> grihalekha-0.1.0/packaging
+2026-11-12T04:25:35.4341344Z copying packaging/windows.iss -> grihalekha-0.1.0/packaging
+2026-11-12T04:25:35.4342570Z copying packaging/licenses/GFDL-1.3-no-invariants-only.txt -> grihalekha-0.1.0/packaging/licenses
+2026-11-12T04:25:35.4343780Z copying packaging/licenses/GPL-3.0-only.txt -> grihalekha-0.1.0/packaging/licenses
+2026-11-12T04:25:35.4345377Z copying packaging/licenses/LGPL-3.0-only.txt -> grihalekha-0.1.0/packaging/licenses
+2026-11-12T04:25:35.4346502Z copying packaging/licenses/README.md -> grihalekha-0.1.0/packaging/licenses
+2026-11-12T04:25:35.4347640Z copying packaging/licenses/qt-attributions.json -> grihalekha-0.1.0/packaging/licenses
+2026-11-12T04:25:35.4349326Z copying packaging/licenses/qt-third-party-notices.html -> grihalekha-0.1.0/packaging/licenses
+2026-11-12T04:25:35.4365936Z copying scripts/check_distribution.py -> grihalekha-0.1.0/scripts
+2026-11-12T04:25:35.4366911Z copying scripts/generate_screenshots.py -> grihalekha-0.1.0/scripts
+2026-11-12T04:25:35.4368149Z copying scripts/install_linux_ci_dependencies.sh -> grihalekha-0.1.0/scripts
+2026-11-12T04:25:35.4369166Z copying scripts/launcher.py -> grihalekha-0.1.0/scripts
+2026-11-12T04:25:35.4370307Z copying src/grihalekha/__init__.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4371376Z copying src/grihalekha/__main__.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4372460Z copying src/grihalekha/backups.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4373797Z copying src/grihalekha/bill_corrections.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4375198Z copying src/grihalekha/billing.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4376843Z copying src/grihalekha/clock.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4377973Z copying src/grihalekha/currencies.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4379048Z copying src/grihalekha/dates.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4380182Z copying src/grihalekha/deposit_transfers.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4381232Z copying src/grihalekha/ledger.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4383733Z copying src/grihalekha/lifecycle.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4385165Z copying src/grihalekha/meter.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4386408Z copying src/grihalekha/migrations.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4387569Z copying src/grihalekha/models.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4388779Z copying src/grihalekha/money.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4389881Z copying src/grihalekha/paths.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4390991Z copying src/grihalekha/reports.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4393108Z copying src/grihalekha/statement_cycles.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4394199Z copying src/grihalekha/tenancy_cancellation.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4395454Z copying src/grihalekha/tenancy_deletion.py -> grihalekha-0.1.0/src/grihalekha
+2026-11-12T04:25:35.4396863Z copying src/grihalekha.egg-info/PKG-INFO -> grihalekha-0.1.0/src/grihalekha.egg-info
+2026-11-12T04:25:35.4398060Z copying src/grihalekha.egg-info/SOURCES.txt -> grihalekha-0.1.0/src/grihalekha.egg-info
+2026-11-12T04:25:35.4399240Z copying src/grihalekha.egg-info/dependency_links.txt -> grihalekha-0.1.0/src/grihalekha.egg-info
+2026-11-12T04:25:35.4400228Z copying src/grihalekha.egg-info/entry_points.txt -> grihalekha-0.1.0/src/grihalekha.egg-info
+2026-11-12T04:25:35.4401320Z copying src/grihalekha.egg-info/requires.txt -> grihalekha-0.1.0/src/grihalekha.egg-info
+2026-11-12T04:25:35.4402319Z copying src/grihalekha.egg-info/top_level.txt -> grihalekha-0.1.0/src/grihalekha.egg-info
+2026-11-12T04:25:35.4403490Z copying src/grihalekha/assets/fonts/NotoSans-Bold.ttf -> grihalekha-0.1.0/src/grihalekha/assets/fonts
+2026-11-12T04:25:35.4410581Z copying src/grihalekha/assets/fonts/NotoSans-Regular.ttf -> grihalekha-0.1.0/src/grihalekha/assets/fonts
+2026-11-12T04:25:35.4417652Z copying src/grihalekha/assets/fonts/NotoSansDevanagari-Bold.ttf -> grihalekha-0.1.0/src/grihalekha/assets/fonts
+2026-11-12T04:25:35.4421048Z copying src/grihalekha/assets/fonts/NotoSansDevanagari-Regular.ttf -> grihalekha-0.1.0/src/grihalekha/assets/fonts
+2026-11-12T04:25:35.4424318Z copying src/grihalekha/assets/fonts/OFL-Devanagari.txt -> grihalekha-0.1.0/src/grihalekha/assets/fonts
+2026-11-12T04:25:35.4425376Z copying src/grihalekha/assets/fonts/OFL-NotoSans.txt -> grihalekha-0.1.0/src/grihalekha/assets/fonts
+2026-11-12T04:25:35.4426570Z copying src/grihalekha/assets/fonts/README.md -> grihalekha-0.1.0/src/grihalekha/assets/fonts
+2026-11-12T04:25:35.4427672Z copying src/grihalekha/assets/ui/check.svg -> grihalekha-0.1.0/src/grihalekha/assets/ui
+2026-11-12T04:25:35.4428831Z copying src/grihalekha/assets/ui/chevron-down.svg -> grihalekha-0.1.0/src/grihalekha/assets/ui
+2026-11-12T04:25:35.4430021Z copying src/grihalekha/assets/ui/chevron-left.svg -> grihalekha-0.1.0/src/grihalekha/assets/ui
+2026-11-12T04:25:35.4431076Z copying src/grihalekha/assets/ui/chevron-right.svg -> grihalekha-0.1.0/src/grihalekha/assets/ui
+2026-11-12T04:25:35.4432104Z copying src/grihalekha/assets/ui/chevron-up.svg -> grihalekha-0.1.0/src/grihalekha/assets/ui
+2026-11-12T04:25:35.4433132Z copying src/grihalekha/ui/__init__.py -> grihalekha-0.1.0/src/grihalekha/ui
+2026-11-12T04:25:35.4434256Z copying src/grihalekha/ui/bill_dialogs.py -> grihalekha-0.1.0/src/grihalekha/ui
+2026-11-12T04:25:35.4435624Z copying src/grihalekha/ui/bill_table.py -> grihalekha-0.1.0/src/grihalekha/ui
+2026-11-12T04:25:35.4436762Z copying src/grihalekha/ui/calendar.py -> grihalekha-0.1.0/src/grihalekha/ui
+2026-11-12T04:25:35.4437978Z copying src/grihalekha/ui/dialogs.py -> grihalekha-0.1.0/src/grihalekha/ui
+2026-11-12T04:25:35.4439412Z copying src/grihalekha/ui/lifecycle_dialogs.py -> grihalekha-0.1.0/src/grihalekha/ui
+2026-11-12T04:25:35.4440518Z copying src/grihalekha/ui/theme.py -> grihalekha-0.1.0/src/grihalekha/ui
+2026-11-12T04:25:35.4441929Z copying src/grihalekha/ui/widgets.py -> grihalekha-0.1.0/src/grihalekha/ui
+2026-11-12T04:25:35.4443094Z copying src/grihalekha/ui/window.py -> grihalekha-0.1.0/src/grihalekha/ui
+2026-11-12T04:25:35.4445928Z copying tests/legacy_ledger.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4446765Z copying tests/test_account_actions_ui.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4447961Z copying tests/test_backdated_move_out.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4449135Z copying tests/test_backups.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4450319Z copying tests/test_balance_to_deposit.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4451566Z copying tests/test_balance_workflow.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4452742Z copying tests/test_bill_corrections_ui.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4453863Z copying tests/test_bill_deletion.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4455177Z copying tests/test_bill_deletion_reports.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4456355Z copying tests/test_bill_replace.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4457479Z copying tests/test_bill_restore.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4458632Z copying tests/test_bill_ui.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4459743Z copying tests/test_bill_workflow.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4460853Z copying tests/test_build_documentation.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4461942Z copying tests/test_bundle_verification.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4463052Z copying tests/test_currencies.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4464113Z copying tests/test_currency_reports.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4465329Z copying tests/test_currency_settings.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4466485Z copying tests/test_currency_ui.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4467606Z copying tests/test_date_input.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4468731Z copying tests/test_distribution.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4469877Z copying tests/test_dropdown_properties.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4471036Z copying tests/test_electricity_correction_chronology.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4472072Z copying tests/test_electricity_deferral.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4473205Z copying tests/test_electricity_exports.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4474421Z copying tests/test_electricity_readings_ui.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4475882Z copying tests/test_electricity_review.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4476939Z copying tests/test_ledger.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4478259Z copying tests/test_license_notices.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4479342Z copying tests/test_lifecycle_ui.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4480595Z copying tests/test_meter_readings.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4481728Z copying tests/test_money_dates.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4482829Z copying tests/test_move_out_cycle_ui.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4483946Z copying tests/test_move_out_edge_cases.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4485348Z copying tests/test_moveout_cycles.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4486557Z copying tests/test_release_packaging.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4487728Z copying tests/test_reports.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4489154Z copying tests/test_required_bill_corrections.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4490319Z copying tests/test_required_bill_ui.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4491450Z copying tests/test_schema_migration.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4492750Z copying tests/test_startup.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4493923Z copying tests/test_statement_current.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4495140Z copying tests/test_statement_cycles.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4496376Z copying tests/test_table_resize.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4497522Z copying tests/test_tenancy_deletion.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4498805Z copying tests/test_tenancy_deletion_guards.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4499942Z copying tests/test_tenancy_deletion_ui.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4501105Z copying tests/test_tenancy_lifecycle.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4502240Z copying tests/test_theme.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4503503Z copying tests/test_ui.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4504987Z copying tests/test_unpaid_bill_correction.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4506269Z copying tests/test_upcoming_cancellation.py -> grihalekha-0.1.0/tests
+2026-11-12T04:25:35.4507665Z copying src/grihalekha.egg-info/SOURCES.txt -> grihalekha-0.1.0/src/grihalekha.egg-info
+2026-11-12T04:25:35.4517597Z Writing grihalekha-0.1.0/setup.cfg
+2026-11-12T04:25:35.4518893Z Creating tar archive
+2026-11-12T04:25:35.7804439Z removing 'grihalekha-0.1.0' (and everything under it)
+2026-11-12T04:25:35.8656431Z Building wheel from source distribution...
+2026-11-12T04:25:36.1540058Z running egg_info
+2026-11-12T04:25:36.1548198Z writing src/grihalekha.egg-info/PKG-INFO
+2026-11-12T04:25:36.1555438Z writing dependency_links to src/grihalekha.egg-info/dependency_links.txt
+2026-11-12T04:25:36.1558204Z writing entry points to src/grihalekha.egg-info/entry_points.txt
+2026-11-12T04:25:36.1562105Z writing requirements to src/grihalekha.egg-info/requires.txt
+2026-11-12T04:25:36.1563113Z writing top-level names to src/grihalekha.egg-info/top_level.txt
+2026-11-12T04:25:36.1597157Z reading manifest file 'src/grihalekha.egg-info/SOURCES.txt'
+2026-11-12T04:25:36.1608876Z reading manifest template 'MANIFEST.in'
+2026-11-12T04:25:36.1644410Z warning: no files found matching '*.yaml' under directory '.github'
+2026-11-12T04:25:36.1648669Z warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+2026-11-12T04:25:36.1649255Z adding license file 'LICENSE'
+2026-11-12T04:25:36.1649623Z adding license file 'THIRD_PARTY_NOTICES.md'
+2026-11-12T04:25:36.1650112Z adding license file 'src/grihalekha/assets/fonts/OFL-Devanagari.txt'
+2026-11-12T04:25:36.1650693Z adding license file 'src/grihalekha/assets/fonts/OFL-NotoSans.txt'
+2026-11-12T04:25:36.1665002Z writing manifest file 'src/grihalekha.egg-info/SOURCES.txt'
+2026-11-12T04:25:36.2831494Z running bdist_wheel
+2026-11-12T04:25:36.2863317Z running build
+2026-11-12T04:25:36.2863645Z running build_py
+2026-11-12T04:25:36.2867491Z creating build/lib/grihalekha
+2026-11-12T04:25:36.2869694Z copying src/grihalekha/billing.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2872244Z copying src/grihalekha/models.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2873814Z copying src/grihalekha/statement_cycles.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2875432Z copying src/grihalekha/clock.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2876824Z copying src/grihalekha/dates.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2878333Z copying src/grihalekha/tenancy_deletion.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2879931Z copying src/grihalekha/__init__.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2881314Z copying src/grihalekha/bill_corrections.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2882895Z copying src/grihalekha/money.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2884247Z copying src/grihalekha/backups.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2886447Z copying src/grihalekha/tenancy_cancellation.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2887623Z copying src/grihalekha/meter.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2889327Z copying src/grihalekha/migrations.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2890499Z copying src/grihalekha/currencies.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2891929Z copying src/grihalekha/lifecycle.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2893915Z copying src/grihalekha/deposit_transfers.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2895408Z copying src/grihalekha/ledger.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2898129Z copying src/grihalekha/paths.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2899342Z copying src/grihalekha/reports.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2901641Z copying src/grihalekha/__main__.py -> build/lib/grihalekha
+2026-11-12T04:25:36.2904338Z creating build/lib/grihalekha/ui
+2026-11-12T04:25:36.2905348Z copying src/grihalekha/ui/widgets.py -> build/lib/grihalekha/ui
+2026-11-12T04:25:36.2907574Z copying src/grihalekha/ui/lifecycle_dialogs.py -> build/lib/grihalekha/ui
+2026-11-12T04:25:36.2908869Z copying src/grihalekha/ui/calendar.py -> build/lib/grihalekha/ui
+2026-11-12T04:25:36.2910331Z copying src/grihalekha/ui/__init__.py -> build/lib/grihalekha/ui
+2026-11-12T04:25:36.2911690Z copying src/grihalekha/ui/bill_dialogs.py -> build/lib/grihalekha/ui
+2026-11-12T04:25:36.2913167Z copying src/grihalekha/ui/dialogs.py -> build/lib/grihalekha/ui
+2026-11-12T04:25:36.2915273Z copying src/grihalekha/ui/theme.py -> build/lib/grihalekha/ui
+2026-11-12T04:25:36.2916995Z copying src/grihalekha/ui/window.py -> build/lib/grihalekha/ui
+2026-11-12T04:25:36.2919785Z copying src/grihalekha/ui/bill_table.py -> build/lib/grihalekha/ui
+2026-11-12T04:25:36.2922316Z running egg_info
+2026-11-12T04:25:36.2930811Z writing src/grihalekha.egg-info/PKG-INFO
+2026-11-12T04:25:36.2939489Z writing dependency_links to src/grihalekha.egg-info/dependency_links.txt
+2026-11-12T04:25:36.2942864Z writing entry points to src/grihalekha.egg-info/entry_points.txt
+2026-11-12T04:25:36.2948002Z writing requirements to src/grihalekha.egg-info/requires.txt
+2026-11-12T04:25:36.2950333Z writing top-level names to src/grihalekha.egg-info/top_level.txt
+2026-11-12T04:25:36.2975403Z reading manifest file 'src/grihalekha.egg-info/SOURCES.txt'
+2026-11-12T04:25:36.2987215Z reading manifest template 'MANIFEST.in'
+2026-11-12T04:25:36.3022071Z warning: no files found matching '*.yaml' under directory '.github'
+2026-11-12T04:25:36.3026397Z warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+2026-11-12T04:25:36.3027002Z adding license file 'LICENSE'
+2026-11-12T04:25:36.3027343Z adding license file 'THIRD_PARTY_NOTICES.md'
+2026-11-12T04:25:36.3027833Z adding license file 'src/grihalekha/assets/fonts/OFL-Devanagari.txt'
+2026-11-12T04:25:36.3028685Z adding license file 'src/grihalekha/assets/fonts/OFL-NotoSans.txt'
+2026-11-12T04:25:36.3042995Z writing manifest file 'src/grihalekha.egg-info/SOURCES.txt'
+2026-11-12T04:25:36.3054216Z creating build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3056032Z copying src/grihalekha/assets/fonts/NotoSans-Regular.ttf -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3063479Z copying src/grihalekha/assets/fonts/NotoSans-Bold.ttf -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3070881Z copying src/grihalekha/assets/fonts/README.md -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3072299Z copying src/grihalekha/assets/fonts/OFL-Devanagari.txt -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3074034Z copying src/grihalekha/assets/fonts/NotoSansDevanagari-Bold.ttf -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3078052Z copying src/grihalekha/assets/fonts/OFL-NotoSans.txt -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3079610Z copying src/grihalekha/assets/fonts/NotoSansDevanagari-Regular.ttf -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3083149Z creating build/lib/grihalekha/assets/ui
+2026-11-12T04:25:36.3084048Z copying src/grihalekha/assets/ui/chevron-up.svg -> build/lib/grihalekha/assets/ui
+2026-11-12T04:25:36.3086078Z copying src/grihalekha/assets/ui/check.svg -> build/lib/grihalekha/assets/ui
+2026-11-12T04:25:36.3087304Z copying src/grihalekha/assets/ui/chevron-right.svg -> build/lib/grihalekha/assets/ui
+2026-11-12T04:25:36.3089000Z copying src/grihalekha/assets/ui/chevron-left.svg -> build/lib/grihalekha/assets/ui
+2026-11-12T04:25:36.3090689Z copying src/grihalekha/assets/ui/chevron-down.svg -> build/lib/grihalekha/assets/ui
+2026-11-12T04:25:36.3092253Z copying src/grihalekha/assets/ui/check.svg -> build/lib/grihalekha/assets/ui
+2026-11-12T04:25:36.3094135Z copying src/grihalekha/assets/ui/chevron-down.svg -> build/lib/grihalekha/assets/ui
+2026-11-12T04:25:36.3096144Z copying src/grihalekha/assets/ui/chevron-left.svg -> build/lib/grihalekha/assets/ui
+2026-11-12T04:25:36.3097972Z copying src/grihalekha/assets/ui/chevron-right.svg -> build/lib/grihalekha/assets/ui
+2026-11-12T04:25:36.3099743Z copying src/grihalekha/assets/ui/chevron-up.svg -> build/lib/grihalekha/assets/ui
+2026-11-12T04:25:36.3101555Z copying src/grihalekha/assets/fonts/NotoSans-Bold.ttf -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3110028Z copying src/grihalekha/assets/fonts/NotoSans-Regular.ttf -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3118402Z copying src/grihalekha/assets/fonts/NotoSansDevanagari-Bold.ttf -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3122260Z copying src/grihalekha/assets/fonts/NotoSansDevanagari-Regular.ttf -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3126298Z copying src/grihalekha/assets/fonts/OFL-Devanagari.txt -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3128159Z copying src/grihalekha/assets/fonts/OFL-NotoSans.txt -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3129999Z copying src/grihalekha/assets/fonts/README.md -> build/lib/grihalekha/assets/fonts
+2026-11-12T04:25:36.3135803Z creating build/lib/grihalekha/assets/icons
+2026-11-12T04:25:36.3137685Z copying /home/runner/work/_temp/setup-uv-cache/sdists-v9/.tmpMtks92/grihalekha-0.1.0/icons/grihalekha.ico -> build/lib/grihalekha/assets/icons
+2026-11-12T04:25:36.3139564Z copying /home/runner/work/_temp/setup-uv-cache/sdists-v9/.tmpMtks92/grihalekha-0.1.0/icons/grihalekha-icon-512.png -> build/lib/grihalekha/assets/icons
+2026-11-12T04:25:36.3154927Z installing to build/bdist.linux-x86_64/wheel
+2026-11-12T04:25:36.3155309Z running install
+2026-11-12T04:25:36.3192364Z running install_lib
+2026-11-12T04:25:36.3200552Z creating build/bdist.linux-x86_64/wheel
+2026-11-12T04:25:36.3202499Z creating build/bdist.linux-x86_64/wheel/grihalekha
+2026-11-12T04:25:36.3203740Z copying build/lib/grihalekha/billing.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3205773Z copying build/lib/grihalekha/models.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3207141Z copying build/lib/grihalekha/statement_cycles.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3208329Z copying build/lib/grihalekha/clock.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3209493Z copying build/lib/grihalekha/dates.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3210749Z copying build/lib/grihalekha/tenancy_deletion.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3212118Z copying build/lib/grihalekha/__init__.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3213278Z copying build/lib/grihalekha/bill_corrections.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3214587Z copying build/lib/grihalekha/money.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3216386Z creating build/bdist.linux-x86_64/wheel/grihalekha/ui
+2026-11-12T04:25:36.3217663Z copying build/lib/grihalekha/ui/widgets.py -> build/bdist.linux-x86_64/wheel/./grihalekha/ui
+2026-11-12T04:25:36.3219185Z copying build/lib/grihalekha/ui/lifecycle_dialogs.py -> build/bdist.linux-x86_64/wheel/./grihalekha/ui
+2026-11-12T04:25:36.3220393Z copying build/lib/grihalekha/ui/calendar.py -> build/bdist.linux-x86_64/wheel/./grihalekha/ui
+2026-11-12T04:25:36.3221620Z copying build/lib/grihalekha/ui/__init__.py -> build/bdist.linux-x86_64/wheel/./grihalekha/ui
+2026-11-12T04:25:36.3222774Z copying build/lib/grihalekha/ui/bill_dialogs.py -> build/bdist.linux-x86_64/wheel/./grihalekha/ui
+2026-11-12T04:25:36.3223987Z copying build/lib/grihalekha/ui/dialogs.py -> build/bdist.linux-x86_64/wheel/./grihalekha/ui
+2026-11-12T04:25:36.3225654Z copying build/lib/grihalekha/ui/theme.py -> build/bdist.linux-x86_64/wheel/./grihalekha/ui
+2026-11-12T04:25:36.3226986Z copying build/lib/grihalekha/ui/window.py -> build/bdist.linux-x86_64/wheel/./grihalekha/ui
+2026-11-12T04:25:36.3229741Z copying build/lib/grihalekha/ui/bill_table.py -> build/bdist.linux-x86_64/wheel/./grihalekha/ui
+2026-11-12T04:25:36.3230693Z copying build/lib/grihalekha/backups.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3232231Z copying build/lib/grihalekha/tenancy_cancellation.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3233809Z creating build/bdist.linux-x86_64/wheel/grihalekha/assets
+2026-11-12T04:25:36.3235495Z creating build/bdist.linux-x86_64/wheel/grihalekha/assets/icons
+2026-11-12T04:25:36.3236823Z copying build/lib/grihalekha/assets/icons/grihalekha-icon-512.png -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/icons
+2026-11-12T04:25:36.3238230Z copying build/lib/grihalekha/assets/icons/grihalekha.ico -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/icons
+2026-11-12T04:25:36.3240043Z creating build/bdist.linux-x86_64/wheel/grihalekha/assets/ui
+2026-11-12T04:25:36.3241349Z copying build/lib/grihalekha/assets/ui/chevron-up.svg -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/ui
+2026-11-12T04:25:36.3242524Z copying build/lib/grihalekha/assets/ui/check.svg -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/ui
+2026-11-12T04:25:36.3243704Z copying build/lib/grihalekha/assets/ui/chevron-right.svg -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/ui
+2026-11-12T04:25:36.3244998Z copying build/lib/grihalekha/assets/ui/chevron-left.svg -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/ui
+2026-11-12T04:25:36.3246385Z copying build/lib/grihalekha/assets/ui/chevron-down.svg -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/ui
+2026-11-12T04:25:36.3247887Z creating build/bdist.linux-x86_64/wheel/grihalekha/assets/fonts
+2026-11-12T04:25:36.3249236Z copying build/lib/grihalekha/assets/fonts/NotoSans-Regular.ttf -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/fonts
+2026-11-12T04:25:36.3256636Z copying build/lib/grihalekha/assets/fonts/NotoSans-Bold.ttf -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/fonts
+2026-11-12T04:25:36.3263304Z copying build/lib/grihalekha/assets/fonts/README.md -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/fonts
+2026-11-12T04:25:36.3264429Z copying build/lib/grihalekha/assets/fonts/OFL-Devanagari.txt -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/fonts
+2026-11-12T04:25:36.3265880Z copying build/lib/grihalekha/assets/fonts/NotoSansDevanagari-Bold.ttf -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/fonts
+2026-11-12T04:25:36.3269242Z copying build/lib/grihalekha/assets/fonts/OFL-NotoSans.txt -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/fonts
+2026-11-12T04:25:36.3270469Z copying build/lib/grihalekha/assets/fonts/NotoSansDevanagari-Regular.ttf -> build/bdist.linux-x86_64/wheel/./grihalekha/assets/fonts
+2026-11-12T04:25:36.3273796Z copying build/lib/grihalekha/meter.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3275070Z copying build/lib/grihalekha/migrations.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3276341Z copying build/lib/grihalekha/currencies.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3277441Z copying build/lib/grihalekha/lifecycle.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3279016Z copying build/lib/grihalekha/deposit_transfers.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3280243Z copying build/lib/grihalekha/ledger.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3282730Z copying build/lib/grihalekha/paths.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3283807Z copying build/lib/grihalekha/reports.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3286024Z copying build/lib/grihalekha/__main__.py -> build/bdist.linux-x86_64/wheel/./grihalekha
+2026-11-12T04:25:36.3286855Z running install_egg_info
+2026-11-12T04:25:36.3297021Z Copying src/grihalekha.egg-info to build/bdist.linux-x86_64/wheel/./grihalekha-0.1.0-py3.12.egg-info
+2026-11-12T04:25:36.3303240Z running install_scripts
+2026-11-12T04:25:36.3315280Z creating build/bdist.linux-x86_64/wheel/grihalekha-0.1.0.dist-info/WHEEL
+2026-11-12T04:25:36.3318902Z creating '/home/runner/work/GrihaLekha/GrihaLekha/dist/python/.tmp-hivivauu/grihalekha-0.1.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+2026-11-12T04:25:36.3322077Z adding 'grihalekha/__init__.py'
+2026-11-12T04:25:36.3326379Z adding 'grihalekha/__main__.py'
+2026-11-12T04:25:36.3331268Z adding 'grihalekha/backups.py'
+2026-11-12T04:25:36.3336610Z adding 'grihalekha/bill_corrections.py'
+2026-11-12T04:25:36.3346321Z adding 'grihalekha/billing.py'
+2026-11-12T04:25:36.3348233Z adding 'grihalekha/clock.py'
+2026-11-12T04:25:36.3349792Z adding 'grihalekha/currencies.py'
+2026-11-12T04:25:36.3352166Z adding 'grihalekha/dates.py'
+2026-11-12T04:25:36.3354656Z adding 'grihalekha/deposit_transfers.py'
+2026-11-12T04:25:36.3378708Z adding 'grihalekha/ledger.py'
+2026-11-12T04:25:36.3388317Z adding 'grihalekha/lifecycle.py'
+2026-11-12T04:25:36.3390496Z adding 'grihalekha/meter.py'
+2026-11-12T04:25:36.3392538Z adding 'grihalekha/migrations.py'
+2026-11-12T04:25:36.3395901Z adding 'grihalekha/models.py'
+2026-11-12T04:25:36.3398031Z adding 'grihalekha/money.py'
+2026-11-12T04:25:36.3399438Z adding 'grihalekha/paths.py'
+2026-11-12T04:25:36.3420599Z adding 'grihalekha/reports.py'
+2026-11-12T04:25:36.3424161Z adding 'grihalekha/statement_cycles.py'
+2026-11-12T04:25:36.3427212Z adding 'grihalekha/tenancy_cancellation.py'
+2026-11-12T04:25:36.3434643Z adding 'grihalekha/tenancy_deletion.py'
+2026-11-12T04:25:36.3669089Z adding 'grihalekha/assets/fonts/NotoSans-Bold.ttf'
+2026-11-12T04:25:36.3899648Z adding 'grihalekha/assets/fonts/NotoSans-Regular.ttf'
+2026-11-12T04:25:36.3974300Z adding 'grihalekha/assets/fonts/NotoSansDevanagari-Bold.ttf'
+2026-11-12T04:25:36.4042754Z adding 'grihalekha/assets/fonts/NotoSansDevanagari-Regular.ttf'
+2026-11-12T04:25:36.4046089Z adding 'grihalekha/assets/fonts/OFL-Devanagari.txt'
+2026-11-12T04:25:36.4048224Z adding 'grihalekha/assets/fonts/OFL-NotoSans.txt'
+2026-11-12T04:25:36.4050004Z adding 'grihalekha/assets/fonts/README.md'
+2026-11-12T04:25:36.4058208Z adding 'grihalekha/assets/icons/grihalekha-icon-512.png'
+2026-11-12T04:25:36.4066844Z adding 'grihalekha/assets/icons/grihalekha.ico'
+2026-11-12T04:25:36.4068649Z adding 'grihalekha/assets/ui/check.svg'
+2026-11-12T04:25:36.4069914Z adding 'grihalekha/assets/ui/chevron-down.svg'
+2026-11-12T04:25:36.4071158Z adding 'grihalekha/assets/ui/chevron-left.svg'
+2026-11-12T04:25:36.4072371Z adding 'grihalekha/assets/ui/chevron-right.svg'
+2026-11-12T04:25:36.4073511Z adding 'grihalekha/assets/ui/chevron-up.svg'
+2026-11-12T04:25:36.4075444Z adding 'grihalekha/ui/__init__.py'
+2026-11-12T04:25:36.4079516Z adding 'grihalekha/ui/bill_dialogs.py'
+2026-11-12T04:25:36.4081763Z adding 'grihalekha/ui/bill_table.py'
+2026-11-12T04:25:36.4084658Z adding 'grihalekha/ui/calendar.py'
+2026-11-12T04:25:36.4091707Z adding 'grihalekha/ui/dialogs.py'
+2026-11-12T04:25:36.4095626Z adding 'grihalekha/ui/lifecycle_dialogs.py'
+2026-11-12T04:25:36.4099838Z adding 'grihalekha/ui/theme.py'
+2026-11-12T04:25:36.4106170Z adding 'grihalekha/ui/widgets.py'
+2026-11-12T04:25:36.4134641Z adding 'grihalekha/ui/window.py'
+2026-11-12T04:25:36.4150754Z adding 'grihalekha-0.1.0.dist-info/licenses/LICENSE'
+2026-11-12T04:25:36.4153346Z adding 'grihalekha-0.1.0.dist-info/licenses/THIRD_PARTY_NOTICES.md'
+2026-11-12T04:25:36.4156927Z adding 'grihalekha-0.1.0.dist-info/licenses/src/grihalekha/assets/fonts/OFL-Devanagari.txt'
+2026-11-12T04:25:36.4159009Z adding 'grihalekha-0.1.0.dist-info/licenses/src/grihalekha/assets/fonts/OFL-NotoSans.txt'
+2026-11-12T04:25:36.4162307Z adding 'grihalekha-0.1.0.dist-info/METADATA'
+2026-11-12T04:25:36.4163408Z adding 'grihalekha-0.1.0.dist-info/WHEEL'
+2026-11-12T04:25:36.4164224Z adding 'grihalekha-0.1.0.dist-info/entry_points.txt'
+2026-11-12T04:25:36.4165123Z adding 'grihalekha-0.1.0.dist-info/top_level.txt'
+2026-11-12T04:25:36.4168353Z adding 'grihalekha-0.1.0.dist-info/RECORD'
+2026-11-12T04:25:36.4170164Z removing build/bdist.linux-x86_64/wheel
+2026-11-12T04:25:36.4524394Z Successfully built dist/python/grihalekha-0.1.0.tar.gz
+2026-11-12T04:25:36.4525139Z Successfully built dist/python/grihalekha-0.1.0-py3-none-any.whl

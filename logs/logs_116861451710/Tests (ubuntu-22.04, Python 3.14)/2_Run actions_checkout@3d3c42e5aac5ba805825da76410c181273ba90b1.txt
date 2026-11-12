@@ -1,0 +1,119 @@
+﻿2026-11-12T04:25:03.8725440Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-12T04:25:03.8726500Z with:
+2026-11-12T04:25:03.8727002Z   persist-credentials: false
+2026-11-12T04:25:03.8727634Z   repository: iamokish/GrihaLekha
+2026-11-12T04:25:03.8731499Z   token: ***
+2026-11-12T04:25:03.8732007Z   ssh-strict: true
+2026-11-12T04:25:03.8732495Z   ssh-user: git
+2026-11-12T04:25:03.8732962Z   clean: true
+2026-11-12T04:25:03.8733492Z   sparse-checkout-cone-mode: true
+2026-11-12T04:25:03.8734066Z   fetch-depth: 1
+2026-11-12T04:25:03.8734609Z   fetch-tags: false
+2026-11-12T04:25:03.8735215Z   show-progress: true
+2026-11-12T04:25:03.8735730Z   lfs: false
+2026-11-12T04:25:03.8736224Z   submodules: false
+2026-11-12T04:25:03.8736731Z   set-safe-directory: true
+2026-11-12T04:25:03.8737313Z   allow-unsafe-pr-checkout: false
+2026-11-12T04:25:03.8738054Z env:
+2026-11-12T04:25:03.8738522Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:25:03.8739147Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:25:03.8739714Z   TZ: Asia/Kolkata
+2026-11-12T04:25:03.8740316Z   UV_PYTHON: 3.14
+2026-11-12T04:25:03.8740807Z ##[endgroup]
+2026-11-12T04:25:04.1196170Z Syncing repository: iamokish/GrihaLekha
+2026-11-12T04:25:04.1199328Z ##[group]Getting Git version info
+2026-11-12T04:25:04.1200731Z Working directory is '/home/runner/work/GrihaLekha/GrihaLekha'
+2026-11-12T04:25:04.1202693Z [command]/usr/bin/git version
+2026-11-12T04:25:04.1242882Z git version 2.56.0
+2026-11-12T04:25:04.1262306Z ##[endgroup]
+2026-11-12T04:25:04.1270562Z Temporarily overriding HOME='/home/runner/work/_temp/3cc8d403-b267-4de4-ad40-573489ca3553' before making global git config changes
+2026-11-12T04:25:04.1273116Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T04:25:04.1288487Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:25:04.1338279Z Deleting the contents of '/home/runner/work/GrihaLekha/GrihaLekha'
+2026-11-12T04:25:04.1353048Z ##[group]Determining repository object format
+2026-11-12T04:25:04.1355816Z ##[endgroup]
+2026-11-12T04:25:04.1357872Z ##[group]Initializing the repository
+2026-11-12T04:25:04.1359485Z [command]/usr/bin/git init /home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:25:04.1452018Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-12T04:25:04.1453751Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-12T04:25:04.1455801Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-12T04:25:04.1457046Z hint: call:
+2026-11-12T04:25:04.1457597Z hint:
+2026-11-12T04:25:04.1458613Z hint: 	git config --global init.defaultBranch <name>
+2026-11-12T04:25:04.1459804Z hint:
+2026-11-12T04:25:04.1461012Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-12T04:25:04.1462196Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-12T04:25:04.1463092Z hint:
+2026-11-12T04:25:04.1463641Z hint: 	git branch -m <name>
+2026-11-12T04:25:04.1464242Z hint:
+2026-11-12T04:25:04.1465220Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-12T04:25:04.1466996Z Initialized empty Git repository in /home/runner/work/GrihaLekha/GrihaLekha/.git/
+2026-11-12T04:25:04.1475866Z [command]/usr/bin/git remote add origin https://github.com/iamokish/GrihaLekha
+2026-11-12T04:25:04.1535117Z ##[endgroup]
+2026-11-12T04:25:04.1537017Z ##[group]Disabling automatic garbage collection
+2026-11-12T04:25:04.1557864Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-12T04:25:04.1594098Z ##[endgroup]
+2026-11-12T04:25:04.1595661Z ##[group]Setting up auth
+2026-11-12T04:25:04.1605762Z Removing SSH command configuration
+2026-11-12T04:25:04.1607418Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T04:25:04.1629816Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-12T04:25:04.1957114Z Removing HTTP extra header
+2026-11-12T04:25:04.1968828Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T04:25:04.1991510Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-12T04:25:04.2182464Z Removing includeIf entries pointing to credentials config files
+2026-11-12T04:25:04.2188511Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T04:25:04.2225695Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-12T04:25:04.2409777Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-56b5cd39-d833-4722-9045-817077978ad4.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-12T04:25:04.2444324Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git.path /home/runner/work/_temp/git-credentials-56b5cd39-d833-4722-9045-817077978ad4.config
+2026-11-12T04:25:04.2473991Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-56b5cd39-d833-4722-9045-817077978ad4.config
+2026-11-12T04:25:04.2504661Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-56b5cd39-d833-4722-9045-817077978ad4.config
+2026-11-12T04:25:04.2539280Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-56b5cd39-d833-4722-9045-817077978ad4.config
+2026-11-12T04:25:04.2568113Z ##[endgroup]
+2026-11-12T04:25:04.2569506Z ##[group]Fetching the repository
+2026-11-12T04:25:04.2575356Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3cff34feec27f66ea026b82f73ddff854e3e2d74:refs/remotes/origin/master
+2026-11-12T04:25:04.6288461Z From https://github.com/iamokish/GrihaLekha
+2026-11-12T04:25:04.6290840Z  * [new ref]         3cff34feec27f66ea026b82f73ddff854e3e2d74 -> origin/master
+2026-11-12T04:25:04.6296589Z [command]/usr/bin/git branch --list --remote origin/master
+2026-11-12T04:25:04.6321017Z   origin/master
+2026-11-12T04:25:04.6329526Z [command]/usr/bin/git rev-parse refs/remotes/origin/master
+2026-11-12T04:25:04.6355572Z 3cff34feec27f66ea026b82f73ddff854e3e2d74
+2026-11-12T04:25:04.6359829Z ##[endgroup]
+2026-11-12T04:25:04.6361422Z ##[group]Determining the checkout info
+2026-11-12T04:25:04.6363671Z ##[endgroup]
+2026-11-12T04:25:04.6365103Z [command]/usr/bin/git sparse-checkout disable
+2026-11-12T04:25:04.6410623Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-12T04:25:04.6441346Z ##[group]Checking out the ref
+2026-11-12T04:25:04.6443905Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2026-11-12T04:25:04.6759200Z Reset branch 'master'
+2026-11-12T04:25:04.6761668Z branch 'master' set up to track 'origin/master'.
+2026-11-12T04:25:04.6768033Z ##[endgroup]
+2026-11-12T04:25:04.6800959Z [command]/usr/bin/git log -1 --format=%H
+2026-11-12T04:25:04.6824025Z 3cff34feec27f66ea026b82f73ddff854e3e2d74
+2026-11-12T04:25:04.6834704Z ##[group]Removing auth
+2026-11-12T04:25:04.6836376Z Removing SSH command configuration
+2026-11-12T04:25:04.6838736Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T04:25:04.6870158Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-12T04:25:04.7066877Z Removing HTTP extra header
+2026-11-12T04:25:04.7069622Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T04:25:04.7097918Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-12T04:25:04.7290916Z Removing includeIf entries pointing to credentials config files
+2026-11-12T04:25:04.7294807Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T04:25:04.7317183Z includeif.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git.path
+2026-11-12T04:25:04.7325440Z includeif.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git/worktrees/*.path
+2026-11-12T04:25:04.7327708Z includeif.gitdir:/github/workspace/.git.path
+2026-11-12T04:25:04.7329434Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-12T04:25:04.7334882Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git.path
+2026-11-12T04:25:04.7351257Z /home/runner/work/_temp/git-credentials-56b5cd39-d833-4722-9045-817077978ad4.config
+2026-11-12T04:25:04.7363786Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-56b5cd39\-d833\-4722\-9045\-817077978ad4\.config
+2026-11-12T04:25:04.7413987Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git/worktrees/*.path
+2026-11-12T04:25:04.7448255Z /home/runner/work/_temp/git-credentials-56b5cd39-d833-4722-9045-817077978ad4.config
+2026-11-12T04:25:04.7456438Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-56b5cd39\-d833\-4722\-9045\-817077978ad4\.config
+2026-11-12T04:25:04.7490668Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-12T04:25:04.7521844Z /github/runner_temp/git-credentials-56b5cd39-d833-4722-9045-817077978ad4.config
+2026-11-12T04:25:04.7534418Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-56b5cd39\-d833\-4722\-9045\-817077978ad4\.config
+2026-11-12T04:25:04.7560437Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-12T04:25:04.7582135Z /github/runner_temp/git-credentials-56b5cd39-d833-4722-9045-817077978ad4.config
+2026-11-12T04:25:04.7593059Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-56b5cd39\-d833\-4722\-9045\-817077978ad4\.config
+2026-11-12T04:25:04.7629687Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-12T04:25:04.7828566Z Removing credentials config '/home/runner/work/_temp/git-credentials-56b5cd39-d833-4722-9045-817077978ad4.config'
+2026-11-12T04:25:04.7844754Z ##[endgroup]

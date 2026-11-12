@@ -1,0 +1,13 @@
+﻿2026-11-12T04:30:17.0061301Z ##[group]Run tzutil /s "India Standard Time"
+2026-11-12T04:30:17.0061846Z [36;1mtzutil /s "India Standard Time"[0m
+2026-11-12T04:30:17.0241584Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T04:30:17.0242007Z env:
+2026-11-12T04:30:17.0242214Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:30:17.0242484Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:30:17.0242774Z   TZ: Asia/Kolkata
+2026-11-12T04:30:17.0242983Z   UV_PYTHON: 3.13
+2026-11-12T04:30:17.0243226Z   UV_TOOL_BIN_DIR: D:\a\_temp\uv-tool-bin-dir
+2026-11-12T04:30:17.0243541Z   UV_TOOL_DIR: D:\a\_temp\uv-tool-dir
+2026-11-12T04:30:17.0243856Z   UV_PYTHON_INSTALL_DIR: D:\a\_temp\uv-python-dir
+2026-11-12T04:30:17.0244189Z   UV_CACHE_DIR: D:\a\_temp\setup-uv-cache
+2026-11-12T04:30:17.0244469Z ##[endgroup]

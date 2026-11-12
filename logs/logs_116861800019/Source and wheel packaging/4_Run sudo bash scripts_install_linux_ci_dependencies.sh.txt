@@ -1,0 +1,336 @@
+﻿2026-11-12T04:26:20.6411084Z ##[group]Run sudo bash scripts/install_linux_ci_dependencies.sh
+2026-11-12T04:26:20.6411701Z [36;1msudo bash scripts/install_linux_ci_dependencies.sh[0m
+2026-11-12T04:26:20.6500933Z shell: /usr/bin/bash -e {0}
+2026-11-12T04:26:20.6501301Z env:
+2026-11-12T04:26:20.6501534Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:26:20.6501836Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:26:20.6502102Z   TZ: Asia/Kolkata
+2026-11-12T04:26:20.6502406Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:26:20.6502763Z   UV_PYTHON: 3.12
+2026-11-12T04:26:20.6503023Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:26:20.6503380Z ##[endgroup]
+2026-11-12T04:26:20.7742431Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-11-12T04:26:20.8139759Z Hit:2 http://azure.archive.ubuntu.com/ubuntu jammy InRelease
+2026-11-12T04:26:20.8141588Z Get:6 https://packages.microsoft.com/ubuntu/22.04/prod jammy InRelease [3632 B]
+2026-11-12T04:26:20.8157650Z Get:3 http://azure.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+2026-11-12T04:26:20.8227983Z Get:4 http://azure.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+2026-11-12T04:26:20.8273966Z Get:5 http://azure.archive.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+2026-11-12T04:26:20.9998355Z Get:7 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main arm64 Packages [783 kB]
+2026-11-12T04:26:21.0202358Z Get:8 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main amd64 Packages [1059 kB]
+2026-11-12T04:26:21.0235523Z Get:9 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main armhf Packages [23.6 kB]
+2026-11-12T04:26:21.1073227Z Get:10 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [3982 kB]
+2026-11-12T04:26:21.1269642Z Get:11 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [584 kB]
+2026-11-12T04:26:21.1362578Z Get:12 http://azure.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [6848 kB]
+2026-11-12T04:26:21.1856842Z Get:13 http://azure.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [1316 kB]
+2026-11-12T04:26:21.1942253Z Get:14 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1291 kB]
+2026-11-12T04:26:21.2013235Z Get:15 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [327 kB]
+2026-11-12T04:26:21.2017181Z Get:16 http://azure.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [86.1 kB]
+2026-11-12T04:26:21.2031894Z Get:17 http://azure.archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [16.5 kB]
+2026-11-12T04:26:21.3321589Z Get:18 http://azure.archive.ubuntu.com/ubuntu jammy-security/main amd64 Packages [3718 kB]
+2026-11-12T04:26:21.3495494Z Get:19 http://azure.archive.ubuntu.com/ubuntu jammy-security/main Translation-en [519 kB]
+2026-11-12T04:26:21.3946680Z Get:20 http://azure.archive.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [6613 kB]
+2026-11-12T04:26:21.4238554Z Get:21 http://azure.archive.ubuntu.com/ubuntu jammy-security/restricted Translation-en [1272 kB]
+2026-11-12T04:26:21.4301901Z Get:22 http://azure.archive.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1057 kB]
+2026-11-12T04:26:21.4356518Z Get:23 http://azure.archive.ubuntu.com/ubuntu jammy-security/universe Translation-en [238 kB]
+2026-11-12T04:26:21.4373663Z Get:24 http://azure.archive.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [79.6 kB]
+2026-11-12T04:26:21.4384710Z Get:25 http://azure.archive.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [13.6 kB]
+2026-11-12T04:26:28.5101839Z Fetched 30.2 MB in 3s (8864 kB/s)
+2026-11-12T04:26:30.4033882Z Reading package lists...
+2026-11-12T04:26:30.4713538Z Reading package lists...
+2026-11-12T04:26:30.8195994Z Building dependency tree...
+2026-11-12T04:26:30.8208372Z Reading state information...
+2026-11-12T04:26:31.1368386Z build-essential is already the newest version (12.9ubuntu3).
+2026-11-12T04:26:31.1369055Z build-essential set to manually installed.
+2026-11-12T04:26:31.1369672Z libfontconfig1 is already the newest version (2.13.1-4.2ubuntu5).
+2026-11-12T04:26:31.1371270Z libfontconfig1 set to manually installed.
+2026-11-12T04:26:31.1371776Z libgl1 is already the newest version (1.4.0-1).
+2026-11-12T04:26:31.1372356Z libgl1 set to manually installed.
+2026-11-12T04:26:31.1372967Z libxcb-randr0 is already the newest version (1.14-3ubuntu3).
+2026-11-12T04:26:31.1373515Z libxcb-randr0 set to manually installed.
+2026-11-12T04:26:31.1373917Z libxcb-shm0 is already the newest version (1.14-3ubuntu3).
+2026-11-12T04:26:31.1374324Z libxcb-shm0 set to manually installed.
+2026-11-12T04:26:31.1374720Z libxcb-sync1 is already the newest version (1.14-3ubuntu3).
+2026-11-12T04:26:31.1375157Z libxcb-sync1 set to manually installed.
+2026-11-12T04:26:31.1375575Z libxcb-xfixes0 is already the newest version (1.14-3ubuntu3).
+2026-11-12T04:26:31.1376009Z libxcb-xfixes0 set to manually installed.
+2026-11-12T04:26:31.1376402Z libxcb1 is already the newest version (1.14-3ubuntu3).
+2026-11-12T04:26:31.1376790Z libxcb1 set to manually installed.
+2026-11-12T04:26:31.1377199Z libxcomposite1 is already the newest version (1:0.4.5-1build2).
+2026-11-12T04:26:31.1377885Z libxcomposite1 set to manually installed.
+2026-11-12T04:26:31.1378537Z libxdamage1 is already the newest version (1:1.1.5-2build2).
+2026-11-12T04:26:31.1379002Z libxdamage1 set to manually installed.
+2026-11-12T04:26:31.1379381Z libxext6 is already the newest version (2:1.3.4-1build1).
+2026-11-12T04:26:31.1379774Z libxext6 set to manually installed.
+2026-11-12T04:26:31.1380139Z libxfixes3 is already the newest version (1:6.0.0-1).
+2026-11-12T04:26:31.1380531Z libxfixes3 set to manually installed.
+2026-11-12T04:26:31.1381177Z libxi6 is already the newest version (2:1.8-1build1).
+2026-11-12T04:26:31.1381551Z libxi6 set to manually installed.
+2026-11-12T04:26:31.1381908Z libxkbcommon0 is already the newest version (1.4.0-1).
+2026-11-12T04:26:31.1382302Z libxkbcommon0 set to manually installed.
+2026-11-12T04:26:31.1382704Z libxrandr2 is already the newest version (2:1.5.2-1build1).
+2026-11-12T04:26:31.1383096Z libxrandr2 set to manually installed.
+2026-11-12T04:26:31.1383422Z libxrender1 is already the newest version (1:0.9.10-1build4).
+2026-11-12T04:26:31.1383788Z libxrender1 set to manually installed.
+2026-11-12T04:26:31.1384131Z zstd is already the newest version (1.4.8+dfsg-3build1).
+2026-11-12T04:26:31.1384473Z zstd set to manually installed.
+2026-11-12T04:26:31.1384772Z patchelf is already the newest version (0.14.3-1).
+2026-11-12T04:26:31.1385155Z binutils is already the newest version (2.38-4ubuntu2.12).
+2026-11-12T04:26:31.1385554Z dpkg-dev is already the newest version (1.21.1ubuntu2.6).
+2026-11-12T04:26:31.1386285Z libasound2 is already the newest version (1.2.6.1-1ubuntu1.2).
+2026-11-12T04:26:31.1386645Z libasound2 set to manually installed.
+2026-11-12T04:26:31.1386992Z libcups2 is already the newest version (2.4.1op1-1ubuntu4.21).
+2026-11-12T04:26:31.1387344Z libcups2 set to manually installed.
+2026-11-12T04:26:31.1387684Z libdbus-1-3 is already the newest version (1.12.20-2ubuntu4.1).
+2026-11-12T04:26:31.1388058Z libdbus-1-3 set to manually installed.
+2026-11-12T04:26:31.1388405Z libdrm2 is already the newest version (2.4.113-2~ubuntu0.22.04.1).
+2026-11-12T04:26:31.1389001Z libdrm2 set to manually installed.
+2026-11-12T04:26:31.1389493Z libfreetype6 is already the newest version (2.11.1+dfsg-1ubuntu0.4).
+2026-11-12T04:26:31.1389878Z libfreetype6 set to manually installed.
+2026-11-12T04:26:31.1390232Z libnspr4 is already the newest version (2:4.35-0ubuntu0.22.04.1).
+2026-11-12T04:26:31.1390912Z libnss3 is already the newest version (2:3.98-0ubuntu0.22.04.5).
+2026-11-12T04:26:31.1391466Z libwayland-client0 is already the newest version (1.20.0-1ubuntu0.1).
+2026-11-12T04:26:31.1392035Z libwayland-client0 set to manually installed.
+2026-11-12T04:26:31.1392404Z libx11-6 is already the newest version (2:1.7.5-1ubuntu0.4).
+2026-11-12T04:26:31.1392746Z libx11-6 set to manually installed.
+2026-11-12T04:26:31.1393076Z libx11-xcb1 is already the newest version (2:1.7.5-1ubuntu0.4).
+2026-11-12T04:26:31.1393654Z libx11-xcb1 set to manually installed.
+2026-11-12T04:26:31.1394125Z libxtst6 is already the newest version (2:1.2.3-1ubuntu0.22.04.1).
+2026-11-12T04:26:31.1394538Z xz-utils is already the newest version (5.2.5-2ubuntu1.2).
+2026-11-12T04:26:31.1394921Z The following additional packages will be installed:
+2026-11-12T04:26:31.1395387Z   libegl-mesa0 libglib2.0-bin libglib2.0-dev libglib2.0-dev-bin libxcb-util1
+2026-11-12T04:26:31.1395795Z Suggested packages:
+2026-11-12T04:26:31.1396127Z   libgirepository1.0-dev libglib2.0-doc libxml2-utils
+2026-11-12T04:26:31.1677426Z The following packages will be REMOVED:
+2026-11-12T04:26:31.1680348Z   pkgconf r-base-dev
+2026-11-12T04:26:31.1681116Z The following NEW packages will be installed:
+2026-11-12T04:26:31.1687052Z   desktop-file-utils libegl-mesa0 libegl1 libopengl0 libxcb-cursor0
+2026-11-12T04:26:31.1687692Z   libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0
+2026-11-12T04:26:31.1694629Z   libxcb-shape0 libxcb-util1 libxcb-xkb1 libxkbcommon-x11-0 pkg-config
+2026-11-12T04:26:31.1702959Z The following packages will be upgraded:
+2026-11-12T04:26:31.1711742Z   libglib2.0-0 libglib2.0-bin libglib2.0-dev libglib2.0-dev-bin
+2026-11-12T04:26:31.1930166Z 4 upgraded, 14 newly installed, 2 to remove and 56 not upgraded.
+2026-11-12T04:26:31.1931130Z Need to get 3816 kB of archives.
+2026-11-12T04:26:31.1931750Z After this operation, 1511 kB of additional disk space will be used.
+2026-11-12T04:26:31.1932493Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-11-12T04:26:36.2835033Z Get:2 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libglib2.0-dev amd64 2.72.4-0ubuntu2.11 [1745 kB]
+2026-11-12T04:26:36.3567059Z Get:3 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libglib2.0-dev-bin amd64 2.72.4-0ubuntu2.11 [117 kB]
+2026-11-12T04:26:36.4188021Z Get:4 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libglib2.0-bin amd64 2.72.4-0ubuntu2.11 [80.8 kB]
+2026-11-12T04:26:36.4809638Z Get:5 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libglib2.0-0 amd64 2.72.4-0ubuntu2.11 [1469 kB]
+2026-11-12T04:26:36.5520266Z Get:6 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 pkg-config amd64 0.29.2-1ubuntu3 [48.2 kB]
+2026-11-12T04:26:36.6137455Z Get:7 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 desktop-file-utils amd64 0.26-1ubuntu3 [55.9 kB]
+2026-11-12T04:26:36.6756526Z Get:8 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libegl-mesa0 amd64 23.2.1-1ubuntu3.1~22.04.4 [118 kB]
+2026-11-12T04:26:36.7379532Z Get:9 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-shape0 amd64 1.14-3ubuntu3 [6158 B]
+2026-11-12T04:26:36.7995800Z Get:10 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-xkb1 amd64 1.14-3ubuntu3 [32.8 kB]
+2026-11-12T04:26:36.8612488Z Get:11 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxkbcommon-x11-0 amd64 1.4.0-1 [14.4 kB]
+2026-11-12T04:26:36.9228584Z Get:12 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libegl1 amd64 1.4.0-1 [28.6 kB]
+2026-11-12T04:26:36.9848972Z Get:13 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libopengl0 amd64 1.4.0-1 [36.5 kB]
+2026-11-12T04:26:37.0466787Z Get:14 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-util1 amd64 0.4.0-1build2 [11.4 kB]
+2026-11-12T04:26:37.1082858Z Get:15 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-image0 amd64 0.4.0-2 [11.5 kB]
+2026-11-12T04:26:37.1699025Z Get:16 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-render-util0 amd64 0.3.9-1build3 [10.3 kB]
+2026-11-12T04:26:37.2315973Z Get:17 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libxcb-cursor0 amd64 0.1.1-4ubuntu1 [10.5 kB]
+2026-11-12T04:26:37.2931657Z Get:18 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-icccm4 amd64 0.4.1-1.1build2 [11.5 kB]
+2026-11-12T04:26:37.3547244Z Get:19 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-keysyms1 amd64 0.4.0-1build3 [8746 B]
+2026-11-12T04:26:37.7521625Z Fetched 3816 kB in 6s (618 kB/s)
+2026-11-12T04:26:37.8053014Z (Reading database ... 
+2026-11-12T04:26:37.8053380Z (Reading database ... 5%
+2026-11-12T04:26:37.8053666Z (Reading database ... 10%
+2026-11-12T04:26:37.8053948Z (Reading database ... 15%
+2026-11-12T04:26:37.8054215Z (Reading database ... 20%
+2026-11-12T04:26:37.8054476Z (Reading database ... 25%
+2026-11-12T04:26:37.8054743Z (Reading database ... 30%
+2026-11-12T04:26:37.8055010Z (Reading database ... 35%
+2026-11-12T04:26:37.8055276Z (Reading database ... 40%
+2026-11-12T04:26:37.8055537Z (Reading database ... 45%
+2026-11-12T04:26:37.8055804Z (Reading database ... 50%
+2026-11-12T04:26:37.8484155Z (Reading database ... 55%
+2026-11-12T04:26:38.1024339Z (Reading database ... 60%
+2026-11-12T04:26:38.3052821Z (Reading database ... 65%
+2026-11-12T04:26:38.4878965Z (Reading database ... 70%
+2026-11-12T04:26:38.6954126Z (Reading database ... 75%
+2026-11-12T04:26:38.8835184Z (Reading database ... 80%
+2026-11-12T04:26:39.0916746Z (Reading database ... 85%
+2026-11-12T04:26:39.3437461Z (Reading database ... 90%
+2026-11-12T04:26:39.5529554Z (Reading database ... 95%
+2026-11-12T04:26:39.5529965Z (Reading database ... 100%
+2026-11-12T04:26:39.5530381Z (Reading database ... 263777 files and directories currently installed.)
+2026-11-12T04:26:39.5588415Z Removing r-base-dev (4.6.2-1.2204.0) ...
+2026-11-12T04:26:39.6454410Z (Reading database ... 
+2026-11-12T04:26:39.6454939Z (Reading database ... 5%
+2026-11-12T04:26:39.6455355Z (Reading database ... 10%
+2026-11-12T04:26:39.6455757Z (Reading database ... 15%
+2026-11-12T04:26:39.6456139Z (Reading database ... 20%
+2026-11-12T04:26:39.6456571Z (Reading database ... 25%
+2026-11-12T04:26:39.6456951Z (Reading database ... 30%
+2026-11-12T04:26:39.6457889Z (Reading database ... 35%
+2026-11-12T04:26:39.6458288Z (Reading database ... 40%
+2026-11-12T04:26:39.6458677Z (Reading database ... 45%
+2026-11-12T04:26:39.6459078Z (Reading database ... 50%
+2026-11-12T04:26:39.6495991Z (Reading database ... 55%
+2026-11-12T04:26:39.6525202Z (Reading database ... 60%
+2026-11-12T04:26:39.6666374Z (Reading database ... 65%
+2026-11-12T04:26:39.6707193Z (Reading database ... 70%
+2026-11-12T04:26:39.6787889Z (Reading database ... 75%
+2026-11-12T04:26:39.6822949Z (Reading database ... 80%
+2026-11-12T04:26:39.7027347Z (Reading database ... 85%
+2026-11-12T04:26:39.7281280Z (Reading database ... 90%
+2026-11-12T04:26:39.7651902Z (Reading database ... 95%
+2026-11-12T04:26:39.7652318Z (Reading database ... 100%
+2026-11-12T04:26:39.7652714Z (Reading database ... 263776 files and directories currently installed.)
+2026-11-12T04:26:39.7709964Z Preparing to unpack .../libglib2.0-dev_2.72.4-0ubuntu2.11_amd64.deb ...
+2026-11-12T04:26:39.7738403Z Unpacking libglib2.0-dev:amd64 (2.72.4-0ubuntu2.11) over (2.72.4-0ubuntu2.10) ...
+2026-11-12T04:26:39.9816943Z Preparing to unpack .../libglib2.0-dev-bin_2.72.4-0ubuntu2.11_amd64.deb ...
+2026-11-12T04:26:40.0844064Z Unpacking libglib2.0-dev-bin (2.72.4-0ubuntu2.11) over (2.72.4-0ubuntu2.10) ...
+2026-11-12T04:26:40.1542151Z Preparing to unpack .../libglib2.0-bin_2.72.4-0ubuntu2.11_amd64.deb ...
+2026-11-12T04:26:40.1566382Z Unpacking libglib2.0-bin (2.72.4-0ubuntu2.11) over (2.72.4-0ubuntu2.10) ...
+2026-11-12T04:26:40.2228179Z Preparing to unpack .../libglib2.0-0_2.72.4-0ubuntu2.11_amd64.deb ...
+2026-11-12T04:26:40.2263864Z Unpacking libglib2.0-0:amd64 (2.72.4-0ubuntu2.11) over (2.72.4-0ubuntu2.10) ...
+2026-11-12T04:26:40.3417372Z dpkg: pkgconf: dependency problems, but removing anyway as you requested:
+2026-11-12T04:26:40.3418206Z  php8.1-dev depends on pkg-config; however:
+2026-11-12T04:26:40.3418726Z   Package pkg-config is not installed.
+2026-11-12T04:26:40.3419364Z   Package pkgconf which provides pkg-config is to be removed.
+2026-11-12T04:26:40.3420021Z  mono-devel depends on pkg-config; however:
+2026-11-12T04:26:40.3420534Z   Package pkg-config is not installed.
+2026-11-12T04:26:40.3421359Z   Package pkgconf which provides pkg-config is to be removed.
+2026-11-12T04:26:40.3422094Z  libmagickwand-6.q16-dev:amd64 depends on pkg-config; however:
+2026-11-12T04:26:40.3423055Z   Package pkg-config is not installed.
+2026-11-12T04:26:40.3423638Z   Package pkgconf which provides pkg-config is to be removed.
+2026-11-12T04:26:40.3424364Z  libmagickcore-6.q16-dev:amd64 depends on pkg-config; however:
+2026-11-12T04:26:40.3424984Z   Package pkg-config is not installed.
+2026-11-12T04:26:40.3425554Z   Package pkgconf which provides pkg-config is to be removed.
+2026-11-12T04:26:40.3426216Z  libglib2.0-dev:amd64 depends on pkg-config; however:
+2026-11-12T04:26:40.3426773Z   Package pkg-config is not installed.
+2026-11-12T04:26:40.3427345Z   Package pkgconf which provides pkg-config is to be removed.
+2026-11-12T04:26:40.3428035Z  libfontconfig-dev:amd64 depends on pkg-config; however:
+2026-11-12T04:26:40.3428608Z   Package pkg-config is not installed.
+2026-11-12T04:26:40.3429179Z   Package pkgconf which provides pkg-config is to be removed.
+2026-11-12T04:26:40.3429619Z 
+2026-11-12T04:26:40.3505226Z (Reading database ... 
+2026-11-12T04:26:40.3505719Z (Reading database ... 5%
+2026-11-12T04:26:40.3506118Z (Reading database ... 10%
+2026-11-12T04:26:40.3506520Z (Reading database ... 15%
+2026-11-12T04:26:40.3506919Z (Reading database ... 20%
+2026-11-12T04:26:40.3507296Z (Reading database ... 25%
+2026-11-12T04:26:40.3507676Z (Reading database ... 30%
+2026-11-12T04:26:40.3508054Z (Reading database ... 35%
+2026-11-12T04:26:40.3508436Z (Reading database ... 40%
+2026-11-12T04:26:40.3508812Z (Reading database ... 45%
+2026-11-12T04:26:40.3509192Z (Reading database ... 50%
+2026-11-12T04:26:40.3548017Z (Reading database ... 55%
+2026-11-12T04:26:40.3576684Z (Reading database ... 60%
+2026-11-12T04:26:40.3716589Z (Reading database ... 65%
+2026-11-12T04:26:40.3756846Z (Reading database ... 70%
+2026-11-12T04:26:40.3837184Z (Reading database ... 75%
+2026-11-12T04:26:40.3871898Z (Reading database ... 80%
+2026-11-12T04:26:40.4082399Z (Reading database ... 85%
+2026-11-12T04:26:40.4346949Z (Reading database ... 90%
+2026-11-12T04:26:40.4722943Z (Reading database ... 95%
+2026-11-12T04:26:40.4723475Z (Reading database ... 100%
+2026-11-12T04:26:40.4724021Z (Reading database ... 263775 files and directories currently installed.)
+2026-11-12T04:26:40.4779987Z Removing pkgconf (1.8.0-1) ...
+2026-11-12T04:26:40.5443011Z Removing 'diversion of /usr/bin/pkg-config to /usr/bin/pkg-config.real by pkgconf'
+2026-11-12T04:26:40.5589654Z Removing 'diversion of /usr/share/aclocal/pkg.m4 to /usr/share/aclocal/pkg.real.m4 by pkgconf'
+2026-11-12T04:26:40.5731577Z Removing 'diversion of /usr/share/man/man1/pkg-config.1.gz to /usr/share/man/man1/pkg-config.real.1.gz by pkgconf'
+2026-11-12T04:26:40.5874651Z Removing 'diversion of /usr/share/pkg-config-crosswrapper to /usr/share/pkg-config-crosswrapper.real by pkgconf'
+2026-11-12T04:26:40.6431792Z Selecting previously unselected package pkg-config.
+2026-11-12T04:26:40.6517041Z (Reading database ... 
+2026-11-12T04:26:40.6517545Z (Reading database ... 5%
+2026-11-12T04:26:40.6517967Z (Reading database ... 10%
+2026-11-12T04:26:40.6518358Z (Reading database ... 15%
+2026-11-12T04:26:40.6518800Z (Reading database ... 20%
+2026-11-12T04:26:40.6519186Z (Reading database ... 25%
+2026-11-12T04:26:40.6519573Z (Reading database ... 30%
+2026-11-12T04:26:40.6519954Z (Reading database ... 35%
+2026-11-12T04:26:40.6520339Z (Reading database ... 40%
+2026-11-12T04:26:40.6520959Z (Reading database ... 45%
+2026-11-12T04:26:40.6522056Z (Reading database ... 50%
+2026-11-12T04:26:40.6554862Z (Reading database ... 55%
+2026-11-12T04:26:40.6582416Z (Reading database ... 60%
+2026-11-12T04:26:40.6724119Z (Reading database ... 65%
+2026-11-12T04:26:40.6766702Z (Reading database ... 70%
+2026-11-12T04:26:40.6853617Z (Reading database ... 75%
+2026-11-12T04:26:40.6887602Z (Reading database ... 80%
+2026-11-12T04:26:40.7101088Z (Reading database ... 85%
+2026-11-12T04:26:40.7356303Z (Reading database ... 90%
+2026-11-12T04:26:40.7734571Z (Reading database ... 95%
+2026-11-12T04:26:40.7735161Z (Reading database ... 100%
+2026-11-12T04:26:40.7735699Z (Reading database ... 263755 files and directories currently installed.)
+2026-11-12T04:26:40.7791583Z Preparing to unpack .../00-pkg-config_0.29.2-1ubuntu3_amd64.deb ...
+2026-11-12T04:26:40.7800612Z Unpacking pkg-config (0.29.2-1ubuntu3) ...
+2026-11-12T04:26:40.8093133Z Selecting previously unselected package desktop-file-utils.
+2026-11-12T04:26:40.8308338Z Preparing to unpack .../01-desktop-file-utils_0.26-1ubuntu3_amd64.deb ...
+2026-11-12T04:26:40.8318782Z Unpacking desktop-file-utils (0.26-1ubuntu3) ...
+2026-11-12T04:26:40.8639645Z Selecting previously unselected package libegl-mesa0:amd64.
+2026-11-12T04:26:40.8855087Z Preparing to unpack .../02-libegl-mesa0_23.2.1-1ubuntu3.1~22.04.4_amd64.deb ...
+2026-11-12T04:26:40.8866358Z Unpacking libegl-mesa0:amd64 (23.2.1-1ubuntu3.1~22.04.4) ...
+2026-11-12T04:26:40.9151011Z Selecting previously unselected package libxcb-shape0:amd64.
+2026-11-12T04:26:40.9366684Z Preparing to unpack .../03-libxcb-shape0_1.14-3ubuntu3_amd64.deb ...
+2026-11-12T04:26:40.9376563Z Unpacking libxcb-shape0:amd64 (1.14-3ubuntu3) ...
+2026-11-12T04:26:40.9635809Z Selecting previously unselected package libxcb-xkb1:amd64.
+2026-11-12T04:26:40.9849960Z Preparing to unpack .../04-libxcb-xkb1_1.14-3ubuntu3_amd64.deb ...
+2026-11-12T04:26:40.9858802Z Unpacking libxcb-xkb1:amd64 (1.14-3ubuntu3) ...
+2026-11-12T04:26:41.0133656Z Selecting previously unselected package libxkbcommon-x11-0:amd64.
+2026-11-12T04:26:41.0349625Z Preparing to unpack .../05-libxkbcommon-x11-0_1.4.0-1_amd64.deb ...
+2026-11-12T04:26:41.0375319Z Unpacking libxkbcommon-x11-0:amd64 (1.4.0-1) ...
+2026-11-12T04:26:41.0736410Z Selecting previously unselected package libegl1:amd64.
+2026-11-12T04:26:41.0966843Z Preparing to unpack .../06-libegl1_1.4.0-1_amd64.deb ...
+2026-11-12T04:26:41.0977231Z Unpacking libegl1:amd64 (1.4.0-1) ...
+2026-11-12T04:26:41.1240986Z Selecting previously unselected package libopengl0:amd64.
+2026-11-12T04:26:41.1456767Z Preparing to unpack .../07-libopengl0_1.4.0-1_amd64.deb ...
+2026-11-12T04:26:41.1470964Z Unpacking libopengl0:amd64 (1.4.0-1) ...
+2026-11-12T04:26:41.1742931Z Selecting previously unselected package libxcb-util1:amd64.
+2026-11-12T04:26:41.1961955Z Preparing to unpack .../08-libxcb-util1_0.4.0-1build2_amd64.deb ...
+2026-11-12T04:26:41.1971427Z Unpacking libxcb-util1:amd64 (0.4.0-1build2) ...
+2026-11-12T04:26:41.2229001Z Selecting previously unselected package libxcb-image0:amd64.
+2026-11-12T04:26:41.2442299Z Preparing to unpack .../09-libxcb-image0_0.4.0-2_amd64.deb ...
+2026-11-12T04:26:41.2452911Z Unpacking libxcb-image0:amd64 (0.4.0-2) ...
+2026-11-12T04:26:41.2730341Z Selecting previously unselected package libxcb-render-util0:amd64.
+2026-11-12T04:26:41.2944593Z Preparing to unpack .../10-libxcb-render-util0_0.3.9-1build3_amd64.deb ...
+2026-11-12T04:26:41.2954396Z Unpacking libxcb-render-util0:amd64 (0.3.9-1build3) ...
+2026-11-12T04:26:41.3245091Z Selecting previously unselected package libxcb-cursor0:amd64.
+2026-11-12T04:26:41.3457745Z Preparing to unpack .../11-libxcb-cursor0_0.1.1-4ubuntu1_amd64.deb ...
+2026-11-12T04:26:41.3466914Z Unpacking libxcb-cursor0:amd64 (0.1.1-4ubuntu1) ...
+2026-11-12T04:26:41.3726865Z Selecting previously unselected package libxcb-icccm4:amd64.
+2026-11-12T04:26:41.3939851Z Preparing to unpack .../12-libxcb-icccm4_0.4.1-1.1build2_amd64.deb ...
+2026-11-12T04:26:41.3951890Z Unpacking libxcb-icccm4:amd64 (0.4.1-1.1build2) ...
+2026-11-12T04:26:41.4206962Z Selecting previously unselected package libxcb-keysyms1:amd64.
+2026-11-12T04:26:41.4427847Z Preparing to unpack .../13-libxcb-keysyms1_0.4.0-1build3_amd64.deb ...
+2026-11-12T04:26:41.4436011Z Unpacking libxcb-keysyms1:amd64 (0.4.0-1build3) ...
+2026-11-12T04:26:41.4996969Z Setting up libglib2.0-0:amd64 (2.72.4-0ubuntu2.11) ...
+2026-11-12T04:26:41.6164047Z Setting up libxcb-keysyms1:amd64 (0.4.0-1build3) ...
+2026-11-12T04:26:41.6188391Z Setting up libxcb-shape0:amd64 (1.14-3ubuntu3) ...
+2026-11-12T04:26:41.6209540Z Setting up libglib2.0-bin (2.72.4-0ubuntu2.11) ...
+2026-11-12T04:26:41.6230924Z Setting up libxcb-render-util0:amd64 (0.3.9-1build3) ...
+2026-11-12T04:26:41.6251328Z Setting up libxcb-icccm4:amd64 (0.4.1-1.1build2) ...
+2026-11-12T04:26:41.6272402Z Setting up libopengl0:amd64 (1.4.0-1) ...
+2026-11-12T04:26:41.6295014Z Setting up libxcb-util1:amd64 (0.4.0-1build2) ...
+2026-11-12T04:26:41.6317097Z Setting up libxcb-xkb1:amd64 (1.14-3ubuntu3) ...
+2026-11-12T04:26:41.6347691Z Setting up libxcb-image0:amd64 (0.4.0-2) ...
+2026-11-12T04:26:41.6373696Z Setting up libegl-mesa0:amd64 (23.2.1-1ubuntu3.1~22.04.4) ...
+2026-11-12T04:26:41.6398305Z Setting up libxcb-cursor0:amd64 (0.1.1-4ubuntu1) ...
+2026-11-12T04:26:41.6421489Z Setting up libxkbcommon-x11-0:amd64 (1.4.0-1) ...
+2026-11-12T04:26:41.6445612Z Setting up pkg-config (0.29.2-1ubuntu3) ...
+2026-11-12T04:26:41.6821955Z Setting up libegl1:amd64 (1.4.0-1) ...
+2026-11-12T04:26:41.6848127Z Setting up libglib2.0-dev-bin (2.72.4-0ubuntu2.11) ...
+2026-11-12T04:26:41.8287730Z Setting up desktop-file-utils (0.26-1ubuntu3) ...
+2026-11-12T04:26:41.8753249Z Setting up libglib2.0-dev:amd64 (2.72.4-0ubuntu2.11) ...
+2026-11-12T04:26:41.8781894Z Processing triggers for libc-bin (2.35-0ubuntu3.15) ...
+2026-11-12T04:26:41.9171548Z Processing triggers for man-db (2.10.2-1) ...
+2026-11-12T04:26:41.9193889Z Not building database; man-db/auto-update is not 'true'.
+2026-11-12T04:26:41.9231933Z Processing triggers for mailcap (3.70+nmu1ubuntu1.22.04.1) ...
+2026-11-12T04:26:42.5478438Z 
+2026-11-12T04:26:42.5479035Z Running kernel seems to be up-to-date.
+2026-11-12T04:26:42.5479447Z 
+2026-11-12T04:26:42.5479608Z Services to be restarted:
+2026-11-12T04:26:42.5535786Z  systemctl restart irqbalance.service
+2026-11-12T04:26:42.5635144Z  systemctl restart packagekit.service
+2026-11-12T04:26:42.5685929Z  systemctl restart php8.1-fpm.service
+2026-11-12T04:26:42.5736355Z  systemctl restart polkit.service
+2026-11-12T04:26:42.5736686Z 
+2026-11-12T04:26:42.5738239Z Service restarts being deferred:
+2026-11-12T04:26:42.5738739Z  systemctl restart networkd-dispatcher.service
+2026-11-12T04:26:42.5738979Z 
+2026-11-12T04:26:42.5739388Z No containers need to be restarted.
+2026-11-12T04:26:42.5739768Z 
+2026-11-12T04:26:42.5739981Z No user sessions are running outdated binaries.
+2026-11-12T04:26:42.5740198Z 
+2026-11-12T04:26:42.5741264Z No VM guests are running outdated hypervisor (qemu) binaries on this host.

@@ -1,0 +1,33 @@
+name: Bug report
+description: Report a reproducible application problem using synthetic data.
+body:
+  - type: markdown
+    attributes:
+      value: Do not attach tenant databases, backups, payment proofs, or unredacted logs. For vulnerabilities, see SECURITY.md.
+  - type: input
+    id: version
+    attributes:
+      label: Application version and package
+      description: For example, 0.1.0 Windows installer or a source commit.
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Operating system
+      description: Include the version and, on Linux, desktop/X11/Wayland if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Use made-up names and amounts and include the relevant dates.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true

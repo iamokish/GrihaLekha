@@ -1,0 +1,284 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  preflight:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.12.5'
+          python-version: '3.12'
+          enable-cache: false
+      - name: Check project, runtime, lockfile, and tag versions
+        id: version
+        env:
+          REF_TYPE: ${{ github.ref_type }}
+          REF_NAME: ${{ github.ref_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          version=$(uv run --no-project python packaging/release.py --print-version)
+          if [[ "$REF_TYPE" == tag ]]; then
+            uv run --no-project python packaging/release.py --validate-tag "$REF_NAME"
+          fi
+          uv run --no-project python packaging/release.py --release-notes build/release-notes.md
+          printf 'version=%s\n' "$version" >> "$GITHUB_OUTPUT"
+
+  checks:
+    needs: preflight
+    uses: ./.github/workflows/check.yml
+
+  build:
+    name: Build ${{ matrix.platform }} x64
+    needs: [preflight, checks]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-2022
+            platform: windows
+          - os: ubuntu-22.04
+            platform: linux
+    env:
+      QT_QPA_PLATFORM: offscreen
+      TZ: Asia/Kolkata
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.12.5'
+          python-version: '3.12'
+          enable-cache: true
+      - name: Linux build and desktop libraries
+        if: runner.os == 'Linux'
+        run: sudo bash scripts/install_linux_ci_dependencies.sh
+      - name: Windows compiler
+        if: runner.os == 'Windows'
+        uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1
+        with:
+          arch: x64
+      - name: Windows installer compiler and time zone
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          tzutil /s "India Standard Time"
+          $iscc = Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6/ISCC.exe'
+          if (-not (Test-Path -LiteralPath $iscc)) {
+            choco install innosetup --version=6.4.3 --yes --no-progress
+            if ($LASTEXITCODE -ne 0) { throw 'Inno Setup installation failed.' }
+          }
+          & $iscc /?
+      - run: uv sync --locked --extra dev
+      - name: Compile and verify relocated application, PDFs, and backups
+        run: uv run --frozen python packaging/build.py --jobs 2
+      - name: Package the verified application
+        run: uv run --frozen python packaging/release.py --platform ${{ matrix.platform }}
+      - name: Verify Windows portable extraction and installer
+        if: runner.os == 'Windows'
+        run: uv run --frozen python packaging/verify_windows_installer.py
+      - name: Verify Linux portable extraction and installed Debian package
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/portable-check
+          tar -xzf dist/release/*-linux-x64-portable.tar.gz -C build/portable-check
+          uv run --frozen python packaging/verify_build.py build/portable-check/GrihaLekha --output-dir build/portable-verification --require-chromium
+          sudo apt-get install -y ./dist/release/*.deb
+          desktop-file-validate /usr/share/applications/grihalekha.desktop
+          uv run --frozen python packaging/verify_build.py /opt/grihalekha --output-dir build/installer-verification --require-chromium
+          find build/installer-verification -name '*.sqlite3' -exec sha256sum {} + > build/installer-account-sha256.txt
+          test -s build/installer-account-sha256.txt
+          sudo apt-get remove -y grihalekha
+          test ! -e /opt/grihalekha/GrihaLekha
+          sha256sum --check build/installer-account-sha256.txt
+      - name: Release packages
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-${{ matrix.platform }}-x64
+          path: dist/release/*
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
+      - name: Build verification diagnostics
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: diagnostics-${{ matrix.platform }}-x64
+          path: |
+            build/nuitka/compilation-report.xml
+            build/nuitka/verification/
+            build/portable-verification/
+            build/installer-verification/
+            build/installer-check/
+            dist/GrihaLekha/build-info.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+  arch:
+    name: Package and test Arch Linux x64
+    needs: build
+    runs-on: ubuntu-22.04
+    container:
+      image: archlinux:base-devel
+      # Allow Chromium to create its own user namespaces inside this disposable
+      # container. Chromium's sandbox remains enabled; no --no-sandbox flag.
+      options: --security-opt seccomp=unconfined
+    timeout-minutes: 45
+    steps:
+      - name: Arch build and desktop libraries
+        run: |
+          pacman -Syu --noconfirm --needed git python zstd desktop-file-utils \
+            glib2 dbus fontconfig freetype2 nss nspr alsa-lib libcups \
+            libglvnd mesa libdrm libx11 libxext libxfixes libxrender libxi \
+            libxrandr libxdamage libxcomposite libxtst libxcb xcb-util-cursor \
+            xcb-util-wm xcb-util-image xcb-util-keysyms xcb-util-renderutil \
+            libxkbcommon libxkbcommon-x11 wayland
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: release-linux-x64
+          path: build/linux-download
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.12.5'
+          enable-cache: false
+      - name: Prepare an unprivileged build account and portable bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -m755 "$(command -v uv)" /usr/local/bin/grihalekha-ci-uv
+          useradd --create-home --user-group --shell /bin/bash grihalekha-build
+          mkdir -p dist
+          tar -xzf build/linux-download/*-linux-x64-portable.tar.gz -C dist
+          chown -R grihalekha-build:grihalekha-build "$GITHUB_WORKSPACE"
+      - name: Verify Ubuntu-built runtime on Arch and create the native package
+        shell: bash
+        run: |
+          set -euo pipefail
+          runuser -u grihalekha-build -- env \
+            GRIHALEKHA_WORKSPACE="$GITHUB_WORKSPACE" UV_BIN=/usr/local/bin/grihalekha-ci-uv \
+            UV_CACHE_DIR="$GITHUB_WORKSPACE/.cache/uv" UV_PYTHON_INSTALL_DIR="$GITHUB_WORKSPACE/.cache/python" \
+            GITHUB_SHA="$GITHUB_SHA" QT_QPA_PLATFORM=offscreen TZ=Asia/Kolkata \
+            bash <<'BUILD'
+          set -euo pipefail
+          cd "$GRIHALEKHA_WORKSPACE"
+          "$UV_BIN" sync --locked --extra dev --python 3.12
+          "$UV_BIN" run --frozen python packaging/verify_build.py dist/GrihaLekha --output-dir build/arch-verification --require-chromium
+          "$UV_BIN" run --frozen python packaging/release.py --arch-package
+          BUILD
+      - name: Install and verify the Arch package
+        shell: bash
+        run: |
+          set -euo pipefail
+          pacman -U --noconfirm dist/release/*.pkg.tar.zst
+          desktop-file-validate /usr/share/applications/grihalekha.desktop
+          runuser -u grihalekha-build -- env \
+            GRIHALEKHA_WORKSPACE="$GITHUB_WORKSPACE" UV_BIN=/usr/local/bin/grihalekha-ci-uv \
+            UV_CACHE_DIR="$GITHUB_WORKSPACE/.cache/uv" UV_PYTHON_INSTALL_DIR="$GITHUB_WORKSPACE/.cache/python" \
+            QT_QPA_PLATFORM=offscreen TZ=Asia/Kolkata bash <<'VERIFY'
+          set -euo pipefail
+          cd "$GRIHALEKHA_WORKSPACE"
+          "$UV_BIN" run --frozen python packaging/verify_build.py /opt/grihalekha --output-dir build/arch-installed-verification --require-chromium
+          VERIFY
+          find build/arch-installed-verification -name '*.sqlite3' -exec sha256sum {} + > build/arch-account-sha256.txt
+          test -s build/arch-account-sha256.txt
+          pacman -R --noconfirm grihalekha
+          test ! -e /opt/grihalekha/GrihaLekha
+          sha256sum --check build/arch-account-sha256.txt
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-arch-x64
+          path: dist/release/*.pkg.tar.zst
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
+      - name: Arch verification diagnostics
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: diagnostics-arch-x64
+          path: |
+            build/arch-verification/
+            build/arch-installed-verification/
+          if-no-files-found: ignore
+          retention-days: 14
+
+  draft:
+    name: Assemble six release files
+    needs: [preflight, build, arch]
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.12.5'
+          python-version: '3.12'
+          enable-cache: false
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: release-*-x64
+          merge-multiple: true
+          path: dist/release
+      - name: Require the exact five packages and write checksums
+        run: uv run --no-project python packaging/release.py --checksums dist/release
+      - name: Generate release notes from the matching changelog entry
+        run: uv run --no-project python packaging/release.py --release-notes build/release-notes.md
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: complete-release
+          path: dist/release/*
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
+      - name: Create draft for a pushed version tag
+        if: github.event_name == 'push' && github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+          RELEASE_VERSION: ${{ needs.preflight.outputs.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo 'A release already exists for this tag. Inspect it before rerunning.' >&2
+            exit 1
+          fi
+          gh release create "$RELEASE_TAG" dist/release/* \
+            --verify-tag --draft --title "GrihaLekha $RELEASE_VERSION" --notes-file build/release-notes.md
+          release_url=$(gh release view "$RELEASE_TAG" --json url --jq .url)
+          {
+            printf '## Release draft ready\n\n'
+            printf '[Review GrihaLekha %s](%s) before publishing.\n\n' "$RELEASE_VERSION" "$release_url"
+            printf 'The draft contains five platform packages, SHA256SUMS.txt, and release notes from CHANGELOG.md.\n'
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/iamokish/GrihaLekha/security/advisories/new
+    about: Report security issues privately without exposing tenant data.
+  - name: User guide
+    url: https://github.com/iamokish/GrihaLekha/blob/main/USER_GUIDE.md
+    about: Setup, billing, statements, and backup instructions.

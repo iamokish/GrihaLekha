@@ -1,0 +1,19 @@
+﻿2026-11-12T04:27:23.4410727Z ##[group]Run set -euo pipefail
+2026-11-12T04:27:23.4411325Z [36;1mset -euo pipefail[0m
+2026-11-12T04:27:23.4412181Z [36;1mversion=$(uv run --no-project python packaging/release.py --print-version)[0m
+2026-11-12T04:27:23.4412744Z [36;1mif [[ "$REF_TYPE" == tag ]]; then[0m
+2026-11-12T04:27:23.4413232Z [36;1m  uv run --no-project python packaging/release.py --validate-tag "$REF_NAME"[0m
+2026-11-12T04:27:23.4413691Z [36;1mfi[0m
+2026-11-12T04:27:23.4414164Z [36;1muv run --no-project python packaging/release.py --release-notes build/release-notes.md[0m
+2026-11-12T04:27:23.4414724Z [36;1mprintf 'version=%s\n' "$version" >> "$GITHUB_OUTPUT"[0m
+2026-11-12T04:27:23.4586821Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-12T04:27:23.4587555Z env:
+2026-11-12T04:27:23.4587952Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:27:23.4588343Z   UV_PYTHON: 3.12
+2026-11-12T04:27:23.4588679Z   REF_TYPE: tag
+2026-11-12T04:27:23.4588984Z   REF_NAME: v0.1.0
+2026-11-12T04:27:23.4589425Z ##[endgroup]
+2026-11-12T04:27:23.6235948Z Downloading cpython-3.12.14-linux-x86_64-gnu (download) (32.6MiB)
+2026-11-12T04:27:24.2543530Z  Downloaded cpython-3.12.14-linux-x86_64-gnu (download)
+2026-11-12T04:27:24.8613071Z 0.1.0
+2026-11-12T04:27:24.9446155Z /home/runner/work/GrihaLekha/GrihaLekha/build/release-notes.md

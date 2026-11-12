@@ -1,0 +1,8 @@
+﻿2026-11-12T04:34:24.1189429Z Post job cleanup.
+2026-11-12T04:34:24.2578858Z UV_CACHE_DIR is already set to D:\a\_temp\setup-uv-cache
+2026-11-12T04:34:24.2586641Z UV_PYTHON_INSTALL_DIR is already set to D:\a\_temp\uv-python-dir
+2026-11-12T04:34:24.2590351Z Including uv cache path: D:\a\_temp\setup-uv-cache
+2026-11-12T04:34:24.3776203Z [command]"C:\Program Files\Git\usr\bin\tar.exe" --posix -cf cache.tzst --exclude cache.tzst -P -C D:/a/GrihaLekha/GrihaLekha --files-from manifest.txt --force-local --use-compress-program "zstd -T0"
+2026-11-12T04:34:30.6670790Z Sent 8857066 of 344401386 (2.6%), 8.4 MBs/sec
+2026-11-12T04:34:31.3213978Z Sent 344401386 of 344401386 (100.0%), 198.3 MBs/sec
+2026-11-12T04:34:31.4653724Z uv cache saved with key: setup-uv-2-x86_64-pc-windows-msvc-windows-2022-3.13-e6ef7b33b5a5e4d3e5d15fe02c612274224c71450551e69619accd72f55d2b4c

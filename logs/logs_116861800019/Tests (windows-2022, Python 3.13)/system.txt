@@ -1,0 +1,8 @@
+2026-11-12T04:26:14.1740000Z Requested labels: windows-2022
+2026-11-12T04:26:14.1740000Z Job defined at: iamokish/GrihaLekha/.github/workflows/check.yml@refs/pull/1/merge
+2026-11-12T04:26:14.1740000Z Waiting for a runner to pick up this job...
+2026-11-12T04:26:14.1730000Z Evaluating tests.if
+2026-11-12T04:26:14.1730000Z Evaluating: success()
+2026-11-12T04:26:14.1730000Z Result: true
+2026-11-12T04:26:14.1750000Z Job is waiting for a hosted runner to come online.
+2026-11-12T04:26:14.1760000Z Job is about to start running on the hosted runner: GitHub Actions 1000000500

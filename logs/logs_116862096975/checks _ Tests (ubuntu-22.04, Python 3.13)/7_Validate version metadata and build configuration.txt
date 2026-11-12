@@ -1,0 +1,45 @@
+﻿2026-11-12T04:29:47.2255754Z ##[group]Run uv run --frozen python packaging/release.py --print-version
+2026-11-12T04:29:47.2256199Z [36;1muv run --frozen python packaging/release.py --print-version[0m
+2026-11-12T04:29:47.2256622Z [36;1muv run --frozen python packaging/release.py --release-notes build/release-notes.md[0m
+2026-11-12T04:29:47.2257033Z [36;1muv run --frozen python packaging/build.py --dry-run[0m
+2026-11-12T04:29:47.2257360Z [36;1muv run --frozen python -m compileall -q src packaging scripts[0m
+2026-11-12T04:29:47.2310497Z shell: /usr/bin/bash -e {0}
+2026-11-12T04:29:47.2310698Z env:
+2026-11-12T04:29:47.2310864Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:29:47.2311069Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:29:47.2311273Z   TZ: Asia/Kolkata
+2026-11-12T04:29:47.2311442Z   UV_PYTHON: 3.13
+2026-11-12T04:29:47.2311667Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:29:47.2311967Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:29:47.2312223Z ##[endgroup]
+2026-11-12T04:29:47.3478827Z 0.1.0
+2026-11-12T04:29:47.4176660Z /home/runner/work/GrihaLekha/GrihaLekha/build/release-notes.md
+2026-11-12T04:29:47.4858969Z {
+2026-11-12T04:29:47.4859311Z   "command": [
+2026-11-12T04:29:47.4859754Z     "/home/runner/work/GrihaLekha/GrihaLekha/.venv/bin/python3",
+2026-11-12T04:29:47.4860241Z     "-m",
+2026-11-12T04:29:47.4860478Z     "nuitka",
+2026-11-12T04:29:47.4860730Z     "--mode=standalone",
+2026-11-12T04:29:47.4861023Z     "--update-check=never",
+2026-11-12T04:29:47.4861336Z     "--enable-plugin=pyside6",
+2026-11-12T04:29:47.4861671Z     "--include-package=grihalekha",
+2026-11-12T04:29:47.4862039Z     "--include-package-data=grihalekha",
+2026-11-12T04:29:47.4862633Z     "--include-data-dir=/home/runner/work/GrihaLekha/GrihaLekha/icons=grihalekha/assets/icons",
+2026-11-12T04:29:47.4863317Z     "--include-module=sqlalchemy.dialects.sqlite.pysqlite",
+2026-11-12T04:29:47.4863925Z     "--nofollow-import-to=pytest,pymupdf,fitz,numpy,onnxruntime",
+2026-11-12T04:29:47.4865240Z     "--nofollow-import-to=sqlalchemy.dialects.mssql,sqlalchemy.dialects.mysql,sqlalchemy.dialects.oracle,sqlalchemy.dialects.postgresql",
+2026-11-12T04:29:47.4866259Z     "--noinclude-data-files=*.debug.pak",
+2026-11-12T04:29:47.4866649Z     "--python-flag=isolated",
+2026-11-12T04:29:47.4866974Z     "--python-flag=no_docstrings",
+2026-11-12T04:29:47.4867440Z     "--output-dir=/home/runner/work/GrihaLekha/GrihaLekha/build/nuitka",
+2026-11-12T04:29:47.4867952Z     "--output-folder-name=GrihaLekha",
+2026-11-12T04:29:47.4868313Z     "--output-filename=GrihaLekha",
+2026-11-12T04:29:47.4868634Z     "--jobs=4",
+2026-11-12T04:29:47.4868882Z     "--lto=auto",
+2026-11-12T04:29:47.4869384Z     "--report=/home/runner/work/GrihaLekha/GrihaLekha/build/nuitka/compilation-report.xml",
+2026-11-12T04:29:47.4869995Z     "--assume-yes-for-downloads",
+2026-11-12T04:29:47.4870400Z     "/home/runner/work/GrihaLekha/GrihaLekha/scripts/launcher.py"
+2026-11-12T04:29:47.4870799Z   ],
+2026-11-12T04:29:47.4871134Z   "output": "/home/runner/work/GrihaLekha/GrihaLekha/dist/GrihaLekha",
+2026-11-12T04:29:47.4871676Z   "cache": "/home/runner/work/GrihaLekha/GrihaLekha/.cache/nuitka"
+2026-11-12T04:29:47.4872080Z }

@@ -1,0 +1,47 @@
+﻿2026-11-12T04:28:02.1045381Z ##[group]Run uv sync --locked --extra dev
+2026-11-12T04:28:02.1045687Z [36;1muv sync --locked --extra dev[0m
+2026-11-12T04:28:02.1105107Z shell: /usr/bin/bash -e {0}
+2026-11-12T04:28:02.1105342Z env:
+2026-11-12T04:28:02.1105527Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:28:02.1105746Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:28:02.1105970Z   TZ: Asia/Kolkata
+2026-11-12T04:28:02.1106214Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:28:02.1106487Z   UV_PYTHON: 3.12
+2026-11-12T04:28:02.1106701Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:28:02.1106957Z ##[endgroup]
+2026-11-12T04:28:02.2252161Z Downloading cpython-3.12.14-linux-x86_64-gnu (download) (32.6MiB)
+2026-11-12T04:28:02.8553905Z  Downloaded cpython-3.12.14-linux-x86_64-gnu (download)
+2026-11-12T04:28:02.9890394Z Using CPython 3.12.14
+2026-11-12T04:28:02.9890831Z Creating virtual environment at: .venv
+2026-11-12T04:28:02.9910558Z Resolved 28 packages in 0.56ms
+2026-11-12T04:28:02.9930220Z    Building grihalekha @ file:///home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:28:03.7410919Z       Built grihalekha @ file:///home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:28:03.7427320Z Prepared 1 package in 750ms
+2026-11-12T04:28:03.8041375Z Installed 27 packages in 61ms
+2026-11-12T04:28:03.8041831Z  + flatbuffers==25.12.19
+2026-11-12T04:28:03.8042488Z  + grihalekha==0.1.0 (from file:///home/runner/work/GrihaLekha/GrihaLekha)
+2026-11-12T04:28:03.8042971Z  + iniconfig==2.3.1
+2026-11-12T04:28:03.8043240Z  + networkx==3.7
+2026-11-12T04:28:03.8043679Z  + nuitka==4.3.4
+2026-11-12T04:28:03.8043934Z  + numpy==2.5.4
+2026-11-12T04:28:03.8044278Z  + onnxruntime==1.31.1
+2026-11-12T04:28:03.8044656Z  + packaging==26.3
+2026-11-12T04:28:03.8045220Z  + pluggy==1.7.0
+2026-11-12T04:28:03.8045703Z  + protobuf==7.36.2
+2026-11-12T04:28:03.8046136Z  + psutil==7.2.2
+2026-11-12T04:28:03.8046736Z  + pygments==2.21.0
+2026-11-12T04:28:03.8046993Z  + pymupdf==2.1
+2026-11-12T04:28:03.8047279Z  + pymupdf-layout==2.1
+2026-11-12T04:28:03.8047722Z  + pymupdf4llm==2.1
+2026-11-12T04:28:03.8048170Z  + pyside6==6.12.0
+2026-11-12T04:28:03.8048620Z  + pyside6-addons==6.12.0
+2026-11-12T04:28:03.8049076Z  + pyside6-essentials==6.12.0
+2026-11-12T04:28:03.8049550Z  + pyside6-pdf==6.12.0.140
+2026-11-12T04:28:03.8050090Z  + pyside6-webengine==6.12.0.140
+2026-11-12T04:28:03.8050536Z  + pytest==9.2.0
+2026-11-12T04:28:03.8050972Z  + pytest-qt==4.5.0
+2026-11-12T04:28:03.8051443Z  + pyyaml==6.0.3
+2026-11-12T04:28:03.8051878Z  + shiboken6==6.12.0
+2026-11-12T04:28:03.8052299Z  + sqlalchemy==2.1.8
+2026-11-12T04:28:03.8052779Z  + tabulate==0.10.0
+2026-11-12T04:28:03.8053246Z  + typing-extensions==4.16.0

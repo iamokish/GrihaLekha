@@ -1,0 +1,13 @@
+﻿2026-11-12T04:25:39.9438434Z Post job cleanup.
+2026-11-12T04:25:40.0417091Z UV_CACHE_DIR is already set to /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:25:40.0421383Z UV_PYTHON_INSTALL_DIR is already set to /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:25:40.0423265Z Including uv cache path: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:25:40.0583270Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/GrihaLekha/GrihaLekha --files-from manifest.txt --use-compress-program zstdmt
+2026-11-12T04:25:43.6482328Z Sent 0 of 381009401 (0.0%), 0.0 MBs/sec
+2026-11-12T04:25:44.6494569Z Sent 0 of 381009401 (0.0%), 0.0 MBs/sec
+2026-11-12T04:25:45.6507228Z Sent 0 of 381009401 (0.0%), 0.0 MBs/sec
+2026-11-12T04:25:46.6519562Z Sent 0 of 381009401 (0.0%), 0.0 MBs/sec
+2026-11-12T04:25:47.6531928Z Sent 0 of 381009401 (0.0%), 0.0 MBs/sec
+2026-11-12T04:25:48.6530377Z Sent 313900537 of 381009401 (82.4%), 49.9 MBs/sec
+2026-11-12T04:25:48.6979246Z Sent 381009401 of 381009401 (100.0%), 60.1 MBs/sec
+2026-11-12T04:25:48.8978634Z uv cache saved with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-22.04-3.12-e7f563581e55a68ce4b46bc109193f25815830055b6f647faf78481c7626bc02

@@ -1,0 +1,486 @@
+﻿2026-11-12T04:30:07.3682839Z Current runner version: '2.338.2'
+2026-11-12T04:30:07.3718738Z ##[group]Runner Image Provisioner
+2026-11-12T04:30:07.3720057Z Hosted Compute Agent
+2026-11-12T04:30:07.3720883Z Version: 20261028.624
+2026-11-12T04:30:07.3721787Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-12T04:30:07.3723042Z Build Date: 2026-10-28T21:51:42Z
+2026-11-12T04:30:07.3724136Z Worker ID: {15262f6f-41c6-4045-b9a7-fdedb5dcd1c9}
+2026-11-12T04:30:07.3725299Z Region: canadaeast
+2026-11-12T04:30:07.3726165Z Cloud: Azure
+2026-11-12T04:30:07.3726939Z ##[endgroup]
+2026-11-12T04:30:07.3729116Z ##[group]Operating System
+2026-11-12T04:30:07.3730122Z Microsoft Windows Server 2022
+2026-11-12T04:30:07.3731275Z 10.0.20348
+2026-11-12T04:30:07.3732030Z Datacenter
+2026-11-12T04:30:07.3732746Z ##[endgroup]
+2026-11-12T04:30:07.3733556Z ##[group]Runner Image
+2026-11-12T04:30:07.3734399Z Image: windows-2022
+2026-11-12T04:30:07.3735184Z Version: 20261101.353.1
+2026-11-12T04:30:07.3737478Z Included Software: https://github.com/actions/runner-images/blob/win22/20261101.353/images/windows/Windows2022-Readme.md
+2026-11-12T04:30:07.3740220Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20261101.353
+2026-11-12T04:30:07.3741843Z ##[endgroup]
+2026-11-12T04:30:07.3743577Z ##[group]GITHUB_TOKEN Permissions
+2026-11-12T04:30:07.3745974Z Contents: read
+2026-11-12T04:30:07.3746790Z Metadata: read
+2026-11-12T04:30:07.3747596Z ##[endgroup]
+2026-11-12T04:30:07.3750533Z Secret source: Actions
+2026-11-12T04:30:07.3751917Z Cache mode: write
+2026-11-12T04:30:07.3752950Z Prepare workflow directory
+2026-11-12T04:30:07.4472929Z Prepare all required actions
+2026-11-12T04:30:07.4548258Z Getting action download info
+2026-11-12T04:30:07.7243471Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-12T04:30:07.8399558Z Download action repository 'astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2' (SHA:68559e99cc807c1eb7e9238fd43a15bba460eec2)
+2026-11-12T04:30:08.3140708Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-11-12T04:30:08.5401123Z Uses: iamokish/GrihaLekha/.github/workflows/check.yml@refs/tags/v0.1.0 (3cff34feec27f66ea026b82f73ddff854e3e2d74)
+2026-11-12T04:30:08.5406043Z Complete job name: checks / Tests (windows-2022, Python 3.13)
+2026-11-12T04:30:08.7264911Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-12T04:30:08.7266275Z with:
+2026-11-12T04:30:08.7266823Z   persist-credentials: false
+2026-11-12T04:30:08.7267486Z   repository: iamokish/GrihaLekha
+2026-11-12T04:30:08.7272832Z   token: ***
+2026-11-12T04:30:08.7273370Z   ssh-strict: true
+2026-11-12T04:30:08.7273920Z   ssh-user: git
+2026-11-12T04:30:08.7274450Z   clean: true
+2026-11-12T04:30:08.7274998Z   sparse-checkout-cone-mode: true
+2026-11-12T04:30:08.7275664Z   fetch-depth: 1
+2026-11-12T04:30:08.7276218Z   fetch-tags: false
+2026-11-12T04:30:08.7276708Z   show-progress: true
+2026-11-12T04:30:08.7277152Z   lfs: false
+2026-11-12T04:30:08.7277553Z   submodules: false
+2026-11-12T04:30:08.7277992Z   set-safe-directory: true
+2026-11-12T04:30:08.7278494Z   allow-unsafe-pr-checkout: false
+2026-11-12T04:30:08.7279233Z env:
+2026-11-12T04:30:08.7279658Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:30:08.7280216Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:30:08.7280724Z   TZ: Asia/Kolkata
+2026-11-12T04:30:08.7281146Z   UV_PYTHON: 3.13
+2026-11-12T04:30:08.7281556Z ##[endgroup]
+2026-11-12T04:30:08.8735469Z Syncing repository: iamokish/GrihaLekha
+2026-11-12T04:30:08.8737538Z ##[group]Getting Git version info
+2026-11-12T04:30:08.8738321Z Working directory is 'D:\a\GrihaLekha\GrihaLekha'
+2026-11-12T04:30:08.9780559Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-11-12T04:30:09.2710476Z git version 2.56.0.windows.4
+2026-11-12T04:30:09.2752989Z ##[endgroup]
+2026-11-12T04:30:09.2768088Z Temporarily overriding HOME='D:\a\_temp\b1a97150-cbba-4846-91d9-24efbdfc2409' before making global git config changes
+2026-11-12T04:30:09.2772468Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T04:30:09.2778997Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\GrihaLekha\GrihaLekha
+2026-11-12T04:30:09.3277540Z Deleting the contents of 'D:\a\GrihaLekha\GrihaLekha'
+2026-11-12T04:30:09.3282633Z ##[group]Determining repository object format
+2026-11-12T04:30:09.3285840Z ##[endgroup]
+2026-11-12T04:30:09.3288319Z ##[group]Initializing the repository
+2026-11-12T04:30:09.3296953Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\GrihaLekha\GrihaLekha
+2026-11-12T04:30:09.4139158Z Initialized empty Git repository in D:/a/GrihaLekha/GrihaLekha/.git/
+2026-11-12T04:30:09.4182499Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/iamokish/GrihaLekha
+2026-11-12T04:30:09.4787038Z ##[endgroup]
+2026-11-12T04:30:09.4789162Z ##[group]Disabling automatic garbage collection
+2026-11-12T04:30:09.4795498Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-11-12T04:30:09.5106512Z ##[endgroup]
+2026-11-12T04:30:09.5108418Z ##[group]Setting up auth
+2026-11-12T04:30:09.5109817Z Removing SSH command configuration
+2026-11-12T04:30:09.5116885Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T04:30:09.5419613Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-12T04:30:10.8405110Z Removing HTTP extra header
+2026-11-12T04:30:10.8415744Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T04:30:10.8702367Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-12T04:30:11.3153744Z Removing includeIf entries pointing to credentials config files
+2026-11-12T04:30:11.3163394Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T04:30:11.3448295Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-12T04:30:11.9001083Z [command]"C:\Program Files\Git\bin\git.exe" config --file D:\a\_temp\git-credentials-153a6316-9384-460a-ae40-c55862718930.config http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-11-12T04:30:11.9373755Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/GrihaLekha/GrihaLekha/.git.path D:\a\_temp\git-credentials-153a6316-9384-460a-ae40-c55862718930.config
+2026-11-12T04:30:11.9674124Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/GrihaLekha/GrihaLekha/.git/worktrees/*.path D:\a\_temp\git-credentials-153a6316-9384-460a-ae40-c55862718930.config
+2026-11-12T04:30:12.0054883Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-153a6316-9384-460a-ae40-c55862718930.config
+2026-11-12T04:30:12.0352706Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-153a6316-9384-460a-ae40-c55862718930.config
+2026-11-12T04:30:12.0683181Z ##[endgroup]
+2026-11-12T04:30:12.0684090Z ##[group]Fetching the repository
+2026-11-12T04:30:12.0696276Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/tags/v0.1.0:refs/tags/v0.1.0
+2026-11-12T04:30:13.1821619Z From https://github.com/iamokish/GrihaLekha
+2026-11-12T04:30:13.1824320Z  * [new tag]         v0.1.0     -> v0.1.0
+2026-11-12T04:30:13.1876342Z [command]"C:\Program Files\Git\bin\git.exe" tag --list v0.1.0
+2026-11-12T04:30:13.2235461Z v0.1.0
+2026-11-12T04:30:13.2272409Z [command]"C:\Program Files\Git\bin\git.exe" rev-parse refs/tags/v0.1.0^{commit}
+2026-11-12T04:30:13.2589240Z 3cff34feec27f66ea026b82f73ddff854e3e2d74
+2026-11-12T04:30:13.2617719Z ##[endgroup]
+2026-11-12T04:30:13.2618630Z ##[group]Determining the checkout info
+2026-11-12T04:30:13.2619607Z ##[endgroup]
+2026-11-12T04:30:13.2631941Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-11-12T04:30:13.3021907Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-11-12T04:30:13.3319192Z ##[group]Checking out the ref
+2026-11-12T04:30:13.3331686Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/tags/v0.1.0
+2026-11-12T04:30:13.4347726Z Note: switching to 'refs/tags/v0.1.0'.
+2026-11-12T04:30:13.4348453Z 
+2026-11-12T04:30:13.4349008Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-12T04:30:13.4350149Z changes and commit them, and you can discard any commits you make in this
+2026-11-12T04:30:13.4350894Z state without impacting any branches by switching back to a branch.
+2026-11-12T04:30:13.4351247Z 
+2026-11-12T04:30:13.4351488Z If you want to create a new branch to retain commits you create, you may
+2026-11-12T04:30:13.4351997Z do so (now or later) by using -c with the switch command. Example:
+2026-11-12T04:30:13.4352290Z 
+2026-11-12T04:30:13.4352458Z   git switch -c <new-branch-name>
+2026-11-12T04:30:13.4352656Z 
+2026-11-12T04:30:13.4352818Z Or undo this operation with:
+2026-11-12T04:30:13.4352999Z 
+2026-11-12T04:30:13.4353132Z   git switch -
+2026-11-12T04:30:13.4353283Z 
+2026-11-12T04:30:13.4353570Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-12T04:30:13.4353929Z 
+2026-11-12T04:30:13.4354083Z HEAD is now at 3cff34f Initial release
+2026-11-12T04:30:13.4409500Z ##[endgroup]
+2026-11-12T04:30:13.4791805Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-11-12T04:30:13.5076034Z 3cff34feec27f66ea026b82f73ddff854e3e2d74
+2026-11-12T04:30:13.5108134Z ##[group]Removing auth
+2026-11-12T04:30:13.5108709Z Removing SSH command configuration
+2026-11-12T04:30:13.5118476Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T04:30:13.5411157Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-12T04:30:14.0440020Z Removing HTTP extra header
+2026-11-12T04:30:14.0447955Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T04:30:14.0761162Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-12T04:30:14.5441177Z Removing includeIf entries pointing to credentials config files
+2026-11-12T04:30:14.5448648Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T04:30:14.5725015Z includeif.gitdir:D:/a/GrihaLekha/GrihaLekha/.git.path
+2026-11-12T04:30:14.5726139Z includeif.gitdir:D:/a/GrihaLekha/GrihaLekha/.git/worktrees/*.path
+2026-11-12T04:30:14.5727044Z includeif.gitdir:/github/workspace/.git.path
+2026-11-12T04:30:14.5727929Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-12T04:30:14.5765453Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/GrihaLekha/GrihaLekha/.git.path
+2026-11-12T04:30:14.6043649Z D:\a\_temp\git-credentials-153a6316-9384-460a-ae40-c55862718930.config
+2026-11-12T04:30:14.6079339Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/GrihaLekha/GrihaLekha/.git.path D\:\\a\\_temp\\git\-credentials\-153a6316\-9384\-460a\-ae40\-c55862718930\.config
+2026-11-12T04:30:14.6392271Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/GrihaLekha/GrihaLekha/.git/worktrees/*.path
+2026-11-12T04:30:14.6660124Z D:\a\_temp\git-credentials-153a6316-9384-460a-ae40-c55862718930.config
+2026-11-12T04:30:14.6694378Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/GrihaLekha/GrihaLekha/.git/worktrees/*.path D\:\\a\\_temp\\git\-credentials\-153a6316\-9384\-460a\-ae40\-c55862718930\.config
+2026-11-12T04:30:14.6991909Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-12T04:30:14.7261047Z /github/runner_temp/git-credentials-153a6316-9384-460a-ae40-c55862718930.config
+2026-11-12T04:30:14.7294666Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-153a6316\-9384\-460a\-ae40\-c55862718930\.config
+2026-11-12T04:30:14.7590736Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-12T04:30:14.7844153Z /github/runner_temp/git-credentials-153a6316-9384-460a-ae40-c55862718930.config
+2026-11-12T04:30:14.7876584Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-153a6316\-9384\-460a\-ae40\-c55862718930\.config
+2026-11-12T04:30:14.8162996Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-12T04:30:15.2598588Z Removing credentials config 'D:\a\_temp\git-credentials-153a6316-9384-460a-ae40-c55862718930.config'
+2026-11-12T04:30:15.2609478Z ##[endgroup]
+2026-11-12T04:30:15.3069893Z ##[group]Run astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
+2026-11-12T04:30:15.3070355Z with:
+2026-11-12T04:30:15.3070537Z   version: 0.12.5
+2026-11-12T04:30:15.3070744Z   python-version: 3.13
+2026-11-12T04:30:15.3070957Z   enable-cache: true
+2026-11-12T04:30:15.3071181Z   activate-environment: false
+2026-11-12T04:30:15.3071414Z   no-project: false
+2026-11-12T04:30:15.3071651Z   working-directory: D:\a\GrihaLekha\GrihaLekha
+2026-11-12T04:30:15.3074450Z   github-token: ***
+2026-11-12T04:30:15.3075038Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-11-12T04:30:15.3075676Z   restore-cache: true
+2026-11-12T04:30:15.3075882Z   save-cache: auto
+2026-11-12T04:30:15.3076073Z   prune-cache: false
+2026-11-12T04:30:15.3076269Z   cache-python: false
+2026-11-12T04:30:15.3076484Z   ignore-nothing-to-cache: false
+2026-11-12T04:30:15.3076797Z   ignore-empty-workdir: false
+2026-11-12T04:30:15.3077049Z   download-from-astral-mirror: true
+2026-11-12T04:30:15.3077309Z   add-problem-matchers: true
+2026-11-12T04:30:15.3077527Z   quiet: false
+2026-11-12T04:30:15.3077719Z   resolution-strategy: highest
+2026-11-12T04:30:15.3077944Z env:
+2026-11-12T04:30:15.3078120Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:30:15.3078351Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:30:15.3078578Z   TZ: Asia/Kolkata
+2026-11-12T04:30:15.3078760Z   UV_PYTHON: 3.13
+2026-11-12T04:30:15.3078935Z ##[endgroup]
+2026-11-12T04:30:15.5018738Z Fetching manifest data from https://releases.astral.sh/github/versions/main/v1/uv.ndjson ...
+2026-11-12T04:30:15.6498346Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.12.5/uv-x86_64-pc-windows-msvc.zip" ...
+2026-11-12T04:30:16.2438681Z [command]C:\Windows\system32\tar.exe x -C D:\a\_temp\650505cb-fb60-402c-a85a-83a720c70134 -f D:\a\_temp\c012c9e5-71fd-4328-9a4d-ca8fe3a86971
+2026-11-12T04:30:16.5387903Z Set UV_TOOL_BIN_DIR to D:\a\_temp\uv-tool-bin-dir
+2026-11-12T04:30:16.5391327Z Added D:\a\_temp\uv-tool-bin-dir to the path
+2026-11-12T04:30:16.5399652Z Added C:\hostedtoolcache\windows\uv\0.12.5\x86_64 to the path
+2026-11-12T04:30:16.5402011Z Set UV_TOOL_DIR to D:\a\_temp\uv-tool-dir
+2026-11-12T04:30:16.5404495Z Set UV_PYTHON_INSTALL_DIR to D:\a\_temp\uv-python-dir
+2026-11-12T04:30:16.5407362Z Added D:\a\_temp\uv-python-dir to the path
+2026-11-12T04:30:16.5410513Z Set UV_PYTHON to 3.13
+2026-11-12T04:30:16.5432363Z Set UV_CACHE_DIR to D:\a\_temp\setup-uv-cache
+2026-11-12T04:30:16.5432709Z Successfully installed uv version 0.12.5
+2026-11-12T04:30:16.5434061Z Searching files using cache dependency glob: D:\a\GrihaLekha\GrihaLekha\**\*requirements*.txt,D:\a\GrihaLekha\GrihaLekha\**\*requirements*.in,D:\a\GrihaLekha\GrihaLekha\**\*constraints*.txt,D:\a\GrihaLekha\GrihaLekha\**\*constraints*.in,D:\a\GrihaLekha\GrihaLekha\**\pyproject.toml,D:\a\GrihaLekha\GrihaLekha\**\uv.lock,D:\a\GrihaLekha\GrihaLekha\**\*.py.lock
+2026-11-12T04:30:16.5748316Z D:\a\GrihaLekha\GrihaLekha\pyproject.toml
+2026-11-12T04:30:16.6011801Z D:\a\GrihaLekha\GrihaLekha\uv.lock
+2026-11-12T04:30:16.6026067Z Found 2 files to hash.
+2026-11-12T04:30:16.6032328Z Trying to restore cache from GitHub Actions cache with key: setup-uv-2-x86_64-pc-windows-msvc-windows-2022-3.13-1520c6b471c56b316b3c7732ac8aba8663b691cce0f746151f96d37dc0ef8e1e
+2026-11-12T04:30:16.8505809Z No GitHub Actions cache found for key: setup-uv-2-x86_64-pc-windows-msvc-windows-2022-3.13-1520c6b471c56b316b3c7732ac8aba8663b691cce0f746151f96d37dc0ef8e1e
+2026-11-12T04:30:17.0061328Z ##[group]Run tzutil /s "India Standard Time"
+2026-11-12T04:30:17.0061849Z [36;1mtzutil /s "India Standard Time"[0m
+2026-11-12T04:30:17.0241600Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T04:30:17.0242010Z env:
+2026-11-12T04:30:17.0242216Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:30:17.0242493Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:30:17.0242777Z   TZ: Asia/Kolkata
+2026-11-12T04:30:17.0242986Z   UV_PYTHON: 3.13
+2026-11-12T04:30:17.0243228Z   UV_TOOL_BIN_DIR: D:\a\_temp\uv-tool-bin-dir
+2026-11-12T04:30:17.0243544Z   UV_TOOL_DIR: D:\a\_temp\uv-tool-dir
+2026-11-12T04:30:17.0243858Z   UV_PYTHON_INSTALL_DIR: D:\a\_temp\uv-python-dir
+2026-11-12T04:30:17.0244191Z   UV_CACHE_DIR: D:\a\_temp\setup-uv-cache
+2026-11-12T04:30:17.0244471Z ##[endgroup]
+2026-11-12T04:30:17.4650705Z ##[group]Run uv sync --locked --extra dev
+2026-11-12T04:30:17.4651097Z [36;1muv sync --locked --extra dev[0m
+2026-11-12T04:30:17.4689651Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T04:30:17.4690010Z env:
+2026-11-12T04:30:17.4690206Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:30:17.4690461Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:30:17.4690693Z   TZ: Asia/Kolkata
+2026-11-12T04:30:17.4690884Z   UV_PYTHON: 3.13
+2026-11-12T04:30:17.4691100Z   UV_TOOL_BIN_DIR: D:\a\_temp\uv-tool-bin-dir
+2026-11-12T04:30:17.4691404Z   UV_TOOL_DIR: D:\a\_temp\uv-tool-dir
+2026-11-12T04:30:17.4691684Z   UV_PYTHON_INSTALL_DIR: D:\a\_temp\uv-python-dir
+2026-11-12T04:30:17.4691983Z   UV_CACHE_DIR: D:\a\_temp\setup-uv-cache
+2026-11-12T04:30:17.4692234Z ##[endgroup]
+2026-11-12T04:30:19.8273260Z Using CPython 3.13.17 interpreter at: C:\hostedtoolcache\windows\Python\3.13.17\x64\python.exe
+2026-11-12T04:30:19.8275792Z Creating virtual environment at: .venv
+2026-11-12T04:30:19.8520340Z Resolved 28 packages in 2ms
+2026-11-12T04:30:19.8620911Z    Building grihalekha @ file:///D:/a/GrihaLekha/GrihaLekha
+2026-11-12T04:30:19.9433015Z Downloading pygments (1.2MiB)
+2026-11-12T04:30:19.9607258Z Downloading networkx (2.0MiB)
+2026-11-12T04:30:19.9612672Z Downloading pyside6-essentials (78.3MiB)
+2026-11-12T04:30:19.9615393Z Downloading sqlalchemy (2.3MiB)
+2026-11-12T04:30:19.9617980Z Downloading pyside6-webengine (125.6MiB)
+2026-11-12T04:30:19.9621013Z Downloading numpy (12.0MiB)
+2026-11-12T04:30:19.9625356Z Downloading pymupdf (60.1MiB)
+2026-11-12T04:30:19.9628148Z Downloading shiboken6 (1.2MiB)
+2026-11-12T04:30:19.9631299Z Downloading onnxruntime (14.2MiB)
+2026-11-12T04:30:19.9703608Z Downloading pyside6-pdf (2.8MiB)
+2026-11-12T04:30:19.9708668Z Downloading pyside6-addons (38.6MiB)
+2026-11-12T04:30:20.3124037Z  Downloaded shiboken6
+2026-11-12T04:30:20.5022723Z  Downloaded sqlalchemy
+2026-11-12T04:30:20.5276865Z  Downloaded pygments
+2026-11-12T04:30:20.5805229Z  Downloaded pyside6-pdf
+2026-11-12T04:30:21.0202795Z  Downloaded networkx
+2026-11-12T04:30:21.8326579Z  Downloaded numpy
+2026-11-12T04:30:21.8358709Z  Downloaded onnxruntime
+2026-11-12T04:30:22.8568253Z  Downloaded pymupdf
+2026-11-12T04:30:23.0987657Z       Built grihalekha @ file:///D:/a/GrihaLekha/GrihaLekha
+2026-11-12T04:30:23.6943789Z  Downloaded pyside6-addons
+2026-11-12T04:30:23.7111635Z    Building nuitka==4.3.4
+2026-11-12T04:30:24.2048898Z  Downloaded pyside6-webengine
+2026-11-12T04:30:24.5434689Z  Downloaded pyside6-essentials
+2026-11-12T04:30:27.8234122Z       Built nuitka==4.3.4
+2026-11-12T04:30:27.9703982Z Prepared 28 packages in 8.11s
+2026-11-12T04:30:28.5469269Z Installed 28 packages in 576ms
+2026-11-12T04:30:28.5471509Z  + colorama==0.4.6
+2026-11-12T04:30:28.5472873Z  + flatbuffers==25.12.19
+2026-11-12T04:30:28.5475078Z  + grihalekha==0.1.0 (from file:///D:/a/GrihaLekha/GrihaLekha)
+2026-11-12T04:30:28.5476423Z  + iniconfig==2.3.1
+2026-11-12T04:30:28.5477931Z  + networkx==3.7
+2026-11-12T04:30:28.5479215Z  + nuitka==4.3.4
+2026-11-12T04:30:28.5480433Z  + numpy==2.5.4
+2026-11-12T04:30:28.5481847Z  + onnxruntime==1.31.1
+2026-11-12T04:30:28.5482270Z  + packaging==26.3
+2026-11-12T04:30:28.5483996Z  + pluggy==1.7.0
+2026-11-12T04:30:28.5484985Z  + protobuf==7.36.2
+2026-11-12T04:30:28.5486357Z  + psutil==7.2.2
+2026-11-12T04:30:28.5487103Z  + pygments==2.21.0
+2026-11-12T04:30:28.5488614Z  + pymupdf==2.1
+2026-11-12T04:30:28.5488929Z  + pymupdf-layout==2.1
+2026-11-12T04:30:28.5490433Z  + pymupdf4llm==2.1
+2026-11-12T04:30:28.5491466Z  + pyside6==6.12.0
+2026-11-12T04:30:28.5492835Z  + pyside6-addons==6.12.0
+2026-11-12T04:30:28.5493996Z  + pyside6-essentials==6.12.0
+2026-11-12T04:30:28.5495540Z  + pyside6-pdf==6.12.0.140
+2026-11-12T04:30:28.5496715Z  + pyside6-webengine==6.12.0.140
+2026-11-12T04:30:28.5498115Z  + pytest==9.2.0
+2026-11-12T04:30:28.5498815Z  + pytest-qt==4.5.0
+2026-11-12T04:30:28.5500312Z  + pyyaml==6.0.3
+2026-11-12T04:30:28.5500989Z  + shiboken6==6.12.0
+2026-11-12T04:30:28.5504830Z  + sqlalchemy==2.1.8
+2026-11-12T04:30:28.5505215Z  + tabulate==0.10.0
+2026-11-12T04:30:28.5505440Z  + typing-extensions==4.16.0
+2026-11-12T04:30:28.7240097Z ##[group]Run uv run --frozen python packaging/release.py --print-version
+2026-11-12T04:30:28.7240884Z [36;1muv run --frozen python packaging/release.py --print-version[0m
+2026-11-12T04:30:28.7241861Z [36;1muv run --frozen python packaging/release.py --release-notes build/release-notes.md[0m
+2026-11-12T04:30:28.7242421Z [36;1muv run --frozen python packaging/build.py --dry-run[0m
+2026-11-12T04:30:28.7242888Z [36;1muv run --frozen python -m compileall -q src packaging scripts[0m
+2026-11-12T04:30:28.7311871Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T04:30:28.7312407Z env:
+2026-11-12T04:30:28.7312610Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:30:28.7312878Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:30:28.7313116Z   TZ: Asia/Kolkata
+2026-11-12T04:30:28.7313308Z   UV_PYTHON: 3.13
+2026-11-12T04:30:28.7313528Z   UV_TOOL_BIN_DIR: D:\a\_temp\uv-tool-bin-dir
+2026-11-12T04:30:28.7313818Z   UV_TOOL_DIR: D:\a\_temp\uv-tool-dir
+2026-11-12T04:30:28.7314153Z   UV_PYTHON_INSTALL_DIR: D:\a\_temp\uv-python-dir
+2026-11-12T04:30:28.7314454Z   UV_CACHE_DIR: D:\a\_temp\setup-uv-cache
+2026-11-12T04:30:28.7314709Z ##[endgroup]
+2026-11-12T04:30:29.2242662Z 0.1.0
+2026-11-12T04:30:29.3890607Z D:\a\GrihaLekha\GrihaLekha\build\release-notes.md
+2026-11-12T04:30:29.5910596Z {
+2026-11-12T04:30:29.5911062Z   "command": [
+2026-11-12T04:30:29.5911526Z     "D:\\a\\GrihaLekha\\GrihaLekha\\.venv\\Scripts\\python.exe",
+2026-11-12T04:30:29.5912331Z     "-m",
+2026-11-12T04:30:29.5912567Z     "nuitka",
+2026-11-12T04:30:29.5912817Z     "--mode=standalone",
+2026-11-12T04:30:29.5913128Z     "--update-check=never",
+2026-11-12T04:30:29.5913450Z     "--enable-plugin=pyside6",
+2026-11-12T04:30:29.5913793Z     "--include-package=grihalekha",
+2026-11-12T04:30:29.5914175Z     "--include-package-data=grihalekha",
+2026-11-12T04:30:29.5914743Z     "--include-data-dir=D:\\a\\GrihaLekha\\GrihaLekha\\icons=grihalekha/assets/icons",
+2026-11-12T04:30:29.5915423Z     "--include-module=sqlalchemy.dialects.sqlite.pysqlite",
+2026-11-12T04:30:29.5916648Z     "--nofollow-import-to=pytest,pymupdf,fitz,numpy,onnxruntime",
+2026-11-12T04:30:29.5917915Z     "--nofollow-import-to=sqlalchemy.dialects.mssql,sqlalchemy.dialects.mysql,sqlalchemy.dialects.oracle,sqlalchemy.dialects.postgresql",
+2026-11-12T04:30:29.5918774Z     "--noinclude-data-files=*.debug.pak",
+2026-11-12T04:30:29.5919088Z     "--python-flag=isolated",
+2026-11-12T04:30:29.5919376Z     "--python-flag=no_docstrings",
+2026-11-12T04:30:29.5919728Z     "--output-dir=D:\\a\\GrihaLekha\\GrihaLekha\\build\\nuitka",
+2026-11-12T04:30:29.5920108Z     "--output-folder-name=GrihaLekha",
+2026-11-12T04:30:29.5920412Z     "--output-filename=GrihaLekha.exe",
+2026-11-12T04:30:29.5920689Z     "--jobs=4",
+2026-11-12T04:30:29.5920889Z     "--lto=auto",
+2026-11-12T04:30:29.5921251Z     "--report=D:\\a\\GrihaLekha\\GrihaLekha\\build\\nuitka\\compilation-report.xml",
+2026-11-12T04:30:29.5922025Z     "--assume-yes-for-downloads",
+2026-11-12T04:30:29.5922320Z     "--windows-console-mode=disable",
+2026-11-12T04:30:29.5922613Z     "--company-name=GrihaLekha",
+2026-11-12T04:30:29.5923031Z     "--windows-icon-from-ico=D:\\a\\GrihaLekha\\GrihaLekha\\icons\\grihalekha.ico",
+2026-11-12T04:30:29.5923488Z     "--product-name=GrihaLekha",
+2026-11-12T04:30:29.5923750Z     "--file-version=0.1.0",
+2026-11-12T04:30:29.5923996Z     "--product-version=0.1.0",
+2026-11-12T04:30:29.5924332Z     "--file-description=GrihaLekha offline rental accounts",
+2026-11-12T04:30:29.5924679Z     "--msvc=latest",
+2026-11-12T04:30:29.5924948Z     "D:\\a\\GrihaLekha\\GrihaLekha\\scripts\\launcher.py"
+2026-11-12T04:30:29.5925353Z   ],
+2026-11-12T04:30:29.5925645Z   "output": "D:\\a\\GrihaLekha\\GrihaLekha\\dist\\GrihaLekha",
+2026-11-12T04:30:29.5926064Z   "cache": "D:\\a\\GrihaLekha\\GrihaLekha\\.cache\\nuitka"
+2026-11-12T04:30:29.5926386Z }
+2026-11-12T04:30:29.9891535Z ##[group]Run uv run --frozen pytest --junitxml=build/test-results.xml
+2026-11-12T04:30:29.9892138Z [36;1muv run --frozen pytest --junitxml=build/test-results.xml[0m
+2026-11-12T04:30:29.9930885Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T04:30:29.9931742Z env:
+2026-11-12T04:30:29.9931964Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:30:29.9932234Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:30:29.9932474Z   TZ: Asia/Kolkata
+2026-11-12T04:30:29.9932670Z   UV_PYTHON: 3.13
+2026-11-12T04:30:29.9932911Z   UV_TOOL_BIN_DIR: D:\a\_temp\uv-tool-bin-dir
+2026-11-12T04:30:29.9933201Z   UV_TOOL_DIR: D:\a\_temp\uv-tool-dir
+2026-11-12T04:30:29.9933485Z   UV_PYTHON_INSTALL_DIR: D:\a\_temp\uv-python-dir
+2026-11-12T04:30:29.9933988Z   UV_CACHE_DIR: D:\a\_temp\setup-uv-cache
+2026-11-12T04:30:29.9934375Z ##[endgroup]
+2026-11-12T04:30:34.4669611Z ============================= test session starts =============================
+2026-11-12T04:30:34.4670431Z platform win32 -- Python 3.13.17, pytest-9.2.0, pluggy-1.7.0
+2026-11-12T04:30:34.4671080Z PySide6 6.12.0 -- Qt runtime 6.12.0 -- Qt compiled 6.12.0
+2026-11-12T04:30:34.4671644Z rootdir: D:\a\GrihaLekha\GrihaLekha
+2026-11-12T04:30:34.4672105Z configfile: pyproject.toml
+2026-11-12T04:30:34.4672496Z testpaths: tests
+2026-11-12T04:30:34.4672811Z plugins: qt-4.5.0
+2026-11-12T04:30:34.4673137Z collected 886 items
+2026-11-12T04:30:34.4673377Z 
+2026-11-12T04:30:37.0597289Z tests\test_account_actions_ui.py ........                                [  0%]
+2026-11-12T04:30:38.9152904Z tests\test_backdated_move_out.py ..........                              [  2%]
+2026-11-12T04:30:40.6853868Z tests\test_backups.py ...............                                    [  3%]
+2026-11-12T04:30:44.4615959Z tests\test_balance_to_deposit.py ..................................      [  7%]
+2026-11-12T04:30:46.4343890Z tests\test_balance_workflow.py ...............                           [  9%]
+2026-11-12T04:30:48.3893590Z tests\test_bill_corrections_ui.py .......                                [ 10%]
+2026-11-12T04:30:50.1685984Z tests\test_bill_deletion.py .................                            [ 11%]
+2026-11-12T04:30:52.1225106Z tests\test_bill_deletion_reports.py .......                              [ 12%]
+2026-11-12T04:30:53.6338715Z tests\test_bill_replace.py .............                                 [ 14%]
+2026-11-12T04:30:55.8846435Z tests\test_bill_restore.py ................                              [ 16%]
+2026-11-12T04:30:56.8042473Z tests\test_bill_ui.py ..                                                 [ 16%]
+2026-11-12T04:30:57.8750927Z tests\test_bill_workflow.py ..........                                   [ 17%]
+2026-11-12T04:30:57.9054568Z tests\test_build_documentation.py ..                                     [ 17%]
+2026-11-12T04:30:59.3038633Z tests\test_bundle_verification.py ..........                             [ 18%]
+2026-11-12T04:30:59.3542906Z tests\test_currencies.py ............................................... [ 24%]
+2026-11-12T04:30:59.4300599Z ........................................................................ [ 32%]
+2026-11-12T04:30:59.4359297Z .....                                                                    [ 32%]
+2026-11-12T04:31:00.9593940Z tests\test_currency_reports.py ......................................... [ 37%]
+2026-11-12T04:31:01.6409577Z ...........                                                              [ 38%]
+2026-11-12T04:31:05.5907777Z tests\test_currency_settings.py .....................                    [ 40%]
+2026-11-12T04:31:10.1527694Z tests\test_currency_ui.py ........................                       [ 43%]
+2026-11-12T04:31:12.3581560Z tests\test_date_input.py ............                                    [ 45%]
+2026-11-12T04:31:14.8615783Z tests\test_distribution.py ..............................                [ 48%]
+2026-11-12T04:31:25.9667590Z tests\test_dropdown_properties.py .......                                [ 49%]
+2026-11-12T04:31:26.2609697Z tests\test_electricity_correction_chronology.py ..                       [ 49%]
+2026-11-12T04:31:28.5736069Z tests\test_electricity_deferral.py ................                      [ 51%]
+2026-11-12T04:31:29.4639659Z tests\test_electricity_exports.py ...................                    [ 53%]
+2026-11-12T04:31:33.6073860Z tests\test_electricity_readings_ui.py ..........                         [ 54%]
+2026-11-12T04:31:34.0880252Z tests\test_electricity_review.py ...                                     [ 54%]
+2026-11-12T04:31:37.4644618Z tests\test_ledger.py .............................                       [ 58%]
+2026-11-12T04:31:38.1124334Z tests\test_license_notices.py .....                                      [ 58%]
+2026-11-12T04:33:15.8963124Z tests\test_lifecycle_ui.py ............                                  [ 60%]
+2026-11-12T04:33:16.6153762Z tests\test_meter_readings.py ................................            [ 63%]
+2026-11-12T04:33:16.6341215Z tests\test_money_dates.py ..................                             [ 65%]
+2026-11-12T04:34:29.3422723Z tests\test_move_out_cycle_ui.py ......                                   [ 66%]
+2026-11-12T04:34:29.8919956Z tests\test_move_out_edge_cases.py ....                                   [ 66%]
+2026-11-12T04:34:32.8580175Z tests\test_moveout_cycles.py ...................                         [ 68%]
+2026-11-12T04:34:33.3945372Z tests\test_release_packaging.py .....................s.....              [ 72%]
+2026-11-12T04:34:34.5322670Z tests\test_reports.py ................................                   [ 75%]
+2026-11-12T04:34:38.4942183Z tests\test_required_bill_corrections.py ................................ [ 79%]
+2026-11-12T04:34:38.8314131Z ...                                                                      [ 79%]
+2026-11-12T04:34:43.1240073Z tests\test_required_bill_ui.py ..........                                [ 80%]
+2026-11-12T04:34:46.0221710Z tests\test_schema_migration.py ............                              [ 82%]
+2026-11-12T04:34:49.2373063Z tests\test_startup.py ..                                                 [ 82%]
+2026-11-12T04:34:49.8816908Z tests\test_statement_current.py .....                                    [ 82%]
+2026-11-12T04:34:51.1271144Z tests\test_statement_cycles.py ...........                               [ 84%]
+2026-11-12T04:34:52.4428688Z tests\test_table_resize.py .............                                 [ 85%]
+2026-11-12T04:34:58.3539627Z tests\test_tenancy_deletion.py ..................                        [ 87%]
+2026-11-12T04:35:00.3628680Z tests\test_tenancy_deletion_guards.py ............                       [ 88%]
+2026-11-12T04:35:49.8722253Z tests\test_tenancy_deletion_ui.py .............                          [ 90%]
+2026-11-12T04:35:51.4733554Z tests\test_tenancy_lifecycle.py .............                            [ 91%]
+2026-11-12T04:37:11.2912201Z tests\test_theme.py ...........                                          [ 93%]
+2026-11-12T04:37:26.9956023Z tests\test_ui.py ................                                        [ 94%]
+2026-11-12T04:37:29.4714218Z tests\test_unpaid_bill_correction.py ....................                [ 97%]
+2026-11-12T04:37:32.4316785Z tests\test_upcoming_cancellation.py .........................            [100%]
+2026-11-12T04:37:32.4317226Z 
+2026-11-12T04:37:32.4317588Z ---- generated xml file: D:\a\GrihaLekha\GrihaLekha\build\test-results.xml ----
+2026-11-12T04:37:32.4318410Z =========================== short test summary info ===========================
+2026-11-12T04:37:32.4319391Z SKIPPED [1] tests\test_release_packaging.py:239: Unix executable modes and symlinks
+2026-11-12T04:37:32.4320005Z ================= 885 passed, 1 skipped in 420.70s (0:07:00) ==================
+2026-11-12T04:37:33.0749911Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-11-12T04:37:33.0750471Z with:
+2026-11-12T04:37:33.0750731Z   name: tests-windows-2022-py3.13
+2026-11-12T04:37:33.0751057Z   path: build/test-results.xml
+2026-11-12T04:37:33.0751353Z   if-no-files-found: ignore
+2026-11-12T04:37:33.0751635Z   retention-days: 14
+2026-11-12T04:37:33.0751901Z   compression-level: 6
+2026-11-12T04:37:33.0752196Z   overwrite: false
+2026-11-12T04:37:33.0752457Z   include-hidden-files: false
+2026-11-12T04:37:33.0752736Z   archive: true
+2026-11-12T04:37:33.0752963Z env:
+2026-11-12T04:37:33.0753193Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:37:33.0753482Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:37:33.0753778Z   TZ: Asia/Kolkata
+2026-11-12T04:37:33.0754013Z   UV_PYTHON: 3.13
+2026-11-12T04:37:33.0754282Z   UV_TOOL_BIN_DIR: D:\a\_temp\uv-tool-bin-dir
+2026-11-12T04:37:33.0754635Z   UV_TOOL_DIR: D:\a\_temp\uv-tool-dir
+2026-11-12T04:37:33.0755072Z   UV_PYTHON_INSTALL_DIR: D:\a\_temp\uv-python-dir
+2026-11-12T04:37:33.0755437Z   UV_CACHE_DIR: D:\a\_temp\setup-uv-cache
+2026-11-12T04:37:33.0755740Z ##[endgroup]
+2026-11-12T04:37:33.2433865Z With the provided path, there will be 1 file uploaded
+2026-11-12T04:37:33.2439586Z Artifact name is valid!
+2026-11-12T04:37:33.2441355Z Root directory input is valid!
+2026-11-12T04:37:33.4934574Z Uploading artifact: tests-windows-2022-py3.13.zip
+2026-11-12T04:37:33.4974044Z Beginning upload of artifact content to blob storage
+2026-11-12T04:37:33.6929750Z Uploaded bytes 17436
+2026-11-12T04:37:33.7313214Z Finished uploading artifact content to blob storage!
+2026-11-12T04:37:33.7314772Z SHA256 digest of uploaded artifact is c807d7de20a1f3064fce5c2b5b10f44833c639a540707887609f0da246e2e970
+2026-11-12T04:37:33.7317870Z Finalizing artifact upload
+2026-11-12T04:37:34.1398445Z Artifact tests-windows-2022-py3.13 successfully finalized. Artifact ID 13915613245
+2026-11-12T04:37:34.1399394Z Artifact tests-windows-2022-py3.13 has been successfully uploaded! Final size is 17436 bytes. Artifact ID is 13915613245
+2026-11-12T04:37:34.1405184Z Artifact download URL: https://github.com/iamokish/GrihaLekha/actions/runs/43154902518/artifacts/13915613245
+2026-11-12T04:37:34.1747599Z Post job cleanup.
+2026-11-12T04:37:34.3122283Z UV_CACHE_DIR is already set to D:\a\_temp\setup-uv-cache
+2026-11-12T04:37:34.3130353Z UV_PYTHON_INSTALL_DIR is already set to D:\a\_temp\uv-python-dir
+2026-11-12T04:37:34.3134299Z Including uv cache path: D:\a\_temp\setup-uv-cache
+2026-11-12T04:37:34.4363171Z [command]"C:\Program Files\Git\usr\bin\tar.exe" --posix -cf cache.tzst --exclude cache.tzst -P -C D:/a/GrihaLekha/GrihaLekha --files-from manifest.txt --force-local --use-compress-program "zstd -T0"
+2026-11-12T04:37:40.7565337Z Sent 9384669 of 344928989 (2.7%), 8.9 MBs/sec
+2026-11-12T04:37:41.7077261Z Sent 344928989 of 344928989 (100.0%), 168.2 MBs/sec
+2026-11-12T04:37:41.8696907Z uv cache saved with key: setup-uv-2-x86_64-pc-windows-msvc-windows-2022-3.13-1520c6b471c56b316b3c7732ac8aba8663b691cce0f746151f96d37dc0ef8e1e
+2026-11-12T04:37:42.0160286Z Post job cleanup.
+2026-11-12T04:37:42.2149867Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-11-12T04:37:42.2429136Z git version 2.56.0.windows.4
+2026-11-12T04:37:42.2493420Z Temporarily overriding HOME='D:\a\_temp\feb0fc7b-e83c-4200-9ada-4183ebb5a4c5' before making global git config changes
+2026-11-12T04:37:42.2494308Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T04:37:42.2506346Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\GrihaLekha\GrihaLekha
+2026-11-12T04:37:42.2816005Z Removing SSH command configuration
+2026-11-12T04:37:42.2828271Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T04:37:42.3140223Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-12T04:37:42.8097068Z Removing HTTP extra header
+2026-11-12T04:37:42.8106762Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T04:37:42.8408048Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-12T04:37:43.3397076Z Removing includeIf entries pointing to credentials config files
+2026-11-12T04:37:43.3407719Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T04:37:43.3705235Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-12T04:37:43.8597253Z Cleaning up orphan processes

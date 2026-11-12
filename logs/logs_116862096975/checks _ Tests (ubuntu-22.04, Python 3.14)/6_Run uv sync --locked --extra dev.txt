@@ -1,0 +1,69 @@
+﻿2026-11-12T04:29:09.5595126Z ##[group]Run uv sync --locked --extra dev
+2026-11-12T04:29:09.5597132Z [36;1muv sync --locked --extra dev[0m
+2026-11-12T04:29:09.5633821Z shell: /usr/bin/bash -e {0}
+2026-11-12T04:29:09.5634189Z env:
+2026-11-12T04:29:09.5634426Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:29:09.5634734Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:29:09.5635076Z   TZ: Asia/Kolkata
+2026-11-12T04:29:09.5635311Z   UV_PYTHON: 3.14
+2026-11-12T04:29:09.5635738Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:29:09.5636130Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:29:09.5636443Z ##[endgroup]
+2026-11-12T04:29:09.7555831Z Downloading cpython-3.14.7-linux-x86_64-gnu (download) (34.2MiB)
+2026-11-12T04:29:10.5691028Z  Downloaded cpython-3.14.7-linux-x86_64-gnu (download)
+2026-11-12T04:29:10.7277322Z Using CPython 3.14.7
+2026-11-12T04:29:10.7277801Z Creating virtual environment at: .venv
+2026-11-12T04:29:10.7293944Z Resolved 28 packages in 0.58ms
+2026-11-12T04:29:10.7333087Z    Building grihalekha @ file:///home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:29:10.7860977Z Downloading pygments (1.2MiB)
+2026-11-12T04:29:10.7861484Z Downloading onnxruntime (22.7MiB)
+2026-11-12T04:29:10.7861848Z Downloading networkx (2.0MiB)
+2026-11-12T04:29:10.7953042Z Downloading pyside6-pdf (2.7MiB)
+2026-11-12T04:29:10.7953420Z Downloading pymupdf (65.8MiB)
+2026-11-12T04:29:10.7960486Z Downloading numpy (15.9MiB)
+2026-11-12T04:29:10.7960907Z Downloading sqlalchemy (4.4MiB)
+2026-11-12T04:29:10.7961346Z Downloading pyside6-webengine (111.3MiB)
+2026-11-12T04:29:10.7961805Z Downloading pyside6-essentials (80.4MiB)
+2026-11-12T04:29:10.7962187Z Downloading pyside6-addons (56.5MiB)
+2026-11-12T04:29:11.1442961Z  Downloaded pyside6-pdf
+2026-11-12T04:29:11.2063116Z  Downloaded pygments
+2026-11-12T04:29:11.2595275Z  Downloaded sqlalchemy
+2026-11-12T04:29:11.4101985Z  Downloaded networkx
+2026-11-12T04:29:12.2657723Z  Downloaded numpy
+2026-11-12T04:29:12.3003858Z       Built grihalekha @ file:///home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:29:12.9448126Z  Downloaded onnxruntime
+2026-11-12T04:29:13.3551653Z  Downloaded pymupdf
+2026-11-12T04:29:13.5605146Z    Building nuitka==4.3.4
+2026-11-12T04:29:13.6756912Z  Downloaded pyside6-addons
+2026-11-12T04:29:13.7395125Z  Downloaded pyside6-webengine
+2026-11-12T04:29:13.9059509Z  Downloaded pyside6-essentials
+2026-11-12T04:29:15.0145132Z       Built nuitka==4.3.4
+2026-11-12T04:29:15.0648127Z Prepared 27 packages in 4.33s
+2026-11-12T04:29:15.3458617Z Installed 27 packages in 280ms
+2026-11-12T04:29:15.3459122Z  + flatbuffers==25.12.19
+2026-11-12T04:29:15.3459687Z  + grihalekha==0.1.0 (from file:///home/runner/work/GrihaLekha/GrihaLekha)
+2026-11-12T04:29:15.3460056Z  + iniconfig==2.3.1
+2026-11-12T04:29:15.3460279Z  + networkx==3.7
+2026-11-12T04:29:15.3460529Z  + nuitka==4.3.4
+2026-11-12T04:29:15.3460732Z  + numpy==2.5.4
+2026-11-12T04:29:15.3461040Z  + onnxruntime==1.31.1
+2026-11-12T04:29:15.3461273Z  + packaging==26.3
+2026-11-12T04:29:15.3461499Z  + pluggy==1.7.0
+2026-11-12T04:29:15.3461743Z  + protobuf==7.36.2
+2026-11-12T04:29:15.3461959Z  + psutil==7.2.2
+2026-11-12T04:29:15.3462157Z  + pygments==2.21.0
+2026-11-12T04:29:15.3462394Z  + pymupdf==2.1
+2026-11-12T04:29:15.3468148Z  + pymupdf-layout==2.1
+2026-11-12T04:29:15.3468464Z  + pymupdf4llm==2.1
+2026-11-12T04:29:15.3468865Z  + pyside6==6.12.0
+2026-11-12T04:29:15.3469159Z  + pyside6-addons==6.12.0
+2026-11-12T04:29:15.3469443Z  + pyside6-essentials==6.12.0
+2026-11-12T04:29:15.3469699Z  + pyside6-pdf==6.12.0.140
+2026-11-12T04:29:15.3469955Z  + pyside6-webengine==6.12.0.140
+2026-11-12T04:29:15.3470196Z  + pytest==9.2.0
+2026-11-12T04:29:15.3470389Z  + pytest-qt==4.5.0
+2026-11-12T04:29:15.3470658Z  + pyyaml==6.0.3
+2026-11-12T04:29:15.3470877Z  + shiboken6==6.12.0
+2026-11-12T04:29:15.3471158Z  + sqlalchemy==2.1.8
+2026-11-12T04:29:15.3471379Z  + tabulate==0.10.0
+2026-11-12T04:29:15.3471796Z  + typing-extensions==4.16.0

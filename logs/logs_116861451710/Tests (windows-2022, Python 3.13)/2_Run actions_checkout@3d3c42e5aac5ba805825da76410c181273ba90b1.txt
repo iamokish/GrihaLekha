@@ -1,0 +1,106 @@
+﻿2026-11-12T04:25:05.2570329Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-12T04:25:05.2571920Z with:
+2026-11-12T04:25:05.2572421Z   persist-credentials: false
+2026-11-12T04:25:05.2573022Z   repository: iamokish/GrihaLekha
+2026-11-12T04:25:05.2577559Z   token: ***
+2026-11-12T04:25:05.2578044Z   ssh-strict: true
+2026-11-12T04:25:05.2578525Z   ssh-user: git
+2026-11-12T04:25:05.2578982Z   clean: true
+2026-11-12T04:25:05.2579468Z   sparse-checkout-cone-mode: true
+2026-11-12T04:25:05.2580054Z   fetch-depth: 1
+2026-11-12T04:25:05.2580521Z   fetch-tags: false
+2026-11-12T04:25:05.2581003Z   show-progress: true
+2026-11-12T04:25:05.2581488Z   lfs: false
+2026-11-12T04:25:05.2581940Z   submodules: false
+2026-11-12T04:25:05.2582368Z   set-safe-directory: true
+2026-11-12T04:25:05.2582823Z   allow-unsafe-pr-checkout: false
+2026-11-12T04:25:05.2583541Z env:
+2026-11-12T04:25:05.2583912Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:25:05.2584367Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:25:05.2584865Z   TZ: Asia/Kolkata
+2026-11-12T04:25:05.2585236Z   UV_PYTHON: 3.13
+2026-11-12T04:25:05.2585610Z ##[endgroup]
+2026-11-12T04:25:05.4201337Z Syncing repository: iamokish/GrihaLekha
+2026-11-12T04:25:05.4203234Z ##[group]Getting Git version info
+2026-11-12T04:25:05.4203890Z Working directory is 'D:\a\GrihaLekha\GrihaLekha'
+2026-11-12T04:25:05.5264283Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-11-12T04:25:05.8280994Z git version 2.56.0.windows.4
+2026-11-12T04:25:05.8327348Z ##[endgroup]
+2026-11-12T04:25:05.8341995Z Temporarily overriding HOME='D:\a\_temp\cd516970-c406-445b-b659-19203b0284b8' before making global git config changes
+2026-11-12T04:25:05.8343634Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T04:25:05.8353533Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\GrihaLekha\GrihaLekha
+2026-11-12T04:25:05.8892665Z Deleting the contents of 'D:\a\GrihaLekha\GrihaLekha'
+2026-11-12T04:25:05.8897084Z ##[group]Determining repository object format
+2026-11-12T04:25:05.8899550Z ##[endgroup]
+2026-11-12T04:25:05.8900434Z ##[group]Initializing the repository
+2026-11-12T04:25:05.8908437Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\GrihaLekha\GrihaLekha
+2026-11-12T04:25:05.9815971Z Initialized empty Git repository in D:/a/GrihaLekha/GrihaLekha/.git/
+2026-11-12T04:25:05.9857884Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/iamokish/GrihaLekha
+2026-11-12T04:25:06.0469679Z ##[endgroup]
+2026-11-12T04:25:06.0470763Z ##[group]Disabling automatic garbage collection
+2026-11-12T04:25:06.0478535Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-11-12T04:25:06.0805099Z ##[endgroup]
+2026-11-12T04:25:06.0806959Z ##[group]Setting up auth
+2026-11-12T04:25:06.0808103Z Removing SSH command configuration
+2026-11-12T04:25:06.0816549Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T04:25:06.1147645Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-12T04:25:08.3946066Z Removing HTTP extra header
+2026-11-12T04:25:08.3955502Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T04:25:08.4267016Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-12T04:25:08.9114225Z Removing includeIf entries pointing to credentials config files
+2026-11-12T04:25:08.9123637Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T04:25:08.9415299Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-12T04:25:09.4143109Z [command]"C:\Program Files\Git\bin\git.exe" config --file D:\a\_temp\git-credentials-4803e15d-8f8d-4ddf-9c9f-3cafc20c3c3d.config http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-11-12T04:25:09.4450611Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/GrihaLekha/GrihaLekha/.git.path D:\a\_temp\git-credentials-4803e15d-8f8d-4ddf-9c9f-3cafc20c3c3d.config
+2026-11-12T04:25:09.4740355Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/GrihaLekha/GrihaLekha/.git/worktrees/*.path D:\a\_temp\git-credentials-4803e15d-8f8d-4ddf-9c9f-3cafc20c3c3d.config
+2026-11-12T04:25:09.5070078Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-4803e15d-8f8d-4ddf-9c9f-3cafc20c3c3d.config
+2026-11-12T04:25:09.5363465Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-4803e15d-8f8d-4ddf-9c9f-3cafc20c3c3d.config
+2026-11-12T04:25:09.5653334Z ##[endgroup]
+2026-11-12T04:25:09.5654122Z ##[group]Fetching the repository
+2026-11-12T04:25:09.5664964Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3cff34feec27f66ea026b82f73ddff854e3e2d74:refs/remotes/origin/master
+2026-11-12T04:25:10.5612246Z From https://github.com/iamokish/GrihaLekha
+2026-11-12T04:25:10.5613841Z  * [new ref]         3cff34feec27f66ea026b82f73ddff854e3e2d74 -> origin/master
+2026-11-12T04:25:10.5651688Z [command]"C:\Program Files\Git\bin\git.exe" branch --list --remote origin/master
+2026-11-12T04:25:10.5959243Z   origin/master
+2026-11-12T04:25:10.5994163Z [command]"C:\Program Files\Git\bin\git.exe" rev-parse refs/remotes/origin/master
+2026-11-12T04:25:10.6319204Z 3cff34feec27f66ea026b82f73ddff854e3e2d74
+2026-11-12T04:25:10.6347086Z ##[endgroup]
+2026-11-12T04:25:10.6347867Z ##[group]Determining the checkout info
+2026-11-12T04:25:10.6349356Z ##[endgroup]
+2026-11-12T04:25:10.6357467Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-11-12T04:25:10.6751997Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-11-12T04:25:10.7092731Z ##[group]Checking out the ref
+2026-11-12T04:25:10.7100074Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B master refs/remotes/origin/master
+2026-11-12T04:25:10.8124159Z Reset branch 'master'
+2026-11-12T04:25:10.8144513Z branch 'master' set up to track 'origin/master'.
+2026-11-12T04:25:10.8194007Z ##[endgroup]
+2026-11-12T04:25:10.9464823Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-11-12T04:25:10.9751095Z 3cff34feec27f66ea026b82f73ddff854e3e2d74
+2026-11-12T04:25:10.9784860Z ##[group]Removing auth
+2026-11-12T04:25:10.9785535Z Removing SSH command configuration
+2026-11-12T04:25:10.9793393Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T04:25:11.0095943Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-12T04:25:11.5155388Z Removing HTTP extra header
+2026-11-12T04:25:11.5164170Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T04:25:11.5496814Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-12T04:25:12.0316610Z Removing includeIf entries pointing to credentials config files
+2026-11-12T04:25:12.0328301Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T04:25:12.0603920Z includeif.gitdir:D:/a/GrihaLekha/GrihaLekha/.git.path
+2026-11-12T04:25:12.0605039Z includeif.gitdir:D:/a/GrihaLekha/GrihaLekha/.git/worktrees/*.path
+2026-11-12T04:25:12.0605777Z includeif.gitdir:/github/workspace/.git.path
+2026-11-12T04:25:12.0606408Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-12T04:25:12.0647491Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/GrihaLekha/GrihaLekha/.git.path
+2026-11-12T04:25:12.0921132Z D:\a\_temp\git-credentials-4803e15d-8f8d-4ddf-9c9f-3cafc20c3c3d.config
+2026-11-12T04:25:12.0962923Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/GrihaLekha/GrihaLekha/.git.path D\:\\a\\_temp\\git\-credentials\-4803e15d\-8f8d\-4ddf\-9c9f\-3cafc20c3c3d\.config
+2026-11-12T04:25:12.1272998Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/GrihaLekha/GrihaLekha/.git/worktrees/*.path
+2026-11-12T04:25:12.1629040Z D:\a\_temp\git-credentials-4803e15d-8f8d-4ddf-9c9f-3cafc20c3c3d.config
+2026-11-12T04:25:12.1682860Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/GrihaLekha/GrihaLekha/.git/worktrees/*.path D\:\\a\\_temp\\git\-credentials\-4803e15d\-8f8d\-4ddf\-9c9f\-3cafc20c3c3d\.config
+2026-11-12T04:25:12.2032782Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-12T04:25:12.2306157Z /github/runner_temp/git-credentials-4803e15d-8f8d-4ddf-9c9f-3cafc20c3c3d.config
+2026-11-12T04:25:12.2343334Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-4803e15d\-8f8d\-4ddf\-9c9f\-3cafc20c3c3d\.config
+2026-11-12T04:25:12.2650027Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-12T04:25:12.2916769Z /github/runner_temp/git-credentials-4803e15d-8f8d-4ddf-9c9f-3cafc20c3c3d.config
+2026-11-12T04:25:12.2956556Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-4803e15d\-8f8d\-4ddf\-9c9f\-3cafc20c3c3d\.config
+2026-11-12T04:25:12.3262874Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-12T04:25:12.8286596Z Removing credentials config 'D:\a\_temp\git-credentials-4803e15d-8f8d-4ddf-9c9f-3cafc20c3c3d.config'
+2026-11-12T04:25:12.8297686Z ##[endgroup]

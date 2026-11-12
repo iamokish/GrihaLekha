@@ -1,0 +1,72 @@
+﻿2026-11-12T04:30:17.4650684Z ##[group]Run uv sync --locked --extra dev
+2026-11-12T04:30:17.4651094Z [36;1muv sync --locked --extra dev[0m
+2026-11-12T04:30:17.4689642Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T04:30:17.4690007Z env:
+2026-11-12T04:30:17.4690204Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:30:17.4690459Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:30:17.4690691Z   TZ: Asia/Kolkata
+2026-11-12T04:30:17.4690876Z   UV_PYTHON: 3.13
+2026-11-12T04:30:17.4691097Z   UV_TOOL_BIN_DIR: D:\a\_temp\uv-tool-bin-dir
+2026-11-12T04:30:17.4691401Z   UV_TOOL_DIR: D:\a\_temp\uv-tool-dir
+2026-11-12T04:30:17.4691682Z   UV_PYTHON_INSTALL_DIR: D:\a\_temp\uv-python-dir
+2026-11-12T04:30:17.4691981Z   UV_CACHE_DIR: D:\a\_temp\setup-uv-cache
+2026-11-12T04:30:17.4692232Z ##[endgroup]
+2026-11-12T04:30:19.8273222Z Using CPython 3.13.17 interpreter at: C:\hostedtoolcache\windows\Python\3.13.17\x64\python.exe
+2026-11-12T04:30:19.8275495Z Creating virtual environment at: .venv
+2026-11-12T04:30:19.8520298Z Resolved 28 packages in 2ms
+2026-11-12T04:30:19.8620880Z    Building grihalekha @ file:///D:/a/GrihaLekha/GrihaLekha
+2026-11-12T04:30:19.9432978Z Downloading pygments (1.2MiB)
+2026-11-12T04:30:19.9607218Z Downloading networkx (2.0MiB)
+2026-11-12T04:30:19.9612650Z Downloading pyside6-essentials (78.3MiB)
+2026-11-12T04:30:19.9615376Z Downloading sqlalchemy (2.3MiB)
+2026-11-12T04:30:19.9617971Z Downloading pyside6-webengine (125.6MiB)
+2026-11-12T04:30:19.9620998Z Downloading numpy (12.0MiB)
+2026-11-12T04:30:19.9625345Z Downloading pymupdf (60.1MiB)
+2026-11-12T04:30:19.9628133Z Downloading shiboken6 (1.2MiB)
+2026-11-12T04:30:19.9631286Z Downloading onnxruntime (14.2MiB)
+2026-11-12T04:30:19.9703584Z Downloading pyside6-pdf (2.8MiB)
+2026-11-12T04:30:19.9708641Z Downloading pyside6-addons (38.6MiB)
+2026-11-12T04:30:20.3123982Z  Downloaded shiboken6
+2026-11-12T04:30:20.5022665Z  Downloaded sqlalchemy
+2026-11-12T04:30:20.5276826Z  Downloaded pygments
+2026-11-12T04:30:20.5805177Z  Downloaded pyside6-pdf
+2026-11-12T04:30:21.0202757Z  Downloaded networkx
+2026-11-12T04:30:21.8326529Z  Downloaded numpy
+2026-11-12T04:30:21.8358675Z  Downloaded onnxruntime
+2026-11-12T04:30:22.8568199Z  Downloaded pymupdf
+2026-11-12T04:30:23.0987608Z       Built grihalekha @ file:///D:/a/GrihaLekha/GrihaLekha
+2026-11-12T04:30:23.6943746Z  Downloaded pyside6-addons
+2026-11-12T04:30:23.7111597Z    Building nuitka==4.3.4
+2026-11-12T04:30:24.2048851Z  Downloaded pyside6-webengine
+2026-11-12T04:30:24.5434641Z  Downloaded pyside6-essentials
+2026-11-12T04:30:27.8234081Z       Built nuitka==4.3.4
+2026-11-12T04:30:27.9703933Z Prepared 28 packages in 8.11s
+2026-11-12T04:30:28.5469227Z Installed 28 packages in 576ms
+2026-11-12T04:30:28.5471493Z  + colorama==0.4.6
+2026-11-12T04:30:28.5472863Z  + flatbuffers==25.12.19
+2026-11-12T04:30:28.5475057Z  + grihalekha==0.1.0 (from file:///D:/a/GrihaLekha/GrihaLekha)
+2026-11-12T04:30:28.5476413Z  + iniconfig==2.3.1
+2026-11-12T04:30:28.5477892Z  + networkx==3.7
+2026-11-12T04:30:28.5479205Z  + nuitka==4.3.4
+2026-11-12T04:30:28.5480409Z  + numpy==2.5.4
+2026-11-12T04:30:28.5481831Z  + onnxruntime==1.31.1
+2026-11-12T04:30:28.5482263Z  + packaging==26.3
+2026-11-12T04:30:28.5483985Z  + pluggy==1.7.0
+2026-11-12T04:30:28.5484975Z  + protobuf==7.36.2
+2026-11-12T04:30:28.5486345Z  + psutil==7.2.2
+2026-11-12T04:30:28.5487095Z  + pygments==2.21.0
+2026-11-12T04:30:28.5488600Z  + pymupdf==2.1
+2026-11-12T04:30:28.5488922Z  + pymupdf-layout==2.1
+2026-11-12T04:30:28.5490423Z  + pymupdf4llm==2.1
+2026-11-12T04:30:28.5491455Z  + pyside6==6.12.0
+2026-11-12T04:30:28.5492825Z  + pyside6-addons==6.12.0
+2026-11-12T04:30:28.5493986Z  + pyside6-essentials==6.12.0
+2026-11-12T04:30:28.5495531Z  + pyside6-pdf==6.12.0.140
+2026-11-12T04:30:28.5496707Z  + pyside6-webengine==6.12.0.140
+2026-11-12T04:30:28.5498106Z  + pytest==9.2.0
+2026-11-12T04:30:28.5498810Z  + pytest-qt==4.5.0
+2026-11-12T04:30:28.5500301Z  + pyyaml==6.0.3
+2026-11-12T04:30:28.5500983Z  + shiboken6==6.12.0
+2026-11-12T04:30:28.5502518Z  + sqlalchemy==2.1.8
+2026-11-12T04:30:28.5505210Z  + tabulate==0.10.0
+2026-11-12T04:30:28.5505438Z  + typing-extensions==4.16.0

@@ -1,0 +1,37 @@
+﻿2026-11-12T04:27:22.1872808Z ##[group]Run astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
+2026-11-12T04:27:22.1874295Z with:
+2026-11-12T04:27:22.1875137Z   version: 0.12.5
+2026-11-12T04:27:22.1876012Z   python-version: 3.12
+2026-11-12T04:27:22.1876928Z   enable-cache: false
+2026-11-12T04:27:22.1878000Z   activate-environment: false
+2026-11-12T04:27:22.1879057Z   no-project: false
+2026-11-12T04:27:22.1880159Z   working-directory: /home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:27:22.1888510Z   github-token: ***
+2026-11-12T04:27:22.1890608Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-11-12T04:27:22.1892942Z   restore-cache: true
+2026-11-12T04:27:22.1893845Z   save-cache: auto
+2026-11-12T04:27:22.1894700Z   prune-cache: false
+2026-11-12T04:27:22.1895638Z   cache-python: false
+2026-11-12T04:27:22.1896580Z   ignore-nothing-to-cache: false
+2026-11-12T04:27:22.1897906Z   ignore-empty-workdir: false
+2026-11-12T04:27:22.1899099Z   download-from-astral-mirror: true
+2026-11-12T04:27:22.1900237Z   add-problem-matchers: true
+2026-11-12T04:27:22.1901205Z   quiet: false
+2026-11-12T04:27:22.1902052Z   resolution-strategy: highest
+2026-11-12T04:27:22.1903084Z ##[endgroup]
+2026-11-12T04:27:22.3683855Z Fetching manifest data from https://releases.astral.sh/github/versions/main/v1/uv.ndjson ...
+2026-11-12T04:27:22.4406092Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.12.5/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-11-12T04:27:22.6563809Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/75ac89f8-067c-4958-9c79-04e85b2d2aa2 -f /home/runner/work/_temp/833fa882-c3a8-45a0-ac7d-6803ecef3f33
+2026-11-12T04:27:23.3209466Z Added /home/runner/.local/bin to the path
+2026-11-12T04:27:23.3210761Z Added /opt/hostedtoolcache/uv/0.12.5/x86_64 to the path
+2026-11-12T04:27:23.3211559Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:27:23.3212342Z Added /home/runner/work/_temp/uv-python-dir to the path
+2026-11-12T04:27:23.3213013Z Set UV_PYTHON to 3.12
+2026-11-12T04:27:23.3238826Z Successfully installed uv version 0.12.5

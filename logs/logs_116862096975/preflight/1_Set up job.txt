@@ -1,0 +1,33 @@
+﻿2026-11-12T04:27:20.2097462Z Current runner version: '2.338.2'
+2026-11-12T04:27:20.2121679Z ##[group]Runner Image Provisioner
+2026-11-12T04:27:20.2122667Z Hosted Compute Agent
+2026-11-12T04:27:20.2123215Z Version: 20261028.624
+2026-11-12T04:27:20.2123803Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-12T04:27:20.2124573Z Build Date: 2026-10-28T21:51:42Z
+2026-11-12T04:27:20.2125266Z Worker ID: {69de3060-cc8d-46a5-8467-132f726ea860}
+2026-11-12T04:27:20.2125970Z Region: northcentralus
+2026-11-12T04:27:20.2126513Z Cloud: Azure
+2026-11-12T04:27:20.2126995Z ##[endgroup]
+2026-11-12T04:27:20.2128848Z ##[group]Operating System
+2026-11-12T04:27:20.2129677Z Ubuntu
+2026-11-12T04:27:20.2130391Z 22.04.5
+2026-11-12T04:27:20.2131070Z LTS
+2026-11-12T04:27:20.2131735Z ##[endgroup]
+2026-11-12T04:27:20.2132500Z ##[group]Runner Image
+2026-11-12T04:27:20.2133307Z Image: ubuntu-22.04
+2026-11-12T04:27:20.2134007Z Version: 20261101.347.1
+2026-11-12T04:27:20.2135441Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20261101.347/images/ubuntu/Ubuntu2204-Readme.md
+2026-11-12T04:27:20.2137977Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20261101.347
+2026-11-12T04:27:20.2139275Z ##[endgroup]
+2026-11-12T04:27:20.2140818Z ##[group]GITHUB_TOKEN Permissions
+2026-11-12T04:27:20.2143663Z Contents: read
+2026-11-12T04:27:20.2144902Z Metadata: read
+2026-11-12T04:27:20.2145705Z ##[endgroup]
+2026-11-12T04:27:20.2148804Z Secret source: Actions
+2026-11-12T04:27:20.2150198Z Cache mode: write
+2026-11-12T04:27:20.2151152Z Prepare workflow directory
+2026-11-12T04:27:20.2489907Z Prepare all required actions
+2026-11-12T04:27:20.2541966Z Getting action download info
+2026-11-12T04:27:20.5738158Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-12T04:27:20.7003791Z Download action repository 'astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2' (SHA:68559e99cc807c1eb7e9238fd43a15bba460eec2)
+2026-11-12T04:27:21.1383492Z Complete job name: preflight

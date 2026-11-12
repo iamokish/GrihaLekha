@@ -1,0 +1,82 @@
+﻿2026-11-12T04:25:23.0123545Z ##[group]Run uv run --frozen pytest --junitxml=build/test-results.xml
+2026-11-12T04:25:23.0124018Z [36;1muv run --frozen pytest --junitxml=build/test-results.xml[0m
+2026-11-12T04:25:23.0149514Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T04:25:23.0149791Z env:
+2026-11-12T04:25:23.0149953Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:25:23.0150143Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:25:23.0150321Z   TZ: Asia/Kolkata
+2026-11-12T04:25:23.0150489Z   UV_PYTHON: 3.14
+2026-11-12T04:25:23.0150682Z   UV_TOOL_BIN_DIR: D:\a\_temp\uv-tool-bin-dir
+2026-11-12T04:25:23.0150899Z   UV_TOOL_DIR: D:\a\_temp\uv-tool-dir
+2026-11-12T04:25:23.0151106Z   UV_PYTHON_INSTALL_DIR: D:\a\_temp\uv-python-dir
+2026-11-12T04:25:23.0151331Z   UV_CACHE_DIR: D:\a\_temp\setup-uv-cache
+2026-11-12T04:25:23.0151522Z ##[endgroup]
+2026-11-12T04:25:27.1530327Z ============================= test session starts =============================
+2026-11-12T04:25:27.1530880Z platform win32 -- Python 3.14.10, pytest-9.2.0, pluggy-1.7.0
+2026-11-12T04:25:27.1531431Z PySide6 6.12.0 -- Qt runtime 6.12.0 -- Qt compiled 6.12.0
+2026-11-12T04:25:27.1531773Z rootdir: D:\a\GrihaLekha\GrihaLekha
+2026-11-12T04:25:27.1532071Z configfile: pyproject.toml
+2026-11-12T04:25:27.1532303Z testpaths: tests
+2026-11-12T04:25:27.1532517Z plugins: qt-4.5.0
+2026-11-12T04:25:27.1532716Z collected 886 items
+2026-11-12T04:25:27.1532862Z 
+2026-11-12T04:25:29.2088881Z tests\test_account_actions_ui.py ........                                [  0%]
+2026-11-12T04:25:30.8715271Z tests\test_backdated_move_out.py ..........                              [  2%]
+2026-11-12T04:25:32.9199047Z tests\test_backups.py ...............                                    [  3%]
+2026-11-12T04:25:36.7656730Z tests\test_balance_to_deposit.py ..................................      [  7%]
+2026-11-12T04:25:38.8038884Z tests\test_balance_workflow.py ...............                           [  9%]
+2026-11-12T04:25:40.4245112Z tests\test_bill_corrections_ui.py .......                                [ 10%]
+2026-11-12T04:25:42.2296444Z tests\test_bill_deletion.py .................                            [ 11%]
+2026-11-12T04:25:44.1265614Z tests\test_bill_deletion_reports.py .......                              [ 12%]
+2026-11-12T04:25:45.6540547Z tests\test_bill_replace.py .............                                 [ 14%]
+2026-11-12T04:25:47.8628459Z tests\test_bill_restore.py ................                              [ 16%]
+2026-11-12T04:25:48.5428557Z tests\test_bill_ui.py ..                                                 [ 16%]
+2026-11-12T04:25:49.6180587Z tests\test_bill_workflow.py ..........                                   [ 17%]
+2026-11-12T04:25:49.6455603Z tests\test_build_documentation.py ..                                     [ 17%]
+2026-11-12T04:25:50.8942330Z tests\test_bundle_verification.py ..........                             [ 18%]
+2026-11-12T04:25:50.9384566Z tests\test_currencies.py ............................................... [ 24%]
+2026-11-12T04:25:50.9850571Z ........................................................................ [ 32%]
+2026-11-12T04:25:50.9886770Z .....                                                                    [ 32%]
+2026-11-12T04:25:52.6959684Z tests\test_currency_reports.py ......................................... [ 37%]
+2026-11-12T04:25:53.3147956Z ...........                                                              [ 38%]
+2026-11-12T04:25:57.6213591Z tests\test_currency_settings.py .....................                    [ 40%]
+2026-11-12T04:26:01.5606211Z tests\test_currency_ui.py ........................                       [ 43%]
+2026-11-12T04:26:02.8821689Z tests\test_date_input.py ............                                    [ 45%]
+2026-11-12T04:26:05.1306311Z tests\test_distribution.py ..............................                [ 48%]
+2026-11-12T04:26:12.4973072Z tests\test_dropdown_properties.py .......                                [ 49%]
+2026-11-12T04:26:12.7789518Z tests\test_electricity_correction_chronology.py ..                       [ 49%]
+2026-11-12T04:26:15.1095754Z tests\test_electricity_deferral.py ................                      [ 51%]
+2026-11-12T04:26:16.0865222Z tests\test_electricity_exports.py ...................                    [ 53%]
+2026-11-12T04:26:19.0949470Z tests\test_electricity_readings_ui.py ..........                         [ 54%]
+2026-11-12T04:26:19.5223602Z tests\test_electricity_review.py ...                                     [ 54%]
+2026-11-12T04:26:22.6998113Z tests\test_ledger.py .............................                       [ 58%]
+2026-11-12T04:26:23.1888256Z tests\test_license_notices.py .....                                      [ 58%]
+2026-11-12T04:27:31.9807429Z tests\test_lifecycle_ui.py ............                                  [ 60%]
+2026-11-12T04:27:33.3071265Z tests\test_meter_readings.py ................................            [ 63%]
+2026-11-12T04:27:33.3201087Z tests\test_money_dates.py ..................                             [ 65%]
+2026-11-12T04:28:23.6499925Z tests\test_move_out_cycle_ui.py ......                                   [ 66%]
+2026-11-12T04:28:24.2039046Z tests\test_move_out_edge_cases.py ....                                   [ 66%]
+2026-11-12T04:28:27.1899662Z tests\test_moveout_cycles.py ...................                         [ 68%]
+2026-11-12T04:28:27.6309258Z tests\test_release_packaging.py .....................s.....              [ 72%]
+2026-11-12T04:28:28.9217587Z tests\test_reports.py ................................                   [ 75%]
+2026-11-12T04:28:33.0645248Z tests\test_required_bill_corrections.py ................................ [ 79%]
+2026-11-12T04:28:33.4208652Z ...                                                                      [ 79%]
+2026-11-12T04:28:36.9431768Z tests\test_required_bill_ui.py ..........                                [ 80%]
+2026-11-12T04:28:40.1601525Z tests\test_schema_migration.py ............                              [ 82%]
+2026-11-12T04:28:43.1740560Z tests\test_startup.py ..                                                 [ 82%]
+2026-11-12T04:28:43.9024964Z tests\test_statement_current.py .....                                    [ 82%]
+2026-11-12T04:28:45.2527517Z tests\test_statement_cycles.py ...........                               [ 84%]
+2026-11-12T04:28:46.1450868Z tests\test_table_resize.py .............                                 [ 85%]
+2026-11-12T04:28:51.6845813Z tests\test_tenancy_deletion.py ..................                        [ 87%]
+2026-11-12T04:28:53.8258298Z tests\test_tenancy_deletion_guards.py ............                       [ 88%]
+2026-11-12T04:29:29.6438333Z tests\test_tenancy_deletion_ui.py .............                          [ 90%]
+2026-11-12T04:29:31.4425268Z tests\test_tenancy_lifecycle.py .............                            [ 91%]
+2026-11-12T04:30:29.5521155Z tests\test_theme.py ...........                                          [ 93%]
+2026-11-12T04:30:41.0846183Z tests\test_ui.py ................                                        [ 94%]
+2026-11-12T04:30:43.7998189Z tests\test_unpaid_bill_correction.py ....................                [ 97%]
+2026-11-12T04:30:46.9892272Z tests\test_upcoming_cancellation.py .........................            [100%]
+2026-11-12T04:30:46.9892793Z 
+2026-11-12T04:30:46.9893242Z ---- generated xml file: D:\a\GrihaLekha\GrihaLekha\build\test-results.xml ----
+2026-11-12T04:30:46.9894128Z =========================== short test summary info ===========================
+2026-11-12T04:30:46.9894747Z SKIPPED [1] tests\test_release_packaging.py:239: Unix executable modes and symlinks
+2026-11-12T04:30:46.9895307Z ================= 885 passed, 1 skipped in 321.83s (0:05:21) ==================

@@ -1,0 +1,33 @@
+﻿2026-11-12T04:25:02.3626085Z Current runner version: '2.338.2'
+2026-11-12T04:25:02.3649603Z ##[group]Runner Image Provisioner
+2026-11-12T04:25:02.3650396Z Hosted Compute Agent
+2026-11-12T04:25:02.3650950Z Version: 20261028.624
+2026-11-12T04:25:02.3651496Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-12T04:25:02.3652168Z Build Date: 2026-10-28T21:51:42Z
+2026-11-12T04:25:02.3652916Z Worker ID: {bf2f4fd0-950e-4b53-b44c-48e33b500c5a}
+2026-11-12T04:25:02.3653511Z Region: eastus2
+2026-11-12T04:25:02.3654079Z Cloud: Azure
+2026-11-12T04:25:02.3654591Z ##[endgroup]
+2026-11-12T04:25:02.3656272Z ##[group]Operating System
+2026-11-12T04:25:02.3657060Z Ubuntu
+2026-11-12T04:25:02.3657676Z 22.04.5
+2026-11-12T04:25:02.3658409Z LTS
+2026-11-12T04:25:02.3659047Z ##[endgroup]
+2026-11-12T04:25:02.3659750Z ##[group]Runner Image
+2026-11-12T04:25:02.3660318Z Image: ubuntu-22.04
+2026-11-12T04:25:02.3660820Z Version: 20261101.347.1
+2026-11-12T04:25:02.3661771Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20261101.347/images/ubuntu/Ubuntu2204-Readme.md
+2026-11-12T04:25:02.3664179Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20261101.347
+2026-11-12T04:25:02.3665215Z ##[endgroup]
+2026-11-12T04:25:02.3666228Z ##[group]GITHUB_TOKEN Permissions
+2026-11-12T04:25:02.3668044Z Contents: read
+2026-11-12T04:25:02.3668600Z Metadata: read
+2026-11-12T04:25:02.3669194Z ##[endgroup]
+2026-11-12T04:25:02.3670885Z Secret source: Actions
+2026-11-12T04:25:02.3671790Z Cache mode: write
+2026-11-12T04:25:02.3672570Z Prepare workflow directory
+2026-11-12T04:25:02.3979800Z Prepare all required actions
+2026-11-12T04:25:02.4018694Z Getting action download info
+2026-11-12T04:25:02.6016286Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-12T04:25:02.6922084Z Download action repository 'astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2' (SHA:68559e99cc807c1eb7e9238fd43a15bba460eec2)
+2026-11-12T04:25:03.0181461Z Complete job name: Source and wheel packaging

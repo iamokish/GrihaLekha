@@ -1,0 +1,51 @@
+﻿2026-11-12T04:28:21.6116612Z ##[group]Run astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
+2026-11-12T04:28:21.6117076Z with:
+2026-11-12T04:28:21.6117255Z   version: 0.12.5
+2026-11-12T04:28:21.6117445Z   python-version: 3.14
+2026-11-12T04:28:21.6117645Z   enable-cache: true
+2026-11-12T04:28:21.6117848Z   activate-environment: false
+2026-11-12T04:28:21.6118075Z   no-project: false
+2026-11-12T04:28:21.6118302Z   working-directory: D:\a\GrihaLekha\GrihaLekha
+2026-11-12T04:28:21.6121005Z   github-token: ***
+2026-11-12T04:28:21.6121569Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-11-12T04:28:21.6122183Z   restore-cache: true
+2026-11-12T04:28:21.6122382Z   save-cache: auto
+2026-11-12T04:28:21.6122559Z   prune-cache: false
+2026-11-12T04:28:21.6122760Z   cache-python: false
+2026-11-12T04:28:21.6122974Z   ignore-nothing-to-cache: false
+2026-11-12T04:28:21.6123239Z   ignore-empty-workdir: false
+2026-11-12T04:28:21.6123524Z   download-from-astral-mirror: true
+2026-11-12T04:28:21.6123783Z   add-problem-matchers: true
+2026-11-12T04:28:21.6123997Z   quiet: false
+2026-11-12T04:28:21.6124183Z   resolution-strategy: highest
+2026-11-12T04:28:21.6124398Z env:
+2026-11-12T04:28:21.6124569Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:28:21.6124796Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:28:21.6125024Z   TZ: Asia/Kolkata
+2026-11-12T04:28:21.6125211Z   UV_PYTHON: 3.14
+2026-11-12T04:28:21.6125385Z ##[endgroup]
+2026-11-12T04:28:21.8154761Z Fetching manifest data from https://releases.astral.sh/github/versions/main/v1/uv.ndjson ...
+2026-11-12T04:28:21.8918453Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.12.5/uv-x86_64-pc-windows-msvc.zip" ...
+2026-11-12T04:28:22.4531153Z [command]C:\Windows\system32\tar.exe x -C D:\a\_temp\b7994281-1626-4f63-a175-fbb2035af0e1 -f D:\a\_temp\0aca8d0b-5b9e-4796-b00e-ac26f354d040
+2026-11-12T04:28:22.7611510Z Set UV_TOOL_BIN_DIR to D:\a\_temp\uv-tool-bin-dir
+2026-11-12T04:28:22.7614886Z Added D:\a\_temp\uv-tool-bin-dir to the path
+2026-11-12T04:28:22.7623084Z Added C:\hostedtoolcache\windows\uv\0.12.5\x86_64 to the path
+2026-11-12T04:28:22.7625354Z Set UV_TOOL_DIR to D:\a\_temp\uv-tool-dir
+2026-11-12T04:28:22.7628325Z Set UV_PYTHON_INSTALL_DIR to D:\a\_temp\uv-python-dir
+2026-11-12T04:28:22.7631614Z Added D:\a\_temp\uv-python-dir to the path
+2026-11-12T04:28:22.7634717Z Set UV_PYTHON to 3.14
+2026-11-12T04:28:22.7657732Z Set UV_CACHE_DIR to D:\a\_temp\setup-uv-cache
+2026-11-12T04:28:22.7658106Z Successfully installed uv version 0.12.5
+2026-11-12T04:28:22.7659438Z Searching files using cache dependency glob: D:\a\GrihaLekha\GrihaLekha\**\*requirements*.txt,D:\a\GrihaLekha\GrihaLekha\**\*requirements*.in,D:\a\GrihaLekha\GrihaLekha\**\*constraints*.txt,D:\a\GrihaLekha\GrihaLekha\**\*constraints*.in,D:\a\GrihaLekha\GrihaLekha\**\pyproject.toml,D:\a\GrihaLekha\GrihaLekha\**\uv.lock,D:\a\GrihaLekha\GrihaLekha\**\*.py.lock
+2026-11-12T04:28:22.7976458Z D:\a\GrihaLekha\GrihaLekha\pyproject.toml
+2026-11-12T04:28:22.8244317Z D:\a\GrihaLekha\GrihaLekha\uv.lock
+2026-11-12T04:28:22.8258163Z Found 2 files to hash.
+2026-11-12T04:28:22.8264707Z Trying to restore cache from GitHub Actions cache with key: setup-uv-2-x86_64-pc-windows-msvc-windows-2022-3.14-1520c6b471c56b316b3c7732ac8aba8663b691cce0f746151f96d37dc0ef8e1e
+2026-11-12T04:28:23.0701724Z No GitHub Actions cache found for key: setup-uv-2-x86_64-pc-windows-msvc-windows-2022-3.14-1520c6b471c56b316b3c7732ac8aba8663b691cce0f746151f96d37dc0ef8e1e

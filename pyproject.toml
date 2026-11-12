@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=77,<82"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grihalekha"
+version = "0.1.0"
+description = "Offline rent and tenant accounts for Windows and Linux, with Hindi statements"
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md", "src/grihalekha/assets/fonts/OFL-*.txt"]
+keywords = ["rent", "tenants", "accounting", "offline", "hindi"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: X11 Applications :: Qt",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Office/Business :: Financial :: Accounting",
+]
+dependencies = [
+    "PySide6>=6.8,<7",
+    "SQLAlchemy>=2.0.36,<3",
+]
+
+[project.urls]
+Homepage = "https://github.com/iamokish/GrihaLekha"
+Repository = "https://github.com/iamokish/GrihaLekha"
+Issues = "https://github.com/iamokish/GrihaLekha/issues"
+Changelog = "https://github.com/iamokish/GrihaLekha/blob/main/CHANGELOG.md"
+Documentation = "https://github.com/iamokish/GrihaLekha/blob/main/USER_GUIDE.md"
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-qt>=4.4,<5", "PyMuPDF>=1.25,<3", "Nuitka>=4.3,<5", "packaging>=24,<27"]
+
+[project.gui-scripts]
+grihalekha = "grihalekha.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+grihalekha = ["assets/fonts/*", "assets/icons/*", "assets/ui/*.svg"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+qt_api = "pyside6"
+

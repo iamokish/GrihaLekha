@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=GrihaLekha
+Comment=Offline rent and tenant accounts
+Exec=grihalekha
+Icon=grihalekha
+Terminal=false
+Categories=Office;Finance;
+StartupWMClass=GrihaLekha

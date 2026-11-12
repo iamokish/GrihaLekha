@@ -1,0 +1,55 @@
+﻿2026-11-12T04:29:53.7815755Z ##[group]Run uv run --frozen python packaging/release.py --print-version
+2026-11-12T04:29:53.7816530Z [36;1muv run --frozen python packaging/release.py --print-version[0m
+2026-11-12T04:29:53.7817132Z [36;1muv run --frozen python packaging/release.py --release-notes build/release-notes.md[0m
+2026-11-12T04:29:53.7817664Z [36;1muv run --frozen python packaging/build.py --dry-run[0m
+2026-11-12T04:29:53.7818157Z [36;1muv run --frozen python -m compileall -q src packaging scripts[0m
+2026-11-12T04:29:53.7855411Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T04:29:53.7855836Z env:
+2026-11-12T04:29:53.7966924Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:29:53.7967418Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:29:53.7967660Z   TZ: Asia/Kolkata
+2026-11-12T04:29:53.7967899Z   UV_PYTHON: 3.12
+2026-11-12T04:29:53.7968120Z   UV_TOOL_BIN_DIR: D:\a\_temp\uv-tool-bin-dir
+2026-11-12T04:29:53.7968409Z   UV_TOOL_DIR: D:\a\_temp\uv-tool-dir
+2026-11-12T04:29:53.7968694Z   UV_PYTHON_INSTALL_DIR: D:\a\_temp\uv-python-dir
+2026-11-12T04:29:53.7969048Z   UV_CACHE_DIR: D:\a\_temp\setup-uv-cache
+2026-11-12T04:29:53.7969283Z ##[endgroup]
+2026-11-12T04:29:54.2770743Z 0.1.0
+2026-11-12T04:29:54.5258301Z D:\a\GrihaLekha\GrihaLekha\build\release-notes.md
+2026-11-12T04:29:54.7266865Z {
+2026-11-12T04:29:54.7267491Z   "command": [
+2026-11-12T04:29:54.7268236Z     "D:\\a\\GrihaLekha\\GrihaLekha\\.venv\\Scripts\\python.exe",
+2026-11-12T04:29:54.7269475Z     "-m",
+2026-11-12T04:29:54.7269912Z     "nuitka",
+2026-11-12T04:29:54.7270402Z     "--mode=standalone",
+2026-11-12T04:29:54.7270997Z     "--update-check=never",
+2026-11-12T04:29:54.7271629Z     "--enable-plugin=pyside6",
+2026-11-12T04:29:54.7272210Z     "--include-package=grihalekha",
+2026-11-12T04:29:54.7272634Z     "--include-package-data=grihalekha",
+2026-11-12T04:29:54.7273255Z     "--include-data-dir=D:\\a\\GrihaLekha\\GrihaLekha\\icons=grihalekha/assets/icons",
+2026-11-12T04:29:54.7273974Z     "--include-module=sqlalchemy.dialects.sqlite.pysqlite",
+2026-11-12T04:29:54.7274648Z     "--nofollow-import-to=pytest,pymupdf,fitz,numpy,onnxruntime",
+2026-11-12T04:29:54.7275856Z     "--nofollow-import-to=sqlalchemy.dialects.mssql,sqlalchemy.dialects.mysql,sqlalchemy.dialects.oracle,sqlalchemy.dialects.postgresql",
+2026-11-12T04:29:54.7276959Z     "--noinclude-data-files=*.debug.pak",
+2026-11-12T04:29:54.7277366Z     "--python-flag=isolated",
+2026-11-12T04:29:54.7277726Z     "--python-flag=no_docstrings",
+2026-11-12T04:29:54.7278188Z     "--output-dir=D:\\a\\GrihaLekha\\GrihaLekha\\build\\nuitka",
+2026-11-12T04:29:54.7278693Z     "--output-folder-name=GrihaLekha",
+2026-11-12T04:29:54.7279084Z     "--output-filename=GrihaLekha.exe",
+2026-11-12T04:29:54.7279435Z     "--jobs=4",
+2026-11-12T04:29:54.7279709Z     "--lto=auto",
+2026-11-12T04:29:54.7280186Z     "--report=D:\\a\\GrihaLekha\\GrihaLekha\\build\\nuitka\\compilation-report.xml",
+2026-11-12T04:29:54.7280788Z     "--assume-yes-for-downloads",
+2026-11-12T04:29:54.7281191Z     "--windows-console-mode=disable",
+2026-11-12T04:29:54.7281592Z     "--company-name=GrihaLekha",
+2026-11-12T04:29:54.7282143Z     "--windows-icon-from-ico=D:\\a\\GrihaLekha\\GrihaLekha\\icons\\grihalekha.ico",
+2026-11-12T04:29:54.7282761Z     "--product-name=GrihaLekha",
+2026-11-12T04:29:54.7283131Z     "--file-version=0.1.0",
+2026-11-12T04:29:54.7283478Z     "--product-version=0.1.0",
+2026-11-12T04:29:54.7283941Z     "--file-description=GrihaLekha offline rental accounts",
+2026-11-12T04:29:54.7284420Z     "--msvc=latest",
+2026-11-12T04:29:54.7284821Z     "D:\\a\\GrihaLekha\\GrihaLekha\\scripts\\launcher.py"
+2026-11-12T04:29:54.7285280Z   ],
+2026-11-12T04:29:54.7285652Z   "output": "D:\\a\\GrihaLekha\\GrihaLekha\\dist\\GrihaLekha",
+2026-11-12T04:29:54.7286215Z   "cache": "D:\\a\\GrihaLekha\\GrihaLekha\\.cache\\nuitka"
+2026-11-12T04:29:54.7286663Z }

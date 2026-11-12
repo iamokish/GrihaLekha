@@ -1,0 +1,49 @@
+﻿2026-11-12T04:28:49.3454955Z ##[group]Run astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
+2026-11-12T04:28:49.3456848Z with:
+2026-11-12T04:28:49.3457706Z   version: 0.12.5
+2026-11-12T04:28:49.3458581Z   python-version: 3.14
+2026-11-12T04:28:49.3459564Z   enable-cache: true
+2026-11-12T04:28:49.3460505Z   activate-environment: false
+2026-11-12T04:28:49.3461566Z   no-project: false
+2026-11-12T04:28:49.3462857Z   working-directory: /home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:28:49.3470949Z   github-token: ***
+2026-11-12T04:28:49.3472590Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-11-12T04:28:49.3474312Z   restore-cache: true
+2026-11-12T04:28:49.3475028Z   save-cache: auto
+2026-11-12T04:28:49.3475854Z   prune-cache: false
+2026-11-12T04:28:49.3476528Z   cache-python: false
+2026-11-12T04:28:49.3477230Z   ignore-nothing-to-cache: false
+2026-11-12T04:28:49.3477995Z   ignore-empty-workdir: false
+2026-11-12T04:28:49.3478877Z   download-from-astral-mirror: true
+2026-11-12T04:28:49.3479670Z   add-problem-matchers: true
+2026-11-12T04:28:49.3480368Z   quiet: false
+2026-11-12T04:28:49.3481013Z   resolution-strategy: highest
+2026-11-12T04:28:49.3481716Z env:
+2026-11-12T04:28:49.3482303Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:28:49.3483076Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:28:49.3483796Z   TZ: Asia/Kolkata
+2026-11-12T04:28:49.3484480Z   UV_PYTHON: 3.14
+2026-11-12T04:28:49.3485080Z ##[endgroup]
+2026-11-12T04:28:49.4767680Z Fetching manifest data from https://releases.astral.sh/github/versions/main/v1/uv.ndjson ...
+2026-11-12T04:28:49.5644224Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.12.5/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-11-12T04:28:49.9236949Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/94caf30a-8390-4aed-98f9-c519ff4d68a8 -f /home/runner/work/_temp/5483066d-a551-49b6-a1bc-d36b4e053967
+2026-11-12T04:28:50.5381305Z Added /home/runner/.local/bin to the path
+2026-11-12T04:28:50.5384093Z Added /opt/hostedtoolcache/uv/0.12.5/x86_64 to the path
+2026-11-12T04:28:50.5384863Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:28:50.5385426Z Added /home/runner/work/_temp/uv-python-dir to the path
+2026-11-12T04:28:50.5386128Z Set UV_PYTHON to 3.14
+2026-11-12T04:28:50.5405045Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:28:50.5405782Z Successfully installed uv version 0.12.5
+2026-11-12T04:28:50.5407113Z Searching files using cache dependency glob: /home/runner/work/GrihaLekha/GrihaLekha/**/*requirements*.txt,/home/runner/work/GrihaLekha/GrihaLekha/**/*requirements*.in,/home/runner/work/GrihaLekha/GrihaLekha/**/*constraints*.txt,/home/runner/work/GrihaLekha/GrihaLekha/**/*constraints*.in,/home/runner/work/GrihaLekha/GrihaLekha/**/pyproject.toml,/home/runner/work/GrihaLekha/GrihaLekha/**/uv.lock,/home/runner/work/GrihaLekha/GrihaLekha/**/*.py.lock
+2026-11-12T04:28:50.5556067Z /home/runner/work/GrihaLekha/GrihaLekha/pyproject.toml
+2026-11-12T04:28:50.5669563Z /home/runner/work/GrihaLekha/GrihaLekha/uv.lock
+2026-11-12T04:28:50.5677177Z Found 2 files to hash.
+2026-11-12T04:28:50.5730191Z Trying to restore cache from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-22.04-3.14-e7f563581e55a68ce4b46bc109193f25815830055b6f647faf78481c7626bc02
+2026-11-12T04:28:50.6872122Z No GitHub Actions cache found for key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-22.04-3.14-e7f563581e55a68ce4b46bc109193f25815830055b6f647faf78481c7626bc02

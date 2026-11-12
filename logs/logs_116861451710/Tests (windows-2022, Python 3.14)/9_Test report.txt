@@ -1,0 +1,32 @@
+﻿2026-11-12T04:30:47.6575959Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-11-12T04:30:47.6576455Z with:
+2026-11-12T04:30:47.6576676Z   name: tests-windows-2022-py3.14
+2026-11-12T04:30:47.6576936Z   path: build/test-results.xml
+2026-11-12T04:30:47.6577214Z   if-no-files-found: ignore
+2026-11-12T04:30:47.6577484Z   retention-days: 14
+2026-11-12T04:30:47.6577719Z   compression-level: 6
+2026-11-12T04:30:47.6577939Z   overwrite: false
+2026-11-12T04:30:47.6578151Z   include-hidden-files: false
+2026-11-12T04:30:47.6578416Z   archive: true
+2026-11-12T04:30:47.6578620Z env:
+2026-11-12T04:30:47.6578821Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:30:47.6579083Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:30:47.6579345Z   TZ: Asia/Kolkata
+2026-11-12T04:30:47.6579597Z   UV_PYTHON: 3.14
+2026-11-12T04:30:47.6579832Z   UV_TOOL_BIN_DIR: D:\a\_temp\uv-tool-bin-dir
+2026-11-12T04:30:47.6580119Z   UV_TOOL_DIR: D:\a\_temp\uv-tool-dir
+2026-11-12T04:30:47.6580473Z   UV_PYTHON_INSTALL_DIR: D:\a\_temp\uv-python-dir
+2026-11-12T04:30:47.6580923Z   UV_CACHE_DIR: D:\a\_temp\setup-uv-cache
+2026-11-12T04:30:47.6581229Z ##[endgroup]
+2026-11-12T04:30:47.8113628Z With the provided path, there will be 1 file uploaded
+2026-11-12T04:30:47.8117923Z Artifact name is valid!
+2026-11-12T04:30:47.8119937Z Root directory input is valid!
+2026-11-12T04:30:48.0805552Z Uploading artifact: tests-windows-2022-py3.14.zip
+2026-11-12T04:30:48.0840116Z Beginning upload of artifact content to blob storage
+2026-11-12T04:30:48.3395158Z Uploaded bytes 17478
+2026-11-12T04:30:48.3879746Z Finished uploading artifact content to blob storage!
+2026-11-12T04:30:48.3880503Z SHA256 digest of uploaded artifact is 4bd30d70db1d1ebc6629882630dfabdcdae5d4605968d289a12b969bfb7371a9
+2026-11-12T04:30:48.3881296Z Finalizing artifact upload
+2026-11-12T04:30:48.8183875Z Artifact tests-windows-2022-py3.14 successfully finalized. Artifact ID 13915392620
+2026-11-12T04:30:48.8184846Z Artifact tests-windows-2022-py3.14 has been successfully uploaded! Final size is 17478 bytes. Artifact ID is 13915392620
+2026-11-12T04:30:48.8191530Z Artifact download URL: https://github.com/iamokish/GrihaLekha/actions/runs/43154651477/artifacts/13915392620

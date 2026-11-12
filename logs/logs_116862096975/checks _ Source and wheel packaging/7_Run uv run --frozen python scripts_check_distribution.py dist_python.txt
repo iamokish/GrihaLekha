@@ -1,0 +1,12 @@
+﻿2026-11-12T04:28:05.2930292Z ##[group]Run uv run --frozen python scripts/check_distribution.py dist/python
+2026-11-12T04:28:05.2930753Z [36;1muv run --frozen python scripts/check_distribution.py dist/python[0m
+2026-11-12T04:28:05.2985609Z shell: /usr/bin/bash -e {0}
+2026-11-12T04:28:05.2985828Z env:
+2026-11-12T04:28:05.2986007Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:28:05.2986225Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:28:05.2986444Z   TZ: Asia/Kolkata
+2026-11-12T04:28:05.2986682Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:28:05.2986963Z   UV_PYTHON: 3.12
+2026-11-12T04:28:05.2987166Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:28:05.2987420Z ##[endgroup]
+2026-11-12T04:28:05.4182908Z Verified grihalekha-0.1.0-py3-none-any.whl (52 files) and grihalekha-0.1.0.tar.gz (148 files), AGPL-3.0-or-later.

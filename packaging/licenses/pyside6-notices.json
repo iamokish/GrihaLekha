@@ -1,0 +1,49 @@
+{
+  "components": {
+    "pyside6": "6.12.0",
+    "pyside6-addons": "6.12.0",
+    "pyside6-essentials": "6.12.0",
+    "pyside6-pdf": "6.12.0.140",
+    "pyside6-webengine": "6.12.0.140",
+    "shiboken6": "6.12.0"
+  },
+  "license_expression": "LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only",
+  "source_revision": "f50facb83fc3dc5f3240c854668c7a6dd93871b2",
+  "files": [
+    {
+      "path": "GPL-2.0-only.txt",
+      "url": "https://raw.githubusercontent.com/pyside/pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/LICENSES/GPL-2.0-only.txt",
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "path": "GPL-3.0-only.txt",
+      "url": "https://raw.githubusercontent.com/pyside/pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/LICENSES/GPL-3.0-only.txt",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "LGPL-3.0-only.txt",
+      "url": "https://raw.githubusercontent.com/pyside/pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/LICENSES/LGPL-3.0-only.txt",
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+    },
+    {
+      "path": "pyside6-licensecomment.txt",
+      "url": "https://raw.githubusercontent.com/pyside/pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/sources/pyside6/PySide6/licensecomment.txt",
+      "sha256": "dd6a83da77d0b6a113a574154c12cb009751c2b0dfe5c22e288cd86ebc2a1f13"
+    },
+    {
+      "path": "PSF-3.7.0.txt",
+      "url": "https://raw.githubusercontent.com/pyside/pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/sources/shiboken6/shibokenmodule/files.dir/shibokensupport/signature/PSF-3.7.0.txt",
+      "sha256": "e5bdc4b568f0016df16652c4769bafde76641b61409149100ee53b708c8f1219"
+    },
+    {
+      "path": "shiboken6-libshiboken-attribution.json",
+      "url": "https://raw.githubusercontent.com/pyside/pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/sources/shiboken6/libshiboken/qt_attribution.json",
+      "sha256": "1b643e281a9ccb592cfb5df7fc457b9b466f35de6e91ccce76589e85e047573c"
+    },
+    {
+      "path": "shiboken6-signature-attribution.json",
+      "url": "https://raw.githubusercontent.com/pyside/pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/sources/shiboken6/shibokenmodule/files.dir/shibokensupport/signature/qt_attribution.json",
+      "sha256": "6197e61575b0f1a65fc4a32647e48c6a4897aa104ad9e5e397cec8fecdcc2f59"
+    }
+  ]
+}

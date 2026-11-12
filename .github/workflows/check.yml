@@ -1,0 +1,94 @@
+name: Checks
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: Tests (${{ matrix.os }}, Python ${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2022, ubuntu-22.04]
+        python: ['3.12', '3.13', '3.14']
+    env:
+      QT_QPA_PLATFORM: offscreen
+      GRIHALEKHA_PDF_RENDERER: native
+      TZ: Asia/Kolkata
+      UV_PYTHON: ${{ matrix.python }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.12.5'
+          python-version: ${{ matrix.python }}
+          enable-cache: true
+      - name: Linux desktop libraries
+        if: runner.os == 'Linux'
+        run: sudo bash scripts/install_linux_ci_dependencies.sh
+      - name: Align Windows date fixtures with application IST
+        if: runner.os == 'Windows'
+        run: tzutil /s "India Standard Time"
+      - run: uv sync --locked --extra dev
+      - name: Validate version metadata and build configuration
+        run: |
+          uv run --frozen python packaging/release.py --print-version
+          uv run --frozen python packaging/release.py --release-notes build/release-notes.md
+          uv run --frozen python packaging/build.py --dry-run
+          uv run --frozen python -m compileall -q src packaging scripts
+      - name: Regression tests
+        run: uv run --frozen pytest --junitxml=build/test-results.xml
+      - name: Test report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: tests-${{ matrix.os }}-py${{ matrix.python }}
+          path: build/test-results.xml
+          if-no-files-found: ignore
+          retention-days: 14
+
+  python-package:
+    name: Source and wheel packaging
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    env:
+      QT_QPA_PLATFORM: offscreen
+      GRIHALEKHA_PDF_RENDERER: native
+      TZ: Asia/Kolkata
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.12.5'
+          python-version: '3.12'
+          enable-cache: true
+      - run: sudo bash scripts/install_linux_ci_dependencies.sh
+      - run: uv sync --locked --extra dev
+      - run: uv build --out-dir dist/python
+      - run: uv run --frozen python scripts/check_distribution.py dist/python
+      - name: Install and launch the wheel outside the source import path
+        shell: bash
+        run: |
+          set -euo pipefail
+          uv venv build/wheel-env --python 3.12
+          uv export --frozen --no-dev --no-emit-project --output-file build/runtime-requirements.txt
+          uv pip install --python build/wheel-env/bin/python -r build/runtime-requirements.txt
+          uv pip install --python build/wheel-env/bin/python --no-deps dist/python/*.whl
+          build/wheel-env/bin/python -I -m grihalekha --smoke-test --data-dir "$RUNNER_TEMP/wheel-account" --screenshot "$RUNNER_TEMP/wheel-smoke.png"

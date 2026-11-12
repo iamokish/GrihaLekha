@@ -1,0 +1,11 @@
+include icons/grihalekha.ico
+include icons/grihalekha-icon-512.png
+include LICENSE THIRD_PARTY_NOTICES.md README.md USER_GUIDE.md CONTRIBUTING.md SECURITY.md CHANGELOG.md
+include pyproject.toml uv.lock setup.py
+recursive-include docs *.md *.png
+recursive-include packaging *.py *.md *.iss *.desktop *.in *.txt *.json *.html
+recursive-include scripts *.py *.sh
+recursive-include tests *.py
+recursive-include .github *.yml *.yaml *.md
+include .gitignore
+global-exclude *.py[cod]

@@ -1,0 +1,844 @@
+﻿2026-11-12T04:26:16.7503421Z Current runner version: '2.338.2'
+2026-11-12T04:26:16.7529006Z ##[group]Runner Image Provisioner
+2026-11-12T04:26:16.7529995Z Hosted Compute Agent
+2026-11-12T04:26:16.7530667Z Version: 20261028.624
+2026-11-12T04:26:16.7531328Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-12T04:26:16.7532576Z Build Date: 2026-10-28T21:51:42Z
+2026-11-12T04:26:16.7533347Z Worker ID: {019c42f6-1afa-4608-9924-e5ce3de49e07}
+2026-11-12T04:26:16.7534071Z Region: westus
+2026-11-12T04:26:16.7534790Z Cloud: Azure
+2026-11-12T04:26:16.7535354Z ##[endgroup]
+2026-11-12T04:26:16.7537115Z ##[group]Operating System
+2026-11-12T04:26:16.7537815Z Ubuntu
+2026-11-12T04:26:16.7538352Z 22.04.5
+2026-11-12T04:26:16.7538989Z LTS
+2026-11-12T04:26:16.7539539Z ##[endgroup]
+2026-11-12T04:26:16.7540150Z ##[group]Runner Image
+2026-11-12T04:26:16.7540803Z Image: ubuntu-22.04
+2026-11-12T04:26:16.7541398Z Version: 20261101.347.1
+2026-11-12T04:26:16.7543236Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20261101.347/images/ubuntu/Ubuntu2204-Readme.md
+2026-11-12T04:26:16.7544924Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20261101.347
+2026-11-12T04:26:16.7545958Z ##[endgroup]
+2026-11-12T04:26:16.7547159Z ##[group]GITHUB_TOKEN Permissions
+2026-11-12T04:26:16.7549367Z Contents: read
+2026-11-12T04:26:16.7549995Z Metadata: read
+2026-11-12T04:26:16.7550718Z ##[endgroup]
+2026-11-12T04:26:16.7553232Z Secret source: Dependabot
+2026-11-12T04:26:16.7554378Z Cache mode: write
+2026-11-12T04:26:16.7555428Z Prepare workflow directory
+2026-11-12T04:26:16.8146582Z Prepare all required actions
+2026-11-12T04:26:16.8195367Z Getting action download info
+2026-11-12T04:26:17.1509375Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-12T04:26:17.2823182Z Download action repository 'astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2' (SHA:68559e99cc807c1eb7e9238fd43a15bba460eec2)
+2026-11-12T04:26:17.6905354Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-11-12T04:26:17.8652987Z Complete job name: Tests (ubuntu-22.04, Python 3.14)
+2026-11-12T04:26:17.9568999Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-12T04:26:17.9570135Z with:
+2026-11-12T04:26:17.9570576Z   persist-credentials: false
+2026-11-12T04:26:17.9571116Z   repository: iamokish/GrihaLekha
+2026-11-12T04:26:17.9575117Z   token: ***
+2026-11-12T04:26:17.9575555Z   ssh-strict: true
+2026-11-12T04:26:17.9575989Z   ssh-user: git
+2026-11-12T04:26:17.9576407Z   clean: true
+2026-11-12T04:26:17.9576851Z   sparse-checkout-cone-mode: true
+2026-11-12T04:26:17.9577373Z   fetch-depth: 1
+2026-11-12T04:26:17.9577794Z   fetch-tags: false
+2026-11-12T04:26:17.9578233Z   show-progress: true
+2026-11-12T04:26:17.9578980Z   lfs: false
+2026-11-12T04:26:17.9579782Z   submodules: false
+2026-11-12T04:26:17.9580756Z   set-safe-directory: true
+2026-11-12T04:26:17.9582073Z   allow-unsafe-pr-checkout: false
+2026-11-12T04:26:17.9583242Z env:
+2026-11-12T04:26:17.9583820Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:26:17.9584632Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:26:17.9585545Z   TZ: Asia/Kolkata
+2026-11-12T04:26:17.9586140Z   UV_PYTHON: 3.14
+2026-11-12T04:26:17.9586773Z ##[endgroup]
+2026-11-12T04:26:18.2144730Z Syncing repository: iamokish/GrihaLekha
+2026-11-12T04:26:18.2147650Z ##[group]Getting Git version info
+2026-11-12T04:26:18.2149094Z Working directory is '/home/runner/work/GrihaLekha/GrihaLekha'
+2026-11-12T04:26:18.2151097Z [command]/usr/bin/git version
+2026-11-12T04:26:18.2208767Z git version 2.56.0
+2026-11-12T04:26:18.2235452Z ##[endgroup]
+2026-11-12T04:26:18.2253654Z Temporarily overriding HOME='/home/runner/work/_temp/4b5b037e-0cc2-4289-a29c-f75cdae16dcf' before making global git config changes
+2026-11-12T04:26:18.2255230Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T04:26:18.2257721Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:26:18.2305439Z Deleting the contents of '/home/runner/work/GrihaLekha/GrihaLekha'
+2026-11-12T04:26:18.2316407Z ##[group]Determining repository object format
+2026-11-12T04:26:18.2318448Z ##[endgroup]
+2026-11-12T04:26:18.2320043Z ##[group]Initializing the repository
+2026-11-12T04:26:18.2321838Z [command]/usr/bin/git init /home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:26:18.2458830Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-12T04:26:18.2460860Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-12T04:26:18.2463521Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-12T04:26:18.2465133Z hint: call:
+2026-11-12T04:26:18.2465861Z hint:
+2026-11-12T04:26:18.2467317Z hint: 	git config --global init.defaultBranch <name>
+2026-11-12T04:26:18.2469054Z hint:
+2026-11-12T04:26:18.2470193Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-12T04:26:18.2471959Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-12T04:26:18.2473231Z hint:
+2026-11-12T04:26:18.2474104Z hint: 	git branch -m <name>
+2026-11-12T04:26:18.2475227Z hint:
+2026-11-12T04:26:18.2477143Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-12T04:26:18.2478741Z Initialized empty Git repository in /home/runner/work/GrihaLekha/GrihaLekha/.git/
+2026-11-12T04:26:18.2481372Z [command]/usr/bin/git remote add origin https://github.com/iamokish/GrihaLekha
+2026-11-12T04:26:18.2524250Z ##[endgroup]
+2026-11-12T04:26:18.2525475Z ##[group]Disabling automatic garbage collection
+2026-11-12T04:26:18.2527828Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-12T04:26:18.2568009Z ##[endgroup]
+2026-11-12T04:26:18.2569918Z ##[group]Setting up auth
+2026-11-12T04:26:18.2571061Z Removing SSH command configuration
+2026-11-12T04:26:18.2584039Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T04:26:18.2632861Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-12T04:26:18.3074795Z Removing HTTP extra header
+2026-11-12T04:26:18.3080416Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T04:26:18.3122631Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-12T04:26:18.3408767Z Removing includeIf entries pointing to credentials config files
+2026-11-12T04:26:18.3414087Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T04:26:18.3454279Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-12T04:26:18.3717174Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-24487f01-b1aa-4d3a-9d4a-8bb04251070a.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-12T04:26:18.3762885Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git.path /home/runner/work/_temp/git-credentials-24487f01-b1aa-4d3a-9d4a-8bb04251070a.config
+2026-11-12T04:26:18.3803942Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-24487f01-b1aa-4d3a-9d4a-8bb04251070a.config
+2026-11-12T04:26:18.3844467Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-24487f01-b1aa-4d3a-9d4a-8bb04251070a.config
+2026-11-12T04:26:18.3885942Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-24487f01-b1aa-4d3a-9d4a-8bb04251070a.config
+2026-11-12T04:26:18.3924620Z ##[endgroup]
+2026-11-12T04:26:18.3926375Z ##[group]Fetching the repository
+2026-11-12T04:26:18.3933036Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +afd29ee42474b7d3a7516e78c51d309441613ba9:refs/remotes/pull/1/merge
+2026-11-12T04:26:18.9426812Z From https://github.com/iamokish/GrihaLekha
+2026-11-12T04:26:18.9429263Z  * [new ref]         afd29ee42474b7d3a7516e78c51d309441613ba9 -> pull/1/merge
+2026-11-12T04:26:18.9434623Z ##[endgroup]
+2026-11-12T04:26:18.9436901Z ##[group]Determining the checkout info
+2026-11-12T04:26:18.9439183Z ##[endgroup]
+2026-11-12T04:26:18.9440907Z [command]/usr/bin/git sparse-checkout disable
+2026-11-12T04:26:18.9499983Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-12T04:26:18.9541072Z ##[group]Checking out the ref
+2026-11-12T04:26:18.9545320Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1/merge
+2026-11-12T04:26:18.9871445Z Note: switching to 'refs/remotes/pull/1/merge'.
+2026-11-12T04:26:18.9872824Z 
+2026-11-12T04:26:18.9873605Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-12T04:26:18.9875776Z changes and commit them, and you can discard any commits you make in this
+2026-11-12T04:26:18.9878687Z state without impacting any branches by switching back to a branch.
+2026-11-12T04:26:18.9880363Z 
+2026-11-12T04:26:18.9881489Z If you want to create a new branch to retain commits you create, you may
+2026-11-12T04:26:18.9884690Z do so (now or later) by using -c with the switch command. Example:
+2026-11-12T04:26:18.9886405Z 
+2026-11-12T04:26:18.9887187Z   git switch -c <new-branch-name>
+2026-11-12T04:26:18.9888436Z 
+2026-11-12T04:26:18.9889140Z Or undo this operation with:
+2026-11-12T04:26:18.9890269Z 
+2026-11-12T04:26:18.9890907Z   git switch -
+2026-11-12T04:26:18.9892032Z 
+2026-11-12T04:26:18.9893528Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-12T04:26:18.9895678Z 
+2026-11-12T04:26:18.9898379Z HEAD is now at afd29ee Merge f7d24a323ad72bc701a143d9d6c78d0dc561bc54 into 3cff34feec27f66ea026b82f73ddff854e3e2d74
+2026-11-12T04:26:18.9904442Z ##[endgroup]
+2026-11-12T04:26:18.9938444Z [command]/usr/bin/git log -1 --format=%H
+2026-11-12T04:26:18.9973661Z afd29ee42474b7d3a7516e78c51d309441613ba9
+2026-11-12T04:26:18.9983536Z ##[group]Removing auth
+2026-11-12T04:26:18.9984752Z Removing SSH command configuration
+2026-11-12T04:26:18.9987120Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T04:26:19.0027933Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-12T04:26:19.0291195Z Removing HTTP extra header
+2026-11-12T04:26:19.0295666Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T04:26:19.0343754Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-12T04:26:19.0616389Z Removing includeIf entries pointing to credentials config files
+2026-11-12T04:26:19.0620500Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T04:26:19.0654260Z includeif.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git.path
+2026-11-12T04:26:19.0657845Z includeif.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git/worktrees/*.path
+2026-11-12T04:26:19.0660976Z includeif.gitdir:/github/workspace/.git.path
+2026-11-12T04:26:19.0663737Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-12T04:26:19.0670052Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git.path
+2026-11-12T04:26:19.0701371Z /home/runner/work/_temp/git-credentials-24487f01-b1aa-4d3a-9d4a-8bb04251070a.config
+2026-11-12T04:26:19.0716381Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-24487f01\-b1aa\-4d3a\-9d4a\-8bb04251070a\.config
+2026-11-12T04:26:19.0763134Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git/worktrees/*.path
+2026-11-12T04:26:19.0794093Z /home/runner/work/_temp/git-credentials-24487f01-b1aa-4d3a-9d4a-8bb04251070a.config
+2026-11-12T04:26:19.0804776Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/GrihaLekha/GrihaLekha/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-24487f01\-b1aa\-4d3a\-9d4a\-8bb04251070a\.config
+2026-11-12T04:26:19.0846774Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-12T04:26:19.0879219Z /github/runner_temp/git-credentials-24487f01-b1aa-4d3a-9d4a-8bb04251070a.config
+2026-11-12T04:26:19.0889889Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-24487f01\-b1aa\-4d3a\-9d4a\-8bb04251070a\.config
+2026-11-12T04:26:19.0931250Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-12T04:26:19.0962520Z /github/runner_temp/git-credentials-24487f01-b1aa-4d3a-9d4a-8bb04251070a.config
+2026-11-12T04:26:19.0974024Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-24487f01\-b1aa\-4d3a\-9d4a\-8bb04251070a\.config
+2026-11-12T04:26:19.1018900Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-12T04:26:19.1295124Z Removing credentials config '/home/runner/work/_temp/git-credentials-24487f01-b1aa-4d3a-9d4a-8bb04251070a.config'
+2026-11-12T04:26:19.1304734Z ##[endgroup]
+2026-11-12T04:26:19.1753138Z ##[group]Run astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
+2026-11-12T04:26:19.1754685Z with:
+2026-11-12T04:26:19.1755453Z   version: 0.12.5
+2026-11-12T04:26:19.1756310Z   python-version: 3.14
+2026-11-12T04:26:19.1757206Z   enable-cache: true
+2026-11-12T04:26:19.1758095Z   activate-environment: false
+2026-11-12T04:26:19.1759082Z   no-project: false
+2026-11-12T04:26:19.1760182Z   working-directory: /home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:26:19.1769416Z   github-token: ***
+2026-11-12T04:26:19.1771742Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-11-12T04:26:19.1774175Z   restore-cache: true
+2026-11-12T04:26:19.1775037Z   save-cache: auto
+2026-11-12T04:26:19.1775857Z   prune-cache: false
+2026-11-12T04:26:19.1776715Z   cache-python: false
+2026-11-12T04:26:19.1777617Z   ignore-nothing-to-cache: false
+2026-11-12T04:26:19.1778701Z   ignore-empty-workdir: false
+2026-11-12T04:26:19.1779736Z   download-from-astral-mirror: true
+2026-11-12T04:26:19.1780808Z   add-problem-matchers: true
+2026-11-12T04:26:19.1781868Z   quiet: false
+2026-11-12T04:26:19.1782690Z   resolution-strategy: highest
+2026-11-12T04:26:19.1783626Z env:
+2026-11-12T04:26:19.1784379Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:26:19.1785374Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:26:19.1786349Z   TZ: Asia/Kolkata
+2026-11-12T04:26:19.1787147Z   UV_PYTHON: 3.14
+2026-11-12T04:26:19.1787935Z ##[endgroup]
+2026-11-12T04:26:19.3854122Z Fetching manifest data from https://releases.astral.sh/github/versions/main/v1/uv.ndjson ...
+2026-11-12T04:26:19.5444882Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.12.5/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-11-12T04:26:19.7651298Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/eafe67f8-577e-411d-8499-8241ab28113b -f /home/runner/work/_temp/f38151ae-4812-4123-9dd5-42e3b4c029ac
+2026-11-12T04:26:20.2371330Z Added /home/runner/.local/bin to the path
+2026-11-12T04:26:20.2376431Z Added /opt/hostedtoolcache/uv/0.12.5/x86_64 to the path
+2026-11-12T04:26:20.2378050Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:26:20.2379366Z Added /home/runner/work/_temp/uv-python-dir to the path
+2026-11-12T04:26:20.2380272Z Set UV_PYTHON to 3.14
+2026-11-12T04:26:20.2422657Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:26:20.2423649Z Successfully installed uv version 0.12.5
+2026-11-12T04:26:20.2427824Z Searching files using cache dependency glob: /home/runner/work/GrihaLekha/GrihaLekha/**/*requirements*.txt,/home/runner/work/GrihaLekha/GrihaLekha/**/*requirements*.in,/home/runner/work/GrihaLekha/GrihaLekha/**/*constraints*.txt,/home/runner/work/GrihaLekha/GrihaLekha/**/*constraints*.in,/home/runner/work/GrihaLekha/GrihaLekha/**/pyproject.toml,/home/runner/work/GrihaLekha/GrihaLekha/**/uv.lock,/home/runner/work/GrihaLekha/GrihaLekha/**/*.py.lock
+2026-11-12T04:26:20.2636806Z /home/runner/work/GrihaLekha/GrihaLekha/pyproject.toml
+2026-11-12T04:26:20.2798786Z /home/runner/work/GrihaLekha/GrihaLekha/uv.lock
+2026-11-12T04:26:20.2807108Z Found 2 files to hash.
+2026-11-12T04:26:20.2885543Z Trying to restore cache from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-22.04-3.14-04b50c85c01a84c9853f07d64a26a1b97a219048be1b2e66e5ba8d8a7891fdca
+2026-11-12T04:26:20.5115616Z No GitHub Actions cache found for key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-22.04-3.14-04b50c85c01a84c9853f07d64a26a1b97a219048be1b2e66e5ba8d8a7891fdca
+2026-11-12T04:26:20.6363392Z ##[group]Run sudo bash scripts/install_linux_ci_dependencies.sh
+2026-11-12T04:26:20.6364041Z [36;1msudo bash scripts/install_linux_ci_dependencies.sh[0m
+2026-11-12T04:26:20.6455186Z shell: /usr/bin/bash -e {0}
+2026-11-12T04:26:20.6455525Z env:
+2026-11-12T04:26:20.6455796Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:26:20.6456115Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:26:20.6456457Z   TZ: Asia/Kolkata
+2026-11-12T04:26:20.6456719Z   UV_PYTHON: 3.14
+2026-11-12T04:26:20.6457068Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:26:20.6457537Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:26:20.6457922Z ##[endgroup]
+2026-11-12T04:26:20.7625430Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-11-12T04:26:20.7873452Z Get:6 https://packages.microsoft.com/ubuntu/22.04/prod jammy InRelease [3632 B]
+2026-11-12T04:26:20.7990689Z Hit:2 http://azure.archive.ubuntu.com/ubuntu jammy InRelease
+2026-11-12T04:26:20.7998689Z Get:3 http://azure.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+2026-11-12T04:26:20.8039284Z Get:4 http://azure.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+2026-11-12T04:26:20.8066463Z Get:5 http://azure.archive.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+2026-11-12T04:26:20.8731188Z Get:7 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main arm64 Packages [783 kB]
+2026-11-12T04:26:20.8929674Z Get:8 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main armhf Packages [23.6 kB]
+2026-11-12T04:26:20.8957818Z Get:9 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main amd64 Packages [1059 kB]
+2026-11-12T04:26:21.0849950Z Get:10 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [3982 kB]
+2026-11-12T04:26:21.1033210Z Get:11 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [584 kB]
+2026-11-12T04:26:21.1068284Z Get:12 http://azure.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [6848 kB]
+2026-11-12T04:26:21.1423234Z Get:13 http://azure.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [1316 kB]
+2026-11-12T04:26:21.1492520Z Get:14 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1291 kB]
+2026-11-12T04:26:21.1564788Z Get:15 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [327 kB]
+2026-11-12T04:26:21.1593914Z Get:16 http://azure.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [86.1 kB]
+2026-11-12T04:26:21.1611452Z Get:17 http://azure.archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [16.5 kB]
+2026-11-12T04:26:21.2783917Z Get:18 http://azure.archive.ubuntu.com/ubuntu jammy-security/main amd64 Packages [3718 kB]
+2026-11-12T04:26:21.2964319Z Get:19 http://azure.archive.ubuntu.com/ubuntu jammy-security/main Translation-en [519 kB]
+2026-11-12T04:26:21.3435031Z Get:20 http://azure.archive.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [6613 kB]
+2026-11-12T04:26:21.3783708Z Get:21 http://azure.archive.ubuntu.com/ubuntu jammy-security/restricted Translation-en [1272 kB]
+2026-11-12T04:26:21.3843021Z Get:22 http://azure.archive.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1057 kB]
+2026-11-12T04:26:21.3902114Z Get:23 http://azure.archive.ubuntu.com/ubuntu jammy-security/universe Translation-en [238 kB]
+2026-11-12T04:26:21.3920300Z Get:24 http://azure.archive.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [79.6 kB]
+2026-11-12T04:26:21.3936319Z Get:25 http://azure.archive.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [13.6 kB]
+2026-11-12T04:26:27.8699801Z Fetched 30.2 MB in 3s (9048 kB/s)
+2026-11-12T04:26:29.5877422Z Reading package lists...
+2026-11-12T04:26:29.6545404Z Reading package lists...
+2026-11-12T04:26:29.9656830Z Building dependency tree...
+2026-11-12T04:26:29.9668926Z Reading state information...
+2026-11-12T04:26:30.1631237Z build-essential is already the newest version (12.9ubuntu3).
+2026-11-12T04:26:30.1632449Z build-essential set to manually installed.
+2026-11-12T04:26:30.1634042Z libfontconfig1 is already the newest version (2.13.1-4.2ubuntu5).
+2026-11-12T04:26:30.1634874Z libfontconfig1 set to manually installed.
+2026-11-12T04:26:30.1635416Z libgl1 is already the newest version (1.4.0-1).
+2026-11-12T04:26:30.1635957Z libgl1 set to manually installed.
+2026-11-12T04:26:30.1636574Z libxcb-randr0 is already the newest version (1.14-3ubuntu3).
+2026-11-12T04:26:30.1637227Z libxcb-randr0 set to manually installed.
+2026-11-12T04:26:30.1637791Z libxcb-shm0 is already the newest version (1.14-3ubuntu3).
+2026-11-12T04:26:30.1638353Z libxcb-shm0 set to manually installed.
+2026-11-12T04:26:30.1638899Z libxcb-sync1 is already the newest version (1.14-3ubuntu3).
+2026-11-12T04:26:30.1639476Z libxcb-sync1 set to manually installed.
+2026-11-12T04:26:30.1640027Z libxcb-xfixes0 is already the newest version (1.14-3ubuntu3).
+2026-11-12T04:26:30.1640639Z libxcb-xfixes0 set to manually installed.
+2026-11-12T04:26:30.1641321Z libxcb1 is already the newest version (1.14-3ubuntu3).
+2026-11-12T04:26:30.1642171Z libxcb1 set to manually installed.
+2026-11-12T04:26:30.1642877Z libxcomposite1 is already the newest version (1:0.4.5-1build2).
+2026-11-12T04:26:30.1643709Z libxcomposite1 set to manually installed.
+2026-11-12T04:26:30.1644392Z libxdamage1 is already the newest version (1:1.1.5-2build2).
+2026-11-12T04:26:30.1644985Z libxdamage1 set to manually installed.
+2026-11-12T04:26:30.1645545Z libxext6 is already the newest version (2:1.3.4-1build1).
+2026-11-12T04:26:30.1646109Z libxext6 set to manually installed.
+2026-11-12T04:26:30.1646577Z libxfixes3 is already the newest version (1:6.0.0-1).
+2026-11-12T04:26:30.1647075Z libxfixes3 set to manually installed.
+2026-11-12T04:26:30.1647468Z libxi6 is already the newest version (2:1.8-1build1).
+2026-11-12T04:26:30.1647785Z libxi6 set to manually installed.
+2026-11-12T04:26:30.1648089Z libxkbcommon0 is already the newest version (1.4.0-1).
+2026-11-12T04:26:30.1648424Z libxkbcommon0 set to manually installed.
+2026-11-12T04:26:30.1648760Z libxrandr2 is already the newest version (2:1.5.2-1build1).
+2026-11-12T04:26:30.1649113Z libxrandr2 set to manually installed.
+2026-11-12T04:26:30.1649446Z libxrender1 is already the newest version (1:0.9.10-1build4).
+2026-11-12T04:26:30.1649791Z libxrender1 set to manually installed.
+2026-11-12T04:26:30.1650111Z zstd is already the newest version (1.4.8+dfsg-3build1).
+2026-11-12T04:26:30.1650604Z zstd set to manually installed.
+2026-11-12T04:26:30.1651247Z patchelf is already the newest version (0.14.3-1).
+2026-11-12T04:26:30.1651883Z binutils is already the newest version (2.38-4ubuntu2.12).
+2026-11-12T04:26:30.1652309Z dpkg-dev is already the newest version (1.21.1ubuntu2.6).
+2026-11-12T04:26:30.1652703Z libasound2 is already the newest version (1.2.6.1-1ubuntu1.2).
+2026-11-12T04:26:30.1653065Z libasound2 set to manually installed.
+2026-11-12T04:26:30.1653393Z libcups2 is already the newest version (2.4.1op1-1ubuntu4.21).
+2026-11-12T04:26:30.1653734Z libcups2 set to manually installed.
+2026-11-12T04:26:30.1654067Z libdbus-1-3 is already the newest version (1.12.20-2ubuntu4.1).
+2026-11-12T04:26:30.1654608Z libdbus-1-3 set to manually installed.
+2026-11-12T04:26:30.1654951Z libdrm2 is already the newest version (2.4.113-2~ubuntu0.22.04.1).
+2026-11-12T04:26:30.1655300Z libdrm2 set to manually installed.
+2026-11-12T04:26:30.1655638Z libfreetype6 is already the newest version (2.11.1+dfsg-1ubuntu0.4).
+2026-11-12T04:26:30.1656016Z libfreetype6 set to manually installed.
+2026-11-12T04:26:30.1656370Z libnspr4 is already the newest version (2:4.35-0ubuntu0.22.04.1).
+2026-11-12T04:26:30.1656772Z libnss3 is already the newest version (2:3.98-0ubuntu0.22.04.5).
+2026-11-12T04:26:30.1657196Z libwayland-client0 is already the newest version (1.20.0-1ubuntu0.1).
+2026-11-12T04:26:30.1657588Z libwayland-client0 set to manually installed.
+2026-11-12T04:26:30.1658017Z libx11-6 is already the newest version (2:1.7.5-1ubuntu0.4).
+2026-11-12T04:26:30.1658557Z libx11-6 set to manually installed.
+2026-11-12T04:26:30.1659320Z libx11-xcb1 is already the newest version (2:1.7.5-1ubuntu0.4).
+2026-11-12T04:26:30.1659954Z libx11-xcb1 set to manually installed.
+2026-11-12T04:26:30.1660529Z libxtst6 is already the newest version (2:1.2.3-1ubuntu0.22.04.1).
+2026-11-12T04:26:30.1661230Z xz-utils is already the newest version (5.2.5-2ubuntu1.2).
+2026-11-12T04:26:30.1661923Z The following additional packages will be installed:
+2026-11-12T04:26:30.1662420Z   libegl-mesa0 libglib2.0-bin libglib2.0-dev libglib2.0-dev-bin libxcb-util1
+2026-11-12T04:26:30.1662828Z Suggested packages:
+2026-11-12T04:26:30.1663094Z   libgirepository1.0-dev libglib2.0-doc libxml2-utils
+2026-11-12T04:26:30.1900493Z The following packages will be REMOVED:
+2026-11-12T04:26:30.1903083Z   pkgconf r-base-dev
+2026-11-12T04:26:30.1903578Z The following NEW packages will be installed:
+2026-11-12T04:26:30.1907450Z   desktop-file-utils libegl-mesa0 libegl1 libopengl0 libxcb-cursor0
+2026-11-12T04:26:30.1908496Z   libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0
+2026-11-12T04:26:30.1913058Z   libxcb-shape0 libxcb-util1 libxcb-xkb1 libxkbcommon-x11-0 pkg-config
+2026-11-12T04:26:30.1917120Z The following packages will be upgraded:
+2026-11-12T04:26:30.1922628Z   libglib2.0-0 libglib2.0-bin libglib2.0-dev libglib2.0-dev-bin
+2026-11-12T04:26:30.2101079Z 4 upgraded, 14 newly installed, 2 to remove and 56 not upgraded.
+2026-11-12T04:26:30.2101517Z Need to get 3816 kB of archives.
+2026-11-12T04:26:30.2103475Z After this operation, 1511 kB of additional disk space will be used.
+2026-11-12T04:26:30.2103909Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-11-12T04:26:30.2878305Z Get:2 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libglib2.0-dev amd64 2.72.4-0ubuntu2.11 [1745 kB]
+2026-11-12T04:26:30.3657306Z Get:3 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libglib2.0-dev-bin amd64 2.72.4-0ubuntu2.11 [117 kB]
+2026-11-12T04:26:30.4256541Z Get:4 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libglib2.0-bin amd64 2.72.4-0ubuntu2.11 [80.8 kB]
+2026-11-12T04:26:30.4857741Z Get:5 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libglib2.0-0 amd64 2.72.4-0ubuntu2.11 [1469 kB]
+2026-11-12T04:26:30.5590301Z Get:6 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 pkg-config amd64 0.29.2-1ubuntu3 [48.2 kB]
+2026-11-12T04:26:30.6189660Z Get:7 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 desktop-file-utils amd64 0.26-1ubuntu3 [55.9 kB]
+2026-11-12T04:26:30.6792209Z Get:8 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libegl-mesa0 amd64 23.2.1-1ubuntu3.1~22.04.4 [118 kB]
+2026-11-12T04:26:30.7392755Z Get:9 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-shape0 amd64 1.14-3ubuntu3 [6158 B]
+2026-11-12T04:26:30.7988859Z Get:10 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-xkb1 amd64 1.14-3ubuntu3 [32.8 kB]
+2026-11-12T04:26:30.8586770Z Get:11 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxkbcommon-x11-0 amd64 1.4.0-1 [14.4 kB]
+2026-11-12T04:26:30.9182328Z Get:12 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libegl1 amd64 1.4.0-1 [28.6 kB]
+2026-11-12T04:26:30.9781468Z Get:13 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libopengl0 amd64 1.4.0-1 [36.5 kB]
+2026-11-12T04:26:31.0379552Z Get:14 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-util1 amd64 0.4.0-1build2 [11.4 kB]
+2026-11-12T04:26:31.0976347Z Get:15 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-image0 amd64 0.4.0-2 [11.5 kB]
+2026-11-12T04:26:31.1573846Z Get:16 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-render-util0 amd64 0.3.9-1build3 [10.3 kB]
+2026-11-12T04:26:31.2169166Z Get:17 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libxcb-cursor0 amd64 0.1.1-4ubuntu1 [10.5 kB]
+2026-11-12T04:26:31.2765161Z Get:18 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-icccm4 amd64 0.4.1-1.1build2 [11.5 kB]
+2026-11-12T04:26:31.3360705Z Get:19 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-keysyms1 amd64 0.4.0-1build3 [8746 B]
+2026-11-12T04:26:31.7020794Z Fetched 3816 kB in 1s (3350 kB/s)
+2026-11-12T04:26:31.7594744Z (Reading database ... 
+2026-11-12T04:26:31.7595330Z (Reading database ... 5%
+2026-11-12T04:26:31.7595871Z (Reading database ... 10%
+2026-11-12T04:26:31.7596176Z (Reading database ... 15%
+2026-11-12T04:26:31.7596444Z (Reading database ... 20%
+2026-11-12T04:26:31.7596713Z (Reading database ... 25%
+2026-11-12T04:26:31.7596997Z (Reading database ... 30%
+2026-11-12T04:26:31.7597255Z (Reading database ... 35%
+2026-11-12T04:26:31.7597520Z (Reading database ... 40%
+2026-11-12T04:26:31.7597784Z (Reading database ... 45%
+2026-11-12T04:26:31.7598047Z (Reading database ... 50%
+2026-11-12T04:26:31.8043553Z (Reading database ... 55%
+2026-11-12T04:26:32.0100024Z (Reading database ... 60%
+2026-11-12T04:26:32.2284291Z (Reading database ... 65%
+2026-11-12T04:26:32.3949469Z (Reading database ... 70%
+2026-11-12T04:26:32.5117216Z (Reading database ... 75%
+2026-11-12T04:26:32.6498172Z (Reading database ... 80%
+2026-11-12T04:26:32.8102400Z (Reading database ... 85%
+2026-11-12T04:26:33.0121149Z (Reading database ... 90%
+2026-11-12T04:26:33.1209468Z (Reading database ... 95%
+2026-11-12T04:26:33.1210102Z (Reading database ... 100%
+2026-11-12T04:26:33.1210767Z (Reading database ... 263777 files and directories currently installed.)
+2026-11-12T04:26:33.1264528Z Removing r-base-dev (4.6.2-1.2204.0) ...
+2026-11-12T04:26:33.3524361Z (Reading database ... 
+2026-11-12T04:26:33.3524795Z (Reading database ... 5%
+2026-11-12T04:26:33.3525070Z (Reading database ... 10%
+2026-11-12T04:26:33.3525315Z (Reading database ... 15%
+2026-11-12T04:26:33.3525563Z (Reading database ... 20%
+2026-11-12T04:26:33.3525802Z (Reading database ... 25%
+2026-11-12T04:26:33.3526030Z (Reading database ... 30%
+2026-11-12T04:26:33.3526256Z (Reading database ... 35%
+2026-11-12T04:26:33.3526482Z (Reading database ... 40%
+2026-11-12T04:26:33.3526707Z (Reading database ... 45%
+2026-11-12T04:26:33.3526929Z (Reading database ... 50%
+2026-11-12T04:26:33.3560213Z (Reading database ... 55%
+2026-11-12T04:26:33.3586241Z (Reading database ... 60%
+2026-11-12T04:26:33.3704041Z (Reading database ... 65%
+2026-11-12T04:26:33.3738791Z (Reading database ... 70%
+2026-11-12T04:26:33.3805325Z (Reading database ... 75%
+2026-11-12T04:26:33.3835344Z (Reading database ... 80%
+2026-11-12T04:26:33.4015998Z (Reading database ... 85%
+2026-11-12T04:26:33.4236724Z (Reading database ... 90%
+2026-11-12T04:26:33.4543488Z (Reading database ... 95%
+2026-11-12T04:26:33.4543863Z (Reading database ... 100%
+2026-11-12T04:26:33.4544339Z (Reading database ... 263776 files and directories currently installed.)
+2026-11-12T04:26:33.4596921Z Preparing to unpack .../libglib2.0-dev_2.72.4-0ubuntu2.11_amd64.deb ...
+2026-11-12T04:26:33.4626095Z Unpacking libglib2.0-dev:amd64 (2.72.4-0ubuntu2.11) over (2.72.4-0ubuntu2.10) ...
+2026-11-12T04:26:33.6433478Z Preparing to unpack .../libglib2.0-dev-bin_2.72.4-0ubuntu2.11_amd64.deb ...
+2026-11-12T04:26:33.7096741Z Unpacking libglib2.0-dev-bin (2.72.4-0ubuntu2.11) over (2.72.4-0ubuntu2.10) ...
+2026-11-12T04:26:33.7748807Z Preparing to unpack .../libglib2.0-bin_2.72.4-0ubuntu2.11_amd64.deb ...
+2026-11-12T04:26:33.7773428Z Unpacking libglib2.0-bin (2.72.4-0ubuntu2.11) over (2.72.4-0ubuntu2.10) ...
+2026-11-12T04:26:33.8370595Z Preparing to unpack .../libglib2.0-0_2.72.4-0ubuntu2.11_amd64.deb ...
+2026-11-12T04:26:33.8421867Z Unpacking libglib2.0-0:amd64 (2.72.4-0ubuntu2.11) over (2.72.4-0ubuntu2.10) ...
+2026-11-12T04:26:33.9542986Z dpkg: pkgconf: dependency problems, but removing anyway as you requested:
+2026-11-12T04:26:33.9543560Z  php8.1-dev depends on pkg-config; however:
+2026-11-12T04:26:33.9543935Z   Package pkg-config is not installed.
+2026-11-12T04:26:33.9544350Z   Package pkgconf which provides pkg-config is to be removed.
+2026-11-12T04:26:33.9544804Z  mono-devel depends on pkg-config; however:
+2026-11-12T04:26:33.9545167Z   Package pkg-config is not installed.
+2026-11-12T04:26:33.9545576Z   Package pkgconf which provides pkg-config is to be removed.
+2026-11-12T04:26:33.9546351Z  libmagickwand-6.q16-dev:amd64 depends on pkg-config; however:
+2026-11-12T04:26:33.9546817Z   Package pkg-config is not installed.
+2026-11-12T04:26:33.9547312Z   Package pkgconf which provides pkg-config is to be removed.
+2026-11-12T04:26:33.9570408Z  libmagickcore-6.q16-dev:amd64 depends on pkg-config; however:
+2026-11-12T04:26:33.9570910Z   Package pkg-config is not installed.
+2026-11-12T04:26:33.9571301Z   Package pkgconf which provides pkg-config is to be removed.
+2026-11-12T04:26:33.9571952Z  libglib2.0-dev:amd64 depends on pkg-config; however:
+2026-11-12T04:26:33.9572312Z   Package pkg-config is not installed.
+2026-11-12T04:26:33.9572663Z   Package pkgconf which provides pkg-config is to be removed.
+2026-11-12T04:26:33.9573072Z  libfontconfig-dev:amd64 depends on pkg-config; however:
+2026-11-12T04:26:33.9573415Z   Package pkg-config is not installed.
+2026-11-12T04:26:33.9573756Z   Package pkgconf which provides pkg-config is to be removed.
+2026-11-12T04:26:33.9574010Z 
+2026-11-12T04:26:33.9629628Z (Reading database ... 
+2026-11-12T04:26:33.9630044Z (Reading database ... 5%
+2026-11-12T04:26:33.9630450Z (Reading database ... 10%
+2026-11-12T04:26:33.9630841Z (Reading database ... 15%
+2026-11-12T04:26:33.9631126Z (Reading database ... 20%
+2026-11-12T04:26:33.9631378Z (Reading database ... 25%
+2026-11-12T04:26:33.9631885Z (Reading database ... 30%
+2026-11-12T04:26:33.9632320Z (Reading database ... 35%
+2026-11-12T04:26:33.9632750Z (Reading database ... 40%
+2026-11-12T04:26:33.9633136Z (Reading database ... 45%
+2026-11-12T04:26:33.9633526Z (Reading database ... 50%
+2026-11-12T04:26:33.9668237Z (Reading database ... 55%
+2026-11-12T04:26:33.9692109Z (Reading database ... 60%
+2026-11-12T04:26:33.9806212Z (Reading database ... 65%
+2026-11-12T04:26:33.9838837Z (Reading database ... 70%
+2026-11-12T04:26:33.9902368Z (Reading database ... 75%
+2026-11-12T04:26:33.9931278Z (Reading database ... 80%
+2026-11-12T04:26:34.0110889Z (Reading database ... 85%
+2026-11-12T04:26:34.0330829Z (Reading database ... 90%
+2026-11-12T04:26:34.0636251Z (Reading database ... 95%
+2026-11-12T04:26:34.0636904Z (Reading database ... 100%
+2026-11-12T04:26:34.0637719Z (Reading database ... 263775 files and directories currently installed.)
+2026-11-12T04:26:34.0690116Z Removing pkgconf (1.8.0-1) ...
+2026-11-12T04:26:34.1366013Z Removing 'diversion of /usr/bin/pkg-config to /usr/bin/pkg-config.real by pkgconf'
+2026-11-12T04:26:34.1499896Z Removing 'diversion of /usr/share/aclocal/pkg.m4 to /usr/share/aclocal/pkg.real.m4 by pkgconf'
+2026-11-12T04:26:34.1635280Z Removing 'diversion of /usr/share/man/man1/pkg-config.1.gz to /usr/share/man/man1/pkg-config.real.1.gz by pkgconf'
+2026-11-12T04:26:34.1768349Z Removing 'diversion of /usr/share/pkg-config-crosswrapper to /usr/share/pkg-config-crosswrapper.real by pkgconf'
+2026-11-12T04:26:34.2318807Z Selecting previously unselected package pkg-config.
+2026-11-12T04:26:34.2400258Z (Reading database ... 
+2026-11-12T04:26:34.2400609Z (Reading database ... 5%
+2026-11-12T04:26:34.2400898Z (Reading database ... 10%
+2026-11-12T04:26:34.2401219Z (Reading database ... 15%
+2026-11-12T04:26:34.2401490Z (Reading database ... 20%
+2026-11-12T04:26:34.2401994Z (Reading database ... 25%
+2026-11-12T04:26:34.2402273Z (Reading database ... 30%
+2026-11-12T04:26:34.2402549Z (Reading database ... 35%
+2026-11-12T04:26:34.2402818Z (Reading database ... 40%
+2026-11-12T04:26:34.2403084Z (Reading database ... 45%
+2026-11-12T04:26:34.2403359Z (Reading database ... 50%
+2026-11-12T04:26:34.2434119Z (Reading database ... 55%
+2026-11-12T04:26:34.2458034Z (Reading database ... 60%
+2026-11-12T04:26:34.2571528Z (Reading database ... 65%
+2026-11-12T04:26:34.2604837Z (Reading database ... 70%
+2026-11-12T04:26:34.2669908Z (Reading database ... 75%
+2026-11-12T04:26:34.2698640Z (Reading database ... 80%
+2026-11-12T04:26:34.2873988Z (Reading database ... 85%
+2026-11-12T04:26:34.3090747Z (Reading database ... 90%
+2026-11-12T04:26:34.3422301Z (Reading database ... 95%
+2026-11-12T04:26:34.3422948Z (Reading database ... 100%
+2026-11-12T04:26:34.3423962Z (Reading database ... 263755 files and directories currently installed.)
+2026-11-12T04:26:34.3491343Z Preparing to unpack .../00-pkg-config_0.29.2-1ubuntu3_amd64.deb ...
+2026-11-12T04:26:34.3501835Z Unpacking pkg-config (0.29.2-1ubuntu3) ...
+2026-11-12T04:26:34.3789197Z Selecting previously unselected package desktop-file-utils.
+2026-11-12T04:26:34.3993293Z Preparing to unpack .../01-desktop-file-utils_0.26-1ubuntu3_amd64.deb ...
+2026-11-12T04:26:34.4020904Z Unpacking desktop-file-utils (0.26-1ubuntu3) ...
+2026-11-12T04:26:34.4328206Z Selecting previously unselected package libegl-mesa0:amd64.
+2026-11-12T04:26:34.4532913Z Preparing to unpack .../02-libegl-mesa0_23.2.1-1ubuntu3.1~22.04.4_amd64.deb ...
+2026-11-12T04:26:34.4542978Z Unpacking libegl-mesa0:amd64 (23.2.1-1ubuntu3.1~22.04.4) ...
+2026-11-12T04:26:34.4803893Z Selecting previously unselected package libxcb-shape0:amd64.
+2026-11-12T04:26:34.5005882Z Preparing to unpack .../03-libxcb-shape0_1.14-3ubuntu3_amd64.deb ...
+2026-11-12T04:26:34.5014132Z Unpacking libxcb-shape0:amd64 (1.14-3ubuntu3) ...
+2026-11-12T04:26:34.5265725Z Selecting previously unselected package libxcb-xkb1:amd64.
+2026-11-12T04:26:34.5470140Z Preparing to unpack .../04-libxcb-xkb1_1.14-3ubuntu3_amd64.deb ...
+2026-11-12T04:26:34.5479325Z Unpacking libxcb-xkb1:amd64 (1.14-3ubuntu3) ...
+2026-11-12T04:26:34.5731287Z Selecting previously unselected package libxkbcommon-x11-0:amd64.
+2026-11-12T04:26:34.5935152Z Preparing to unpack .../05-libxkbcommon-x11-0_1.4.0-1_amd64.deb ...
+2026-11-12T04:26:34.5946987Z Unpacking libxkbcommon-x11-0:amd64 (1.4.0-1) ...
+2026-11-12T04:26:34.6192469Z Selecting previously unselected package libegl1:amd64.
+2026-11-12T04:26:34.6395387Z Preparing to unpack .../06-libegl1_1.4.0-1_amd64.deb ...
+2026-11-12T04:26:34.6404289Z Unpacking libegl1:amd64 (1.4.0-1) ...
+2026-11-12T04:26:34.6655451Z Selecting previously unselected package libopengl0:amd64.
+2026-11-12T04:26:34.6860283Z Preparing to unpack .../07-libopengl0_1.4.0-1_amd64.deb ...
+2026-11-12T04:26:34.6869241Z Unpacking libopengl0:amd64 (1.4.0-1) ...
+2026-11-12T04:26:34.7116460Z Selecting previously unselected package libxcb-util1:amd64.
+2026-11-12T04:26:34.7323459Z Preparing to unpack .../08-libxcb-util1_0.4.0-1build2_amd64.deb ...
+2026-11-12T04:26:34.7334866Z Unpacking libxcb-util1:amd64 (0.4.0-1build2) ...
+2026-11-12T04:26:34.7576852Z Selecting previously unselected package libxcb-image0:amd64.
+2026-11-12T04:26:34.7782071Z Preparing to unpack .../09-libxcb-image0_0.4.0-2_amd64.deb ...
+2026-11-12T04:26:34.7790197Z Unpacking libxcb-image0:amd64 (0.4.0-2) ...
+2026-11-12T04:26:34.8037749Z Selecting previously unselected package libxcb-render-util0:amd64.
+2026-11-12T04:26:34.8246858Z Preparing to unpack .../10-libxcb-render-util0_0.3.9-1build3_amd64.deb ...
+2026-11-12T04:26:34.8256624Z Unpacking libxcb-render-util0:amd64 (0.3.9-1build3) ...
+2026-11-12T04:26:34.8512750Z Selecting previously unselected package libxcb-cursor0:amd64.
+2026-11-12T04:26:34.8719095Z Preparing to unpack .../11-libxcb-cursor0_0.1.1-4ubuntu1_amd64.deb ...
+2026-11-12T04:26:34.8734399Z Unpacking libxcb-cursor0:amd64 (0.1.1-4ubuntu1) ...
+2026-11-12T04:26:34.8976563Z Selecting previously unselected package libxcb-icccm4:amd64.
+2026-11-12T04:26:34.9182477Z Preparing to unpack .../12-libxcb-icccm4_0.4.1-1.1build2_amd64.deb ...
+2026-11-12T04:26:34.9192137Z Unpacking libxcb-icccm4:amd64 (0.4.1-1.1build2) ...
+2026-11-12T04:26:34.9435852Z Selecting previously unselected package libxcb-keysyms1:amd64.
+2026-11-12T04:26:34.9642758Z Preparing to unpack .../13-libxcb-keysyms1_0.4.0-1build3_amd64.deb ...
+2026-11-12T04:26:34.9653581Z Unpacking libxcb-keysyms1:amd64 (0.4.0-1build3) ...
+2026-11-12T04:26:35.0211245Z Setting up libglib2.0-0:amd64 (2.72.4-0ubuntu2.11) ...
+2026-11-12T04:26:35.0596336Z Setting up libxcb-keysyms1:amd64 (0.4.0-1build3) ...
+2026-11-12T04:26:35.0660840Z Setting up libxcb-shape0:amd64 (1.14-3ubuntu3) ...
+2026-11-12T04:26:35.0693744Z Setting up libglib2.0-bin (2.72.4-0ubuntu2.11) ...
+2026-11-12T04:26:35.0722033Z Setting up libxcb-render-util0:amd64 (0.3.9-1build3) ...
+2026-11-12T04:26:35.0756576Z Setting up libxcb-icccm4:amd64 (0.4.1-1.1build2) ...
+2026-11-12T04:26:35.0797501Z Setting up libopengl0:amd64 (1.4.0-1) ...
+2026-11-12T04:26:35.0827282Z Setting up libxcb-util1:amd64 (0.4.0-1build2) ...
+2026-11-12T04:26:35.0851289Z Setting up libxcb-xkb1:amd64 (1.14-3ubuntu3) ...
+2026-11-12T04:26:35.0877256Z Setting up libxcb-image0:amd64 (0.4.0-2) ...
+2026-11-12T04:26:35.0909894Z Setting up libegl-mesa0:amd64 (23.2.1-1ubuntu3.1~22.04.4) ...
+2026-11-12T04:26:35.0934772Z Setting up libxcb-cursor0:amd64 (0.1.1-4ubuntu1) ...
+2026-11-12T04:26:35.0956352Z Setting up libxkbcommon-x11-0:amd64 (1.4.0-1) ...
+2026-11-12T04:26:35.0977601Z Setting up pkg-config (0.29.2-1ubuntu3) ...
+2026-11-12T04:26:35.1350805Z Setting up libegl1:amd64 (1.4.0-1) ...
+2026-11-12T04:26:35.1373447Z Setting up libglib2.0-dev-bin (2.72.4-0ubuntu2.11) ...
+2026-11-12T04:26:35.2724096Z Setting up desktop-file-utils (0.26-1ubuntu3) ...
+2026-11-12T04:26:35.3225039Z Setting up libglib2.0-dev:amd64 (2.72.4-0ubuntu2.11) ...
+2026-11-12T04:26:35.3250456Z Processing triggers for libc-bin (2.35-0ubuntu3.15) ...
+2026-11-12T04:26:35.3658817Z Processing triggers for man-db (2.10.2-1) ...
+2026-11-12T04:26:35.3683585Z Not building database; man-db/auto-update is not 'true'.
+2026-11-12T04:26:35.3699210Z Processing triggers for mailcap (3.70+nmu1ubuntu1.22.04.1) ...
+2026-11-12T04:26:35.9988360Z 
+2026-11-12T04:26:35.9989020Z Running kernel seems to be up-to-date.
+2026-11-12T04:26:35.9989295Z 
+2026-11-12T04:26:35.9989402Z Services to be restarted:
+2026-11-12T04:26:36.0040945Z  systemctl restart irqbalance.service
+2026-11-12T04:26:36.0138293Z  systemctl restart packagekit.service
+2026-11-12T04:26:36.0186747Z  systemctl restart php8.1-fpm.service
+2026-11-12T04:26:36.0236126Z  systemctl restart polkit.service
+2026-11-12T04:26:36.0236486Z 
+2026-11-12T04:26:36.0237764Z Service restarts being deferred:
+2026-11-12T04:26:36.0238345Z  systemctl restart networkd-dispatcher.service
+2026-11-12T04:26:36.0238827Z 
+2026-11-12T04:26:36.0239251Z No containers need to be restarted.
+2026-11-12T04:26:36.0239640Z 
+2026-11-12T04:26:36.0239803Z No user sessions are running outdated binaries.
+2026-11-12T04:26:36.0240029Z 
+2026-11-12T04:26:36.0241043Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-11-12T04:26:37.6978803Z ##[group]Run uv sync --locked --extra dev
+2026-11-12T04:26:37.6979159Z [36;1muv sync --locked --extra dev[0m
+2026-11-12T04:26:37.7045310Z shell: /usr/bin/bash -e {0}
+2026-11-12T04:26:37.7045559Z env:
+2026-11-12T04:26:37.7045750Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:26:37.7046003Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:26:37.7046244Z   TZ: Asia/Kolkata
+2026-11-12T04:26:37.7046436Z   UV_PYTHON: 3.14
+2026-11-12T04:26:37.7046708Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:26:37.7047111Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:26:37.7047407Z ##[endgroup]
+2026-11-12T04:26:37.9266223Z Downloading cpython-3.14.7-linux-x86_64-gnu (download) (34.2MiB)
+2026-11-12T04:26:38.7489963Z  Downloaded cpython-3.14.7-linux-x86_64-gnu (download)
+2026-11-12T04:26:38.9312991Z Using CPython 3.14.7
+2026-11-12T04:26:38.9313509Z Creating virtual environment at: .venv
+2026-11-12T04:26:38.9337303Z Resolved 28 packages in 0.68ms
+2026-11-12T04:26:38.9409890Z    Building grihalekha @ file:///home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:26:38.9606381Z Downloading pygments (1.2MiB)
+2026-11-12T04:26:38.9610385Z Downloading networkx (2.0MiB)
+2026-11-12T04:26:38.9612992Z Downloading sqlalchemy (4.4MiB)
+2026-11-12T04:26:38.9648097Z Downloading numpy (15.9MiB)
+2026-11-12T04:26:38.9650385Z Downloading pymupdf (65.8MiB)
+2026-11-12T04:26:38.9651787Z Downloading pyside6-addons (56.5MiB)
+2026-11-12T04:26:38.9861498Z Downloading pyside6-essentials (80.4MiB)
+2026-11-12T04:26:38.9893170Z Downloading onnxruntime (22.7MiB)
+2026-11-12T04:26:38.9896030Z Downloading pyside6-pdf (2.7MiB)
+2026-11-12T04:26:38.9905120Z Downloading pyside6-webengine (111.3MiB)
+2026-11-12T04:26:39.3571425Z  Downloaded pyside6-pdf
+2026-11-12T04:26:39.4705587Z  Downloaded sqlalchemy
+2026-11-12T04:26:39.5244283Z  Downloaded pygments
+2026-11-12T04:26:40.0974098Z  Downloaded networkx
+2026-11-12T04:26:40.8382842Z       Built grihalekha @ file:///home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:26:40.9173981Z  Downloaded onnxruntime
+2026-11-12T04:26:41.6205826Z  Downloaded numpy
+2026-11-12T04:26:41.8962329Z  Downloaded pymupdf
+2026-11-12T04:26:42.3473101Z    Building nuitka==4.3.4
+2026-11-12T04:26:42.3735900Z  Downloaded pyside6-addons
+2026-11-12T04:26:42.7352940Z  Downloaded pyside6-webengine
+2026-11-12T04:26:42.8418868Z  Downloaded pyside6-essentials
+2026-11-12T04:26:44.1894733Z       Built nuitka==4.3.4
+2026-11-12T04:26:44.2775443Z Prepared 27 packages in 5.34s
+2026-11-12T04:26:44.3635760Z Installed 27 packages in 85ms
+2026-11-12T04:26:44.3636405Z  + flatbuffers==25.12.19
+2026-11-12T04:26:44.3637164Z  + grihalekha==0.1.0 (from file:///home/runner/work/GrihaLekha/GrihaLekha)
+2026-11-12T04:26:44.3638014Z  + iniconfig==2.3.1
+2026-11-12T04:26:44.3638467Z  + networkx==3.7
+2026-11-12T04:26:44.3638897Z  + nuitka==4.3.4
+2026-11-12T04:26:44.3639330Z  + numpy==2.5.4
+2026-11-12T04:26:44.3639765Z  + onnxruntime==1.31.1
+2026-11-12T04:26:44.3640245Z  + packaging==26.3
+2026-11-12T04:26:44.3640783Z  + pluggy==1.7.0
+2026-11-12T04:26:44.3641576Z  + protobuf==7.36.2
+2026-11-12T04:26:44.3642390Z  + psutil==7.2.2
+2026-11-12T04:26:44.3642867Z  + pygments==2.21.0
+2026-11-12T04:26:44.3643350Z  + pymupdf==2.1
+2026-11-12T04:26:44.3643801Z  + pymupdf-layout==2.1
+2026-11-12T04:26:44.3644383Z  + pymupdf4llm==2.1
+2026-11-12T04:26:44.3645050Z  + pyside6==6.12.0
+2026-11-12T04:26:44.3645757Z  + pyside6-addons==6.12.0
+2026-11-12T04:26:44.3646415Z  + pyside6-essentials==6.12.0
+2026-11-12T04:26:44.3647041Z  + pyside6-pdf==6.12.0.140
+2026-11-12T04:26:44.3647591Z  + pyside6-webengine==6.12.0.140
+2026-11-12T04:26:44.3648086Z  + pytest==9.2.0
+2026-11-12T04:26:44.3648449Z  + pytest-qt==4.5.0
+2026-11-12T04:26:44.3648926Z  + pyyaml==6.0.3
+2026-11-12T04:26:44.3649415Z  + shiboken6==6.12.0
+2026-11-12T04:26:44.3649919Z  + sqlalchemy==2.1.8
+2026-11-12T04:26:44.3650441Z  + tabulate==0.10.0
+2026-11-12T04:26:44.3650971Z  + typing-extensions==4.16.0
+2026-11-12T04:26:44.3940012Z ##[group]Run uv run --frozen python packaging/release.py --print-version
+2026-11-12T04:26:44.3940568Z [36;1muv run --frozen python packaging/release.py --print-version[0m
+2026-11-12T04:26:44.3941349Z [36;1muv run --frozen python packaging/release.py --release-notes build/release-notes.md[0m
+2026-11-12T04:26:44.3942176Z [36;1muv run --frozen python packaging/build.py --dry-run[0m
+2026-11-12T04:26:44.3942622Z [36;1muv run --frozen python -m compileall -q src packaging scripts[0m
+2026-11-12T04:26:44.4005935Z shell: /usr/bin/bash -e {0}
+2026-11-12T04:26:44.4006186Z env:
+2026-11-12T04:26:44.4006403Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:26:44.4006670Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:26:44.4006922Z   TZ: Asia/Kolkata
+2026-11-12T04:26:44.4007122Z   UV_PYTHON: 3.14
+2026-11-12T04:26:44.4007401Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:26:44.4007788Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:26:44.4008128Z ##[endgroup]
+2026-11-12T04:26:44.5605689Z 0.1.0
+2026-11-12T04:26:44.6537985Z /home/runner/work/GrihaLekha/GrihaLekha/build/release-notes.md
+2026-11-12T04:26:44.7421833Z {
+2026-11-12T04:26:44.7422377Z   "command": [
+2026-11-12T04:26:44.7422897Z     "/home/runner/work/GrihaLekha/GrihaLekha/.venv/bin/python3",
+2026-11-12T04:26:44.7423549Z     "-m",
+2026-11-12T04:26:44.7423910Z     "nuitka",
+2026-11-12T04:26:44.7424268Z     "--mode=standalone",
+2026-11-12T04:26:44.7424673Z     "--update-check=never",
+2026-11-12T04:26:44.7425110Z     "--enable-plugin=pyside6",
+2026-11-12T04:26:44.7425574Z     "--include-package=grihalekha",
+2026-11-12T04:26:44.7426090Z     "--include-package-data=grihalekha",
+2026-11-12T04:26:44.7426996Z     "--include-data-dir=/home/runner/work/GrihaLekha/GrihaLekha/icons=grihalekha/assets/icons",
+2026-11-12T04:26:44.7427947Z     "--include-module=sqlalchemy.dialects.sqlite.pysqlite",
+2026-11-12T04:26:44.7428719Z     "--nofollow-import-to=pytest,pymupdf,fitz,numpy,onnxruntime",
+2026-11-12T04:26:44.7430181Z     "--nofollow-import-to=sqlalchemy.dialects.mssql,sqlalchemy.dialects.mysql,sqlalchemy.dialects.oracle,sqlalchemy.dialects.postgresql",
+2026-11-12T04:26:44.7431580Z     "--noinclude-data-files=*.debug.pak",
+2026-11-12T04:26:44.7432358Z     "--python-flag=isolated",
+2026-11-12T04:26:44.7432804Z     "--python-flag=no_docstrings",
+2026-11-12T04:26:44.7433454Z     "--output-dir=/home/runner/work/GrihaLekha/GrihaLekha/build/nuitka",
+2026-11-12T04:26:44.7434160Z     "--output-folder-name=GrihaLekha",
+2026-11-12T04:26:44.7434660Z     "--output-filename=GrihaLekha",
+2026-11-12T04:26:44.7435110Z     "--jobs=4",
+2026-11-12T04:26:44.7435438Z     "--lto=auto",
+2026-11-12T04:26:44.7436110Z     "--report=/home/runner/work/GrihaLekha/GrihaLekha/build/nuitka/compilation-report.xml",
+2026-11-12T04:26:44.7436943Z     "--assume-yes-for-downloads",
+2026-11-12T04:26:44.7437545Z     "/home/runner/work/GrihaLekha/GrihaLekha/scripts/launcher.py"
+2026-11-12T04:26:44.7438150Z   ],
+2026-11-12T04:26:44.7438646Z   "output": "/home/runner/work/GrihaLekha/GrihaLekha/dist/GrihaLekha",
+2026-11-12T04:26:44.7439429Z   "cache": "/home/runner/work/GrihaLekha/GrihaLekha/.cache/nuitka"
+2026-11-12T04:26:44.7440028Z }
+2026-11-12T04:26:44.9530478Z ##[group]Run uv run --frozen pytest --junitxml=build/test-results.xml
+2026-11-12T04:26:44.9531002Z [36;1muv run --frozen pytest --junitxml=build/test-results.xml[0m
+2026-11-12T04:26:44.9595444Z shell: /usr/bin/bash -e {0}
+2026-11-12T04:26:44.9595698Z env:
+2026-11-12T04:26:44.9595897Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:26:44.9596153Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:26:44.9596399Z   TZ: Asia/Kolkata
+2026-11-12T04:26:44.9596607Z   UV_PYTHON: 3.14
+2026-11-12T04:26:44.9596886Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:26:44.9597269Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:26:44.9597569Z ##[endgroup]
+2026-11-12T04:26:47.5560691Z ============================= test session starts ==============================
+2026-11-12T04:26:47.5561389Z platform linux -- Python 3.14.7, pytest-9.2.0, pluggy-1.7.0
+2026-11-12T04:26:47.5562495Z PySide6 6.12.0 -- Qt runtime 6.12.0 -- Qt compiled 6.12.0
+2026-11-12T04:26:47.5563415Z rootdir: /home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:26:47.5564530Z configfile: pyproject.toml
+2026-11-12T04:26:47.5565061Z testpaths: tests
+2026-11-12T04:26:47.5565522Z plugins: qt-4.5.0
+2026-11-12T04:26:47.5566006Z collected 886 items
+2026-11-12T04:26:47.5566295Z 
+2026-11-12T04:26:52.0322830Z tests/test_account_actions_ui.py ........                                [  0%]
+2026-11-12T04:26:52.9658031Z tests/test_backdated_move_out.py ..........                              [  2%]
+2026-11-12T04:26:53.3232435Z tests/test_backups.py ...............                                    [  3%]
+2026-11-12T04:26:54.7824160Z tests/test_balance_to_deposit.py ..................................      [  7%]
+2026-11-12T04:26:55.6318738Z tests/test_balance_workflow.py ...............                           [  9%]
+2026-11-12T04:26:56.9785625Z tests/test_bill_corrections_ui.py .......                                [ 10%]
+2026-11-12T04:26:57.6543882Z tests/test_bill_deletion.py .................                            [ 11%]
+2026-11-12T04:26:59.5296998Z tests/test_bill_deletion_reports.py .......                              [ 12%]
+2026-11-12T04:27:00.1345403Z tests/test_bill_replace.py .............                                 [ 14%]
+2026-11-12T04:27:01.2264902Z tests/test_bill_restore.py ................                              [ 16%]
+2026-11-12T04:27:01.8364170Z tests/test_bill_ui.py ..                                                 [ 16%]
+2026-11-12T04:27:02.2969563Z tests/test_bill_workflow.py ..........                                   [ 17%]
+2026-11-12T04:27:02.3035411Z tests/test_build_documentation.py ..                                     [ 17%]
+2026-11-12T04:27:02.8332704Z tests/test_bundle_verification.py ..........                             [ 18%]
+2026-11-12T04:27:02.8773519Z tests/test_currencies.py ............................................... [ 24%]
+2026-11-12T04:27:02.9278047Z ........................................................................ [ 32%]
+2026-11-12T04:27:02.9316894Z .....                                                                    [ 32%]
+2026-11-12T04:27:03.3250784Z tests/test_currency_reports.py ......................................... [ 37%]
+2026-11-12T04:27:03.7038066Z ...........                                                              [ 38%]
+2026-11-12T04:27:05.4963104Z tests/test_currency_settings.py .....................                    [ 40%]
+2026-11-12T04:27:08.2532333Z tests/test_currency_ui.py ........................                       [ 43%]
+2026-11-12T04:27:10.0133289Z tests/test_date_input.py ............                                    [ 45%]
+2026-11-12T04:27:10.3404270Z tests/test_distribution.py ..............................                [ 48%]
+2026-11-12T04:27:19.2174014Z tests/test_dropdown_properties.py .......                                [ 49%]
+2026-11-12T04:27:19.3344509Z tests/test_electricity_correction_chronology.py ..                       [ 49%]
+2026-11-12T04:27:20.4942764Z tests/test_electricity_deferral.py ................                      [ 51%]
+2026-11-12T04:27:20.8602718Z tests/test_electricity_exports.py ...................                    [ 53%]
+2026-11-12T04:27:23.7958328Z tests/test_electricity_readings_ui.py ..........                         [ 54%]
+2026-11-12T04:27:24.0221185Z tests/test_electricity_review.py ...                                     [ 54%]
+2026-11-12T04:27:25.3171264Z tests/test_ledger.py .............................                       [ 58%]
+2026-11-12T04:27:25.7442182Z tests/test_license_notices.py ...F.                                      [ 58%]
+2026-11-12T04:28:39.3846907Z tests/test_lifecycle_ui.py ............                                  [ 60%]
+2026-11-12T04:28:39.6754807Z tests/test_meter_readings.py ................................            [ 63%]
+2026-11-12T04:28:39.6875233Z tests/test_money_dates.py ..................                             [ 65%]
+2026-11-12T04:29:34.3123085Z tests/test_move_out_cycle_ui.py ......                                   [ 66%]
+2026-11-12T04:29:34.5755866Z tests/test_move_out_edge_cases.py ....                                   [ 66%]
+2026-11-12T04:29:35.9363050Z tests/test_moveout_cycles.py ...................                         [ 68%]
+2026-11-12T04:29:36.1632249Z tests/test_release_packaging.py ...........................              [ 72%]
+2026-11-12T04:29:36.7575044Z tests/test_reports.py ................................                   [ 75%]
+2026-11-12T04:29:38.5120898Z tests/test_required_bill_corrections.py ................................ [ 79%]
+2026-11-12T04:29:38.6674187Z ...                                                                      [ 79%]
+2026-11-12T04:29:41.3841598Z tests/test_required_bill_ui.py ..........                                [ 80%]
+2026-11-12T04:29:42.4754757Z tests/test_schema_migration.py ............                              [ 82%]
+2026-11-12T04:29:45.0560875Z tests/test_startup.py ..                                                 [ 82%]
+2026-11-12T04:29:45.3286320Z tests/test_statement_current.py .....                                    [ 82%]
+2026-11-12T04:29:45.9241082Z tests/test_statement_cycles.py ...........                               [ 84%]
+2026-11-12T04:29:46.9946650Z tests/test_table_resize.py .............                                 [ 85%]
+2026-11-12T04:29:50.4775848Z tests/test_tenancy_deletion.py ..................                        [ 87%]
+2026-11-12T04:29:51.4033017Z tests/test_tenancy_deletion_guards.py ............                       [ 88%]
+2026-11-12T04:30:29.0306754Z tests/test_tenancy_deletion_ui.py .............                          [ 90%]
+2026-11-12T04:30:29.7321265Z tests/test_tenancy_lifecycle.py .............                            [ 91%]
+2026-11-12T04:31:32.4358379Z tests/test_theme.py ...........                                          [ 93%]
+2026-11-12T04:31:44.4845080Z tests/test_ui.py ................                                        [ 94%]
+2026-11-12T04:31:45.6144899Z tests/test_unpaid_bill_correction.py ....................                [ 97%]
+2026-11-12T04:31:46.9993176Z tests/test_upcoming_cancellation.py .........................            [100%]
+2026-11-12T04:31:46.9994150Z 
+2026-11-12T04:31:46.9994751Z =================================== FAILURES ===================================
+2026-11-12T04:31:46.9995833Z _____ test_notice_collection_records_runtime_licenses_and_source_revision ______
+2026-11-12T04:31:46.9996260Z 
+2026-11-12T04:31:46.9996723Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-0/test_notice_collection_records0')
+2026-11-12T04:31:46.9997739Z monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fedf0a4b7e0>
+2026-11-12T04:31:46.9998368Z 
+2026-11-12T04:31:46.9998965Z     def test_notice_collection_records_runtime_licenses_and_source_revision(tmp_path, monkeypatch):
+2026-11-12T04:31:47.0000153Z         monkeypatch.setenv("GITHUB_REPOSITORY", "iamokish/GrihaLekha")
+2026-11-12T04:31:47.0000967Z         monkeypatch.setenv("GITHUB_SHA", "a" * 40)
+2026-11-12T04:31:47.0002377Z >       result = notices.collect_notices(tmp_path)
+2026-11-12T04:31:47.0002842Z                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-11-12T04:31:47.0003081Z 
+2026-11-12T04:31:47.0003218Z tests/test_license_notices.py:52: 
+2026-11-12T04:31:47.0003618Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-11-12T04:31:47.0004107Z packaging/license_notices.py:205: in collect_notices
+2026-11-12T04:31:47.0004744Z     components = [_distribution_notices(item, destination) for item in runtime_distributions()]
+2026-11-12T04:31:47.0005348Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-11-12T04:31:47.0005774Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-11-12T04:31:47.0006082Z 
+2026-11-12T04:31:47.0006360Z installed = <importlib.metadata.PathDistribution object at 0x7fedf11f1d60>
+2026-11-12T04:31:47.0006991Z destination = PosixPath('/tmp/pytest-of-runner/pytest-0/test_notice_collection_records0/licenses')
+2026-11-12T04:31:47.0007377Z 
+2026-11-12T04:31:47.0007600Z     def _distribution_notices(installed, destination: Path) -> dict:
+2026-11-12T04:31:47.0008167Z         name = installed.metadata["Name"]
+2026-11-12T04:31:47.0008506Z         component_dir = destination / canonicalize_name(name)
+2026-11-12T04:31:47.0008870Z         component_dir.mkdir(parents=True, exist_ok=True)
+2026-11-12T04:31:47.0009174Z         copied = []
+2026-11-12T04:31:47.0009394Z         for entry in installed.files or []:
+2026-11-12T04:31:47.0009730Z             relative = PurePosixPath(str(entry).replace("\\", "/"))
+2026-11-12T04:31:47.0010118Z             if relative.is_absolute() or ".." in relative.parts:
+2026-11-12T04:31:47.0010427Z                 continue
+2026-11-12T04:31:47.0010739Z             if not any(part.endswith(".dist-info") for part in relative.parts):
+2026-11-12T04:31:47.0011099Z                 continue
+2026-11-12T04:31:47.0011334Z             filename = relative.name.lower()
+2026-11-12T04:31:47.0012042Z             is_notice = "licenses" in relative.parts or filename.startswith(
+2026-11-12T04:31:47.0012539Z                 ("license", "copying", "notice", "authors")
+2026-11-12T04:31:47.0012847Z             )
+2026-11-12T04:31:47.0013052Z             if not is_notice:
+2026-11-12T04:31:47.0013291Z                 continue
+2026-11-12T04:31:47.0013570Z             source = Path(installed.locate_file(entry))
+2026-11-12T04:31:47.0013869Z             if not source.is_file():
+2026-11-12T04:31:47.0014314Z                 raise RuntimeError(f"Installed redistribution notice is missing: {name}/{relative.name}")
+2026-11-12T04:31:47.0014894Z             # Preserve directory structure below .dist-info to avoid basename clashes.
+2026-11-12T04:31:47.0015446Z             index = next(i for i, part in enumerate(relative.parts) if part.endswith(".dist-info"))
+2026-11-12T04:31:47.0015981Z             target = component_dir.joinpath(*relative.parts[index + 1:])
+2026-11-12T04:31:47.0016395Z             target.parent.mkdir(parents=True, exist_ok=True)
+2026-11-12T04:31:47.0016722Z             shutil.copyfile(source, target)
+2026-11-12T04:31:47.0017098Z             copied.append(target.relative_to(destination.parent).as_posix())
+2026-11-12T04:31:47.0017462Z         if not copied:
+2026-11-12T04:31:47.0017872Z >           raise RuntimeError(f"No redistribution notices found for installed runtime component {name}.")
+2026-11-12T04:31:47.0018507Z E           RuntimeError: No redistribution notices found for installed runtime component PySide6.
+2026-11-12T04:31:47.0018875Z 
+2026-11-12T04:31:47.0018995Z packaging/license_notices.py:79: RuntimeError
+2026-11-12T04:31:47.0019496Z - generated xml file: /home/runner/work/GrihaLekha/GrihaLekha/build/test-results.xml -
+2026-11-12T04:31:47.0019997Z =========================== short test summary info ============================
+2026-11-12T04:31:47.0020970Z FAILED tests/test_license_notices.py::test_notice_collection_records_runtime_licenses_and_source_revision - RuntimeError: No redistribution notices found for installed runtime component PySide6.
+2026-11-12T04:31:47.0022339Z ================== 1 failed, 885 passed in 300.99s (0:05:00) ===================
+2026-11-12T04:31:47.5613485Z ##[error]Process completed with exit code 1.
+2026-11-12T04:31:47.5719234Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-11-12T04:31:47.5719654Z with:
+2026-11-12T04:31:47.5719871Z   name: tests-ubuntu-22.04-py3.14
+2026-11-12T04:31:47.5720138Z   path: build/test-results.xml
+2026-11-12T04:31:47.5720387Z   if-no-files-found: ignore
+2026-11-12T04:31:47.5720615Z   retention-days: 14
+2026-11-12T04:31:47.5720828Z   compression-level: 6
+2026-11-12T04:31:47.5721037Z   overwrite: false
+2026-11-12T04:31:47.5721248Z   include-hidden-files: false
+2026-11-12T04:31:47.5721480Z   archive: true
+2026-11-12T04:31:47.5721881Z env:
+2026-11-12T04:31:47.5722072Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:31:47.5722315Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:31:47.5722566Z   TZ: Asia/Kolkata
+2026-11-12T04:31:47.5722766Z   UV_PYTHON: 3.14
+2026-11-12T04:31:47.5723043Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:31:47.5723628Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:31:47.5723954Z ##[endgroup]
+2026-11-12T04:31:47.7283277Z With the provided path, there will be 1 file uploaded
+2026-11-12T04:31:47.7284251Z Artifact name is valid!
+2026-11-12T04:31:47.7284687Z Root directory input is valid!
+2026-11-12T04:31:48.0887726Z Uploading artifact: tests-ubuntu-22.04-py3.14.zip
+2026-11-12T04:31:48.0927694Z Beginning upload of artifact content to blob storage
+2026-11-12T04:31:48.4521893Z Uploaded bytes 18062
+2026-11-12T04:31:48.5325999Z Finished uploading artifact content to blob storage!
+2026-11-12T04:31:48.5327122Z SHA256 digest of uploaded artifact is 272002ea5be681fa8d3e001d633eb1d757c7034e826d411ab07e3addf0b088c2
+2026-11-12T04:31:48.5328019Z Finalizing artifact upload
+2026-11-12T04:31:49.0680188Z Artifact tests-ubuntu-22.04-py3.14 successfully finalized. Artifact ID 13915792064
+2026-11-12T04:31:49.0682298Z Artifact tests-ubuntu-22.04-py3.14 has been successfully uploaded! Final size is 18062 bytes. Artifact ID is 13915792064
+2026-11-12T04:31:49.0685125Z Artifact download URL: https://github.com/iamokish/GrihaLekha/actions/runs/43154786105/artifacts/13915792064
+2026-11-12T04:31:49.0886736Z Post job cleanup.
+2026-11-12T04:31:49.1813779Z [command]/usr/bin/git version
+2026-11-12T04:31:49.1852285Z git version 2.56.0
+2026-11-12T04:31:49.1891073Z Temporarily overriding HOME='/home/runner/work/_temp/ed8c0dd4-6b72-4694-a9bb-566e92afccea' before making global git config changes
+2026-11-12T04:31:49.1893577Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T04:31:49.1897226Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/GrihaLekha/GrihaLekha
+2026-11-12T04:31:49.1935619Z Removing SSH command configuration
+2026-11-12T04:31:49.1943316Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T04:31:49.1983296Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-12T04:31:49.2314274Z Removing HTTP extra header
+2026-11-12T04:31:49.2320060Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T04:31:49.2366976Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-12T04:31:49.2664053Z Removing includeIf entries pointing to credentials config files
+2026-11-12T04:31:49.2671221Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T04:31:49.2722614Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-12T04:31:49.3175514Z Cleaning up orphan processes

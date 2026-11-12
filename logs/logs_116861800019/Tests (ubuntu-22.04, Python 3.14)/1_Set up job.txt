@@ -1,0 +1,34 @@
+﻿2026-11-12T04:26:16.7502645Z Current runner version: '2.338.2'
+2026-11-12T04:26:16.7528981Z ##[group]Runner Image Provisioner
+2026-11-12T04:26:16.7529990Z Hosted Compute Agent
+2026-11-12T04:26:16.7530664Z Version: 20261028.624
+2026-11-12T04:26:16.7531324Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-12T04:26:16.7532567Z Build Date: 2026-10-28T21:51:42Z
+2026-11-12T04:26:16.7533343Z Worker ID: {019c42f6-1afa-4608-9924-e5ce3de49e07}
+2026-11-12T04:26:16.7534067Z Region: westus
+2026-11-12T04:26:16.7534786Z Cloud: Azure
+2026-11-12T04:26:16.7535351Z ##[endgroup]
+2026-11-12T04:26:16.7537099Z ##[group]Operating System
+2026-11-12T04:26:16.7537808Z Ubuntu
+2026-11-12T04:26:16.7538348Z 22.04.5
+2026-11-12T04:26:16.7538985Z LTS
+2026-11-12T04:26:16.7539535Z ##[endgroup]
+2026-11-12T04:26:16.7540147Z ##[group]Runner Image
+2026-11-12T04:26:16.7540799Z Image: ubuntu-22.04
+2026-11-12T04:26:16.7541394Z Version: 20261101.347.1
+2026-11-12T04:26:16.7543036Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20261101.347/images/ubuntu/Ubuntu2204-Readme.md
+2026-11-12T04:26:16.7544917Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20261101.347
+2026-11-12T04:26:16.7545955Z ##[endgroup]
+2026-11-12T04:26:16.7547154Z ##[group]GITHUB_TOKEN Permissions
+2026-11-12T04:26:16.7549346Z Contents: read
+2026-11-12T04:26:16.7549991Z Metadata: read
+2026-11-12T04:26:16.7550714Z ##[endgroup]
+2026-11-12T04:26:16.7553211Z Secret source: Dependabot
+2026-11-12T04:26:16.7554374Z Cache mode: write
+2026-11-12T04:26:16.7555421Z Prepare workflow directory
+2026-11-12T04:26:16.8146544Z Prepare all required actions
+2026-11-12T04:26:16.8195332Z Getting action download info
+2026-11-12T04:26:17.1509339Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-12T04:26:17.2823157Z Download action repository 'astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2' (SHA:68559e99cc807c1eb7e9238fd43a15bba460eec2)
+2026-11-12T04:26:17.6905322Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-11-12T04:26:17.8652956Z Complete job name: Tests (ubuntu-22.04, Python 3.14)

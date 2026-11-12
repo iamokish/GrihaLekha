@@ -1,0 +1,19 @@
+﻿2026-11-12T04:32:40.8229375Z Post job cleanup.
+2026-11-12T04:32:40.9629296Z UV_CACHE_DIR is already set to D:\a\_temp\setup-uv-cache
+2026-11-12T04:32:40.9636565Z UV_PYTHON_INSTALL_DIR is already set to D:\a\_temp\uv-python-dir
+2026-11-12T04:32:40.9640328Z Including uv cache path: D:\a\_temp\setup-uv-cache
+2026-11-12T04:32:41.0946998Z [command]"C:\Program Files\Git\usr\bin\tar.exe" --posix -cf cache.tzst --exclude cache.tzst -P -C D:/a/GrihaLekha/GrihaLekha --files-from manifest.txt --force-local --use-compress-program "zstd -T0"
+2026-11-12T04:32:47.5713616Z Sent 0 of 345154502 (0.0%), 0.0 MBs/sec
+2026-11-12T04:32:48.5729963Z Sent 9610182 of 345154502 (2.8%), 4.6 MBs/sec
+2026-11-12T04:32:49.5770459Z Sent 143827910 of 345154502 (41.7%), 45.6 MBs/sec
+2026-11-12T04:32:50.5774313Z Sent 210936774 of 345154502 (61.1%), 50.2 MBs/sec
+2026-11-12T04:32:51.5926455Z Sent 210936774 of 345154502 (61.1%), 40.1 MBs/sec
+2026-11-12T04:32:52.5991758Z Sent 210936774 of 345154502 (61.1%), 33.4 MBs/sec
+2026-11-12T04:32:53.6116185Z Sent 210936774 of 345154502 (61.1%), 28.6 MBs/sec
+2026-11-12T04:32:54.6144749Z Sent 210936774 of 345154502 (61.1%), 25.0 MBs/sec
+2026-11-12T04:32:55.6206188Z Sent 278045638 of 345154502 (80.6%), 29.3 MBs/sec
+2026-11-12T04:32:56.6249715Z Sent 278045638 of 345154502 (80.6%), 26.4 MBs/sec
+2026-11-12T04:32:57.6263754Z Sent 278045638 of 345154502 (80.6%), 24.0 MBs/sec
+2026-11-12T04:32:58.6309208Z Sent 278045638 of 345154502 (80.6%), 22.0 MBs/sec
+2026-11-12T04:32:59.6114747Z Sent 345154502 of 345154502 (100.0%), 25.2 MBs/sec
+2026-11-12T04:32:59.8806165Z uv cache saved with key: setup-uv-2-x86_64-pc-windows-msvc-windows-2022-3.13-1520c6b471c56b316b3c7732ac8aba8663b691cce0f746151f96d37dc0ef8e1e

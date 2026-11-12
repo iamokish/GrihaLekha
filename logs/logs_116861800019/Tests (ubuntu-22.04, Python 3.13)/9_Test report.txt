@@ -1,0 +1,30 @@
+﻿2026-11-12T04:31:47.0258355Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-11-12T04:31:47.0258759Z with:
+2026-11-12T04:31:47.0258961Z   name: tests-ubuntu-22.04-py3.13
+2026-11-12T04:31:47.0259222Z   path: build/test-results.xml
+2026-11-12T04:31:47.0259460Z   if-no-files-found: ignore
+2026-11-12T04:31:47.0259687Z   retention-days: 14
+2026-11-12T04:31:47.0259892Z   compression-level: 6
+2026-11-12T04:31:47.0260095Z   overwrite: false
+2026-11-12T04:31:47.0260300Z   include-hidden-files: false
+2026-11-12T04:31:47.0260537Z   archive: true
+2026-11-12T04:31:47.0260718Z env:
+2026-11-12T04:31:47.0260902Z   QT_QPA_PLATFORM: offscreen
+2026-11-12T04:31:47.0261336Z   GRIHALEKHA_PDF_RENDERER: native
+2026-11-12T04:31:47.0261572Z   TZ: Asia/Kolkata
+2026-11-12T04:31:47.0261768Z   UV_PYTHON: 3.13
+2026-11-12T04:31:47.0262041Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-11-12T04:31:47.0262591Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-12T04:31:47.0262878Z ##[endgroup]
+2026-11-12T04:31:47.1812899Z With the provided path, there will be 1 file uploaded
+2026-11-12T04:31:47.1834194Z Artifact name is valid!
+2026-11-12T04:31:47.1838843Z Root directory input is valid!
+2026-11-12T04:31:47.5233578Z Uploading artifact: tests-ubuntu-22.04-py3.13.zip
+2026-11-12T04:31:47.5271684Z Beginning upload of artifact content to blob storage
+2026-11-12T04:31:47.8150890Z Uploaded bytes 18142
+2026-11-12T04:31:47.8775462Z Finished uploading artifact content to blob storage!
+2026-11-12T04:31:47.8776594Z SHA256 digest of uploaded artifact is ecb4126fabac4b5de86703d433edad80a789ef1617712b0258570025c97e1fa8
+2026-11-12T04:31:47.8810321Z Finalizing artifact upload
+2026-11-12T04:31:48.4184950Z Artifact tests-ubuntu-22.04-py3.13 successfully finalized. Artifact ID 13915722167
+2026-11-12T04:31:48.4186075Z Artifact tests-ubuntu-22.04-py3.13 has been successfully uploaded! Final size is 18142 bytes. Artifact ID is 13915722167
+2026-11-12T04:31:48.4190148Z Artifact download URL: https://github.com/iamokish/GrihaLekha/actions/runs/43154786105/artifacts/13915722167
