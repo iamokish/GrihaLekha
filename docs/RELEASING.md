@@ -49,15 +49,15 @@ git push origin v0.1.0
 Use the actual release version. A tag must match the project metadata, runtime,
 and lockfile. Published tags must not be moved to different source.
 
-The workflow runs the regression suite on Windows and Linux with Python
-3.12–3.14, then compiles on Windows and Ubuntu using Python 3.12. It verifies
+The workflow runs the regression suite on Windows, Ubuntu, and current Arch Linux
+with Python 3.12–3.14, then compiles on Windows and Ubuntu using Python 3.12. It verifies
 the relocated application, Chromium and native PDF rendering, embedded fonts,
 payment proofs, and complete backups. Portable archives and installed packages
 are checked again. The Arch job verifies the Ubuntu-built runtime on Arch
 before packaging and installing it.
 
-Release packaging checks the x64 executable header, source hashes, commit,
-license documents, and successful compiled verification. A failed check stops
+Release packaging checks the x64 executable header, source and runtime asset
+hashes, commit, license documents, and successful compiled verification. A failed check stops
 draft creation. After every package succeeds, the final job requires the exact
 five package names, writes their SHA-256 checksums, and attaches the six files
 to a draft with the reviewed changelog notes.

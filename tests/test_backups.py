@@ -3,6 +3,7 @@ from contextlib import closing
 import json
 from pathlib import Path
 import sqlite3
+import sys
 import zipfile
 
 import pytest
@@ -168,3 +169,130 @@ def test_online_backup_captures_committed_wal_data(tmp_path):
 @pytest.mark.parametrize("path", ["attachments/CON.pdf", "documents/file.", "attachments/file ", "documents/a:b", "attachments/../outside", "documents/bad?.pdf"])
 def test_backup_paths_are_portable_and_cannot_target_windows_devices(path):
     assert not _safe_name(path)
+
+
+@pytest.mark.parametrize("corruption", ["other_account", "wrong_total", "missing_sources", "wrong_kind"])
+def test_restore_rejects_invalid_deposit_sources_before_replacing_live_data(tmp_path, corruption):
+    data, db, manager = sample_data(tmp_path)
+    ledger = Ledger(data)
+    building = ledger.list_buildings()[0]["id"]
+    flat = ledger.add_flat(building, "2", "Ground", 1)
+    other_tenancy = ledger.add_tenancy(flat, "Other tenant", "2020-01-01", 1, 0)
+    other_payment = ledger.record_payment(other_tenancy, 10000, "2020-01-01", "cash", allocations={})
+    transfer = ledger.transfer_balance_to_deposit(1, 10000, "2020-01-01", "Retain as security")
+    ledger.close()
+    valid = manager.create(tmp_path / "valid-transfer.zip")
+    snapshot = tmp_path / "invalid-transfer.sqlite3"
+    with zipfile.ZipFile(valid) as bundle:
+        snapshot.write_bytes(bundle.read("grihalekha.sqlite3"))
+    with closing(sqlite3.connect(snapshot)) as connection, connection:
+        if corruption == "other_account":
+            connection.execute("UPDATE deposit_sources SET payment_id=?", (other_payment,))
+        elif corruption == "wrong_total":
+            connection.execute("UPDATE deposit_sources SET amount_paise=9999")
+        elif corruption == "missing_sources":
+            connection.execute("DELETE FROM deposit_sources")
+        else:
+            connection.execute("UPDATE deposits SET kind='opening' WHERE id=?", (transfer,))
+        assert connection.execute("PRAGMA foreign_key_check").fetchone() is None
+    corrupt = tmp_path / "invalid-transfer.zip"
+    content = snapshot.read_bytes()
+    with zipfile.ZipFile(valid) as source, zipfile.ZipFile(corrupt, "w") as output:
+        manifest = json.loads(source.read("manifest.json"))
+        manifest["files"]["grihalekha.sqlite3"] = {
+            "size": len(content), "sha256": hashlib.sha256(content).hexdigest(),
+        }
+        for name in source.namelist():
+            if name == "manifest.json":
+                output.writestr(name, json.dumps(manifest))
+            elif name == "grihalekha.sqlite3":
+                output.writestr(name, content)
+            else:
+                output.writestr(name, source.read(name))
+    before = db.read_bytes()
+    proof_before = (data / "attachments" / "proof.pdf").read_bytes()
+    with pytest.raises(ValueError, match="transfer sources"):
+        manager.restore(corrupt)
+    assert db.read_bytes() == before
+    assert (data / "attachments" / "proof.pdf").read_bytes() == proof_before
+
+
+def test_complete_backup_preserves_balance_to_deposit_and_reversal(tmp_path):
+    data, _, manager = sample_data(tmp_path)
+    ledger = Ledger(data)
+    transfer = ledger.transfer_balance_to_deposit(1, 10000, "2020-01-01", "Retain as security")
+    ledger.reverse_deposit(transfer, "Release security", "2020-01-02")
+    ledger.close()
+    exported = manager.create(tmp_path / "transfer-history.zip")
+    manager.restore(exported)
+    restored = Ledger(data)
+    try:
+        assert restored.balance(1, "2020-01-01")["credit_paise"] == 113456
+        assert restored.balance(1, "2020-01-01")["deposit_paise"] == 10000
+        assert restored.balance(1, "2020-01-02")["credit_paise"] == 123456
+        assert restored.balance(1, "2020-01-02")["deposit_paise"] == 0
+    finally:
+        restored.close()
+
+
+@pytest.mark.parametrize("folder_name", ["attachments", "documents"])
+@pytest.mark.parametrize("nested", [False, True], ids=["root", "nested"])
+def test_backup_rejects_linked_storage_without_copying_external_files(tmp_path, folder_name, nested):
+    data, _, manager = sample_data(tmp_path)
+    kept = {manager.create(), manager.create()}
+    external = tmp_path / "external-files"
+    external.mkdir()
+    private_file = external / "private.txt"
+    private_file.write_text("External files must stay outside the backup.", encoding="utf-8")
+    folder = data / folder_name
+    if nested:
+        link = folder / "linked-folder"
+    else:
+        folder.rename(data / f"original-{folder_name}")
+        link = folder
+    if sys.platform == "win32":
+        # Directory junctions need no symlink privilege and reproduce the
+        # Windows case where Path.is_symlink() alone misses a linked root.
+        import _winapi
+
+        try:
+            _winapi.CreateJunction(str(external), str(link))
+        except OSError as exc:
+            pytest.skip(f"The test filesystem cannot create directory junctions: {exc}")
+        assert link.is_junction() and not link.is_symlink()
+    else:
+        link.symlink_to(external, target_is_directory=True)
+    try:
+        with pytest.raises(ValueError, match="application storage"):
+            manager.create()
+        assert set(manager.list_backups()) == kept
+        assert not list(manager.backup_dir.glob("*.partial"))
+        assert private_file.read_text(encoding="utf-8") == "External files must stay outside the backup."
+    finally:
+        if sys.platform == "win32":
+            link.rmdir()
+        else:
+            link.unlink()
+
+
+@pytest.mark.parametrize("folder_name", ["attachments", "documents"])
+def test_backup_rejects_managed_root_resolving_outside_data_dir(tmp_path, monkeypatch, folder_name):
+    data, _, manager = sample_data(tmp_path)
+    kept = {manager.create(), manager.create()}
+    folder = data / folder_name
+    external = tmp_path / "external-files"
+    external.mkdir()
+    original_resolve = Path.resolve
+
+    def escaped_resolve(path, *args, **kwargs):
+        # Model a filesystem redirect without needing Windows reparse-point
+        # privileges. Descendants resolve relative to the redirected root too.
+        if path.is_relative_to(folder):
+            return external / path.relative_to(folder)
+        return original_resolve(path, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "resolve", escaped_resolve)
+    with pytest.raises(ValueError, match="application storage"):
+        manager.create()
+    assert set(manager.list_backups()) == kept
+    assert not list(manager.backup_dir.glob("*.partial"))

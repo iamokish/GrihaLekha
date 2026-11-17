@@ -1,6 +1,7 @@
 """Integration checks for decimal input, selective payments and the desktop ledger."""
 
 from datetime import date, timedelta
+from decimal import Inexact, Rounded, localcontext
 
 import pytest
 from PySide6.QtGui import QFont, QFontDatabase
@@ -45,6 +46,24 @@ def test_amount_editor_keeps_paise_and_rejects_rounding(qtbot):
     for invalid in ("1.001", "1e3", "NaN", "-1", "1,000.00", ""):
         editor.setText(invalid)
         with pytest.raises(ValueError):
+            editor.paise()
+
+
+@pytest.mark.parametrize("text,expected", [("12.34", 1234), ("0.01", 1),
+                                         ("999999999999.99", 99_999_999_999_999)])
+def test_amount_editor_is_exact_under_caller_decimal_context(qtbot, text, expected):
+    editor = AmountInput()
+    qtbot.addWidget(editor)
+    editor.setText(text)
+    with localcontext() as context:
+        context.prec = 3
+        context.traps[Inexact] = True
+        context.traps[Rounded] = True
+        assert editor.paise() == expected
+    editor.setText("1000000000000.00")
+    with localcontext() as context:
+        context.prec = 3
+        with pytest.raises(ValueError, match="supported limit"):
             editor.paise()
 
 

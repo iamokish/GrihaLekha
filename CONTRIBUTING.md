@@ -37,6 +37,12 @@ The application uses IST. Several date-sensitive tests use the machine's current
 date, so CI sets its time zone to India Standard Time. For local runs, use that
 time zone or avoid the interval when local and IST dates differ.
 
+CI runs the full regression suite on Windows, Ubuntu 22.04, and current Arch Linux
+with each supported Python version (3.12–3.14). Arch tests run as an unprivileged
+user inside an updated `archlinux:base-devel` container. Linux shell scripts and
+the Arch build template use LF line endings enforced by `.gitattributes`; keep
+that policy when editing on Windows.
+
 Run `uv build` to check source/wheel packaging and
 `uv run --frozen python scripts/check_distribution.py dist` to inspect the result.
 Run `uv run --frozen python packaging/build.py --dry-run` to inspect compiler

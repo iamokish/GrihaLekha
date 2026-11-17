@@ -78,6 +78,29 @@ def _database_check(path: Path, included: set[str] | None = None) -> int:
                 for (proof,) in connection.execute(f"SELECT proof_path FROM {quoted} WHERE proof_path IS NOT NULL"):
                     if proof and (not _safe_name(proof) or proof not in included):
                         raise ValueError("A payment proof referenced by the database is missing from the backup.")
+        if version >= 5:
+            # Foreign keys alone permit a transfer to reserve another account's
+            # receipt, or source amounts that differ from the deposit received.
+            invalid_source = connection.execute("""
+                SELECT 1
+                FROM deposit_sources AS source
+                JOIN deposits AS deposit ON deposit.id = source.deposit_id
+                JOIN payments AS payment ON payment.id = source.payment_id
+                WHERE deposit.tenancy_id != payment.tenancy_id
+                   OR deposit.kind != 'receipt' OR deposit.method != 'internal'
+                LIMIT 1
+            """).fetchone()
+            invalid_total = connection.execute("""
+                SELECT deposit.id
+                FROM deposits AS deposit
+                LEFT JOIN deposit_sources AS source ON source.deposit_id = deposit.id
+                WHERE deposit.kind = 'receipt' AND deposit.method = 'internal'
+                GROUP BY deposit.id
+                HAVING COALESCE(SUM(source.amount_paise), 0) != deposit.amount_paise
+                LIMIT 1
+            """).fetchone()
+            if invalid_source or invalid_total:
+                raise ValueError("The database has invalid balance-to-deposit transfer sources.")
         return version
 
 
@@ -157,11 +180,11 @@ class BackupManager:
                     files = {"grihalekha.sqlite3": snapshot}
                     for folder_name in ("attachments", "documents"):
                         folder = self.data_dir / folder_name
-                        if folder.is_symlink():
-                            raise ValueError("Managed backup folders must not be symbolic links.")
+                        if folder.is_symlink() or folder.is_junction() or not _under(folder, self.data_dir):
+                            raise ValueError("Managed backup folders must not be linked or point outside application storage.")
                         if folder.exists():
                             for path in sorted(folder.rglob("*")):
-                                if path.is_symlink() or not _under(path, folder):
+                                if path.is_symlink() or path.is_junction() or not _under(path, folder):
                                     raise ValueError("A managed file points outside application storage.")
                                 if path.is_file() and not path.name.endswith(".partial"):
                                     files[path.relative_to(self.data_dir).as_posix()] = path

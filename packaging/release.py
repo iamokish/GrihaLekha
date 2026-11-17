@@ -20,7 +20,7 @@ import tarfile
 import tempfile
 import zipfile
 
-from build import ROOT, project_version, require_x64
+from build import ROOT, application_source_hashes, project_version, require_x64
 
 
 OUTPUT = ROOT / "dist" / "release"
@@ -183,9 +183,9 @@ def validate_bundle(bundle: Path, target: str, version: str) -> dict:
         raise ValueError("The bundle has not passed the compiled application verifier.")
     if verification.get("chromium_runtime_verified") is not True:
         raise ValueError("Release packaging requires a successful Chromium PDF runtime check, including the native fallback check.")
-    expected = {path.relative_to(ROOT).as_posix(): sha256(path) for path in sorted((ROOT / "src" / "grihalekha").rglob("*.py"))}
+    expected = application_source_hashes(ROOT)
     if manifest.get("source_sha256") != expected:
-        raise ValueError("The bundle does not match the current application source. Rebuild before packaging.")
+        raise ValueError("The bundle does not match the current application source or runtime assets. Rebuild before packaging.")
     if os.environ.get("GITHUB_SHA") and manifest.get("source_revision") != os.environ["GITHUB_SHA"]:
         raise ValueError("The bundle was built from a different GitHub commit.")
     for name in (

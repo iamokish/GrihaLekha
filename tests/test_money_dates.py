@@ -1,10 +1,10 @@
 from datetime import date
-from decimal import Decimal
+from decimal import Decimal, Inexact, Rounded, localcontext
 
 import pytest
 
 from grihalekha.dates import cycle_bounds, iter_periods
-from grihalekha.money import decimal_rupees, format_money, parse_money, validate_paise
+from grihalekha.money import MAX_PAISE, decimal_rupees, format_money, parse_money, validate_paise
 
 
 @pytest.mark.parametrize(
@@ -28,6 +28,22 @@ def test_exact_money(entered, paise):
 def test_invalid_money_never_silently_rounds(entered):
     with pytest.raises(ValueError):
         parse_money(entered)
+
+
+@pytest.mark.parametrize("entered,paise", [("12.34", 1234), (Decimal("12.34"), 1234), ("999999999999.99", MAX_PAISE)])
+def test_money_parsing_is_independent_of_decimal_context(entered, paise):
+    with localcontext() as context:
+        context.prec = 3
+        context.traps[Inexact] = True
+        context.traps[Rounded] = True
+        assert parse_money(entered) == paise
+
+
+def test_money_range_is_exact_under_low_decimal_precision():
+    with localcontext() as context:
+        context.prec = 3
+        with pytest.raises(ValueError):
+            parse_money("1000000000000.00")
 
 
 def test_money_display_two_decimal_indian_grouping():

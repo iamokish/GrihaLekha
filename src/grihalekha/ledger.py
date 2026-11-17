@@ -1343,39 +1343,6 @@ class Ledger(BillCorrectionMixin, BillingMixin, LifecycleMixin, TenancyDeletionM
         )
         return [dict(row) for row in conn.execute(query).mappings()]
 
-    def _allocation_opportunity(self, conn, payment, charge, effective):
-        start = max(effective, payment["paid_on"], charge["charge_date"])
-        dates = {start}
-        dates.update(self._payment_deposit_dates(conn, payment["id"], start))
-        release_dates = conn.execute(
-            select(m.allocations.c.cancelled_on).where(
-                or_(
-                    m.allocations.c.payment_id == payment["id"],
-                    m.allocations.c.charge_id == charge["id"],
-                ),
-                m.allocations.c.cancelled_on >= start,
-            )
-        ).scalars()
-        dates.update(release_dates)
-        dates.update(
-            conn.execute(
-                select(m.refunds.c.reversed_on)
-                .join(m.refund_sources)
-                .where(
-                    m.refund_sources.c.payment_id == payment["id"],
-                    m.refunds.c.reversed_on >= start,
-                )
-            ).scalars()
-        )
-        for on in sorted(dates):
-            amount = min(
-                self._available_since(conn, payment, on),
-                self._charge_available_since(conn, charge, on),
-            )
-            if amount > 0:
-                return on, amount
-        return start, 0
-
     def _apply_credit(self, conn, tenancy_id, requested, effective):
         candidates = [payment for payment in self._open_payments(conn, tenancy_id)
                       if payment["paid_on"] <= effective]

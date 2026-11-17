@@ -7,7 +7,7 @@ Public money values retain integer paise (hundredths) for compatibility.
 # ruff: noqa: TRY004
 
 import re
-from decimal import Decimal, InvalidOperation
+from decimal import Decimal
 
 from .currencies import DEFAULT_CURRENCY, get_currency
 
@@ -56,8 +56,11 @@ def parse_money(value: str | Decimal | int, *, currency_code: str = DEFAULT_CURR
             f"Enter a non-negative {currency.code} amount with at most two decimal places."
         )
     try:
-        result = int(Decimal(text) * 100)
-    except (InvalidOperation, ValueError, OverflowError) as exc:
+        whole, _, fraction = text.partition(".")
+        # Decimal arithmetic uses the caller's precision and rounding settings.
+        # Parse digits directly so monetary inputs always retain every paise.
+        result = int(whole) * 100 + int(fraction.ljust(2, "0"))
+    except ValueError as exc:
         raise ValueError("Invalid amount.") from exc
     return validate_paise(result)
 

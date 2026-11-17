@@ -62,6 +62,74 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
 
+  arch-tests:
+    name: Tests (Arch Linux, Python ${{ matrix.python }})
+    runs-on: ubuntu-22.04
+    container:
+      image: archlinux:base-devel
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.12', '3.13', '3.14']
+    env:
+      QT_QPA_PLATFORM: offscreen
+      GRIHALEKHA_PDF_RENDERER: native
+      TZ: Asia/Kolkata
+      UV_PYTHON: ${{ matrix.python }}
+    steps:
+      # Container steps start as root. Install host libraries before checkout,
+      # then run Python, Qt, and all tests as a separate unprivileged account.
+      - name: Current Arch desktop libraries
+        shell: bash
+        run: |
+          pacman -Syu --noconfirm --needed git zstd desktop-file-utils \
+            glib2 dbus fontconfig freetype2 nss nspr alsa-lib libcups \
+            libglvnd mesa libdrm libx11 libxext libxfixes libxrender libxi \
+            libxrandr libxdamage libxcomposite libxtst libxcb xcb-util-cursor \
+            xcb-util-wm xcb-util-image xcb-util-keysyms xcb-util-renderutil \
+            libxkbfile libxkbcommon libxkbcommon-x11 wayland
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.12.5'
+          enable-cache: false
+      - name: Prepare an unprivileged test account
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -m755 "$(command -v uv)" /usr/local/bin/grihalekha-ci-uv
+          useradd --create-home --user-group --shell /bin/bash grihalekha-test
+          chown -R grihalekha-test:grihalekha-test "$GITHUB_WORKSPACE"
+      - name: Validate build configuration and run regression tests on Arch
+        shell: bash
+        run: |
+          set -euo pipefail
+          runuser -u grihalekha-test -- env \
+            GRIHALEKHA_WORKSPACE="$GITHUB_WORKSPACE" UV_BIN=/usr/local/bin/grihalekha-ci-uv \
+            UV_CACHE_DIR="$GITHUB_WORKSPACE/.cache/uv" UV_PYTHON_INSTALL_DIR="$GITHUB_WORKSPACE/.cache/python" \
+            UV_PYTHON="$UV_PYTHON" QT_QPA_PLATFORM=offscreen GRIHALEKHA_PDF_RENDERER=native TZ=Asia/Kolkata \
+            bash <<'CHECKS'
+          set -euo pipefail
+          cd "$GRIHALEKHA_WORKSPACE"
+          "$UV_BIN" sync --locked --extra dev --python "$UV_PYTHON"
+          "$UV_BIN" run --frozen python packaging/release.py --print-version
+          "$UV_BIN" run --frozen python packaging/release.py --release-notes build/release-notes.md
+          "$UV_BIN" run --frozen python packaging/build.py --dry-run
+          "$UV_BIN" run --frozen python -m compileall -q src packaging scripts
+          "$UV_BIN" run --frozen pytest --junitxml=build/test-results.xml
+          CHECKS
+      - name: Arch test report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: tests-arch-linux-py${{ matrix.python }}
+          path: build/test-results.xml
+          if-no-files-found: ignore
+          retention-days: 14
+
   python-package:
     name: Source and wheel packaging
     runs-on: ubuntu-22.04

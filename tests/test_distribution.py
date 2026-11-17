@@ -115,6 +115,7 @@ def test_distribution_rejects_removed_source_and_docs(distribution, kind, name):
     ("wheel", f"{DIST_INFO}/licenses/LICENSE"),
     ("wheel", f"{DIST_INFO}/licenses/THIRD_PARTY_NOTICES.md"),
     ("source", "uv.lock"),
+    ("source", ".gitattributes"),
     ("source", ".github/workflows/check.yml"),
     ("source", "packaging/PKGBUILD.in"),
     ("source", "packaging/licenses/GPL-3.0.txt"),

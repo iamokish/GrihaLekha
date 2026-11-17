@@ -1294,6 +1294,8 @@ class MainWindow(QMainWindow):
     def add_tenancy(self):
         latest_tenancies = {}
         for tenancy in self._tenancies:
+            if tenancy.get("cancelled_on"):
+                continue
             prior = latest_tenancies.get(tenancy["flat_id"])
             if prior is None or tenancy["move_in"] > prior["move_in"]:
                 latest_tenancies[tenancy["flat_id"]] = tenancy

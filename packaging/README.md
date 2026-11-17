@@ -132,8 +132,9 @@ uv run --frozen python packaging/release.py --arch-package --tag v0.1.0
 ```
 
 `release.py` checks the version, actual PE/ELF x64 executable header, matching
-application source hashes, required documents, and successful compiled verification.
-It also checks the source commit in CI. Rebuild old local bundles before packaging.
+application source and runtime asset hashes, required documents, and successful
+compiled verification. It also checks the source commit in CI. Rebuild old local
+bundles before packaging.
 The Windows installer uses the version passed from project metadata and a stable
 AppId for upgrades. Linux packages install under `/opt/grihalekha`, with a
 `grihalekha` launcher, desktop entry, and icon. Uninstall leaves account data intact.
@@ -261,6 +262,6 @@ and repository settings.
 
 Compiler diagnostics are in `build/nuitka/compilation-report.xml`; runtime logs,
 screenshots, and sample PDFs are under `build/nuitka/verification/`.
-`dist/GrihaLekha/build-info.json` records dependency versions, source hashes,
-and the verification result for the completed bundle. Temporary installer
+`dist/GrihaLekha/build-info.json` records dependency versions, source and runtime
+asset hashes, and the verification result for the completed bundle. Temporary installer
 staging uses `build/release/`.

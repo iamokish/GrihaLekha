@@ -42,6 +42,22 @@ DOCUMENT_ASSETS = (
 )
 
 
+def application_source_hashes(root: Path) -> dict[str, str]:
+    """Identify application code and the runtime assets used by this build."""
+    package = root / "src" / "grihalekha"
+    paths = {path for path in package.rglob("*.py")
+             if path.is_file() and "__pycache__" not in path.relative_to(package).parts}
+    for pattern in ("fonts/*", "icons/*", "ui/*.svg"):
+        paths.update(path for path in (package / "assets").glob(pattern)
+                     if path.is_file() and path.suffix in {".ttf", ".txt", ".md", ".svg", ".ico", ".png"})
+    paths.update(path for name in ICON_NAMES if (path := root / "icons" / name).is_file())
+    result = {}
+    for path in sorted(paths):
+        with path.open("rb") as stream:
+            result[path.relative_to(root).as_posix()] = hashlib.file_digest(stream, "sha256").hexdigest()
+    return result
+
+
 def project_version() -> str:
     with (ROOT / "pyproject.toml").open("rb") as stream:
         result = tomllib.load(stream)["project"]["version"]
@@ -216,7 +232,7 @@ def main(argv: list[str] | None = None) -> int:
                     "python_version": sys.version.split()[0], "platform": sys.platform,
                     "architecture": "x64", "source_revision": env.get("GITHUB_SHA"),
                     "pyside6_version": version("PySide6"), "sqlalchemy_version": version("SQLAlchemy"),
-                    "source_sha256": {path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted((ROOT / "src" / "grihalekha").rglob("*.py"))},
+                    "source_sha256": application_source_hashes(ROOT),
                     "verification": verification,
                     "licenses": notices,
                 }

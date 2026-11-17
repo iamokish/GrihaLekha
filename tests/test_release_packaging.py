@@ -72,6 +72,45 @@ def test_release_refuses_stale_sources_and_unverified_chromium(tmp_path, monkeyp
         release.validate_bundle(bundle, "windows", "0.1.0")
 
 
+@pytest.mark.parametrize("relative", [
+    "src/grihalekha/assets/fonts/NotoSans-Regular.ttf",
+    "src/grihalekha/assets/fonts/OFL-NotoSans.txt",
+    "src/grihalekha/assets/ui/check.svg",
+    "icons/grihalekha-icon-512.png",
+])
+@pytest.mark.parametrize("change", ["modified", "removed"])
+def test_release_refuses_runtime_assets_changed_after_compilation(tmp_path, monkeypatch, relative, change):
+    bundle, manifest, _ = _bundle(tmp_path, monkeypatch)
+    asset = release.ROOT / relative
+    asset.parent.mkdir(parents=True, exist_ok=True)
+    asset.write_bytes(b"Original runtime asset")
+    manifest["source_sha256"] = release.application_source_hashes(release.ROOT)
+    assert manifest["source_sha256"][relative] == release.sha256(asset)
+    (bundle / "build-info.json").write_text(json.dumps(manifest), encoding="utf-8")
+    assert release.validate_bundle(bundle, "windows", "0.1.0") == manifest
+    if change == "modified":
+        asset.write_bytes(b"Updated after compilation")
+    else:
+        asset.unlink()
+    with pytest.raises(ValueError, match="runtime assets.*Rebuild"):
+        release.validate_bundle(bundle, "windows", "0.1.0")
+
+
+def test_application_source_hashes_ignore_caches_and_unrelated_files(tmp_path, monkeypatch):
+    bundle, manifest, _ = _bundle(tmp_path, monkeypatch)
+    for relative in (
+        "src/grihalekha/__pycache__/stale.py",
+        "src/grihalekha/development-notes.txt",
+        "src/grihalekha/assets/fonts/cache.log",
+        "icons/unused-preview.png",
+    ):
+        path = release.ROOT / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(b"Not a runtime input")
+    assert release.application_source_hashes(release.ROOT) == manifest["source_sha256"]
+    assert release.validate_bundle(bundle, "windows", "0.1.0") == manifest
+
+
 def test_release_refuses_database_and_wrong_executable_architecture(tmp_path, monkeypatch):
     bundle, _, _ = _bundle(tmp_path, monkeypatch)
     database = bundle / "grihalekha.sqlite3"

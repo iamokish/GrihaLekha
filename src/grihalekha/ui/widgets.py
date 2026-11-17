@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from datetime import date
-from decimal import Decimal, InvalidOperation
 
 from PySide6.QtCore import QEvent, QItemSelectionModel, QObject, QPersistentModelIndex, QSignalBlocker, Qt, QTimer
 from PySide6.QtGui import QCursor
@@ -359,10 +358,10 @@ class AmountInput(QLineEdit):
             or not parts[1].isdigit()
         ):
             raise ValueError("Amounts can have up to two decimal places.")
-        try:
-            amount = int(Decimal(text) * 100)
-        except (InvalidOperation, ValueError, OverflowError) as exc:
-            raise ValueError("Please enter a valid amount.") from exc
+        # Parse the validated digits directly so the caller's Decimal precision
+        # and rounding traps cannot change an entered monetary amount.
+        fraction = int(parts[1].ljust(2, "0")) if len(parts) == 2 else 0
+        amount = int(parts[0]) * 100 + fraction
         if amount < 0 or (not allow_zero and amount == 0):
             raise ValueError(
                 "The amount must be greater than zero."

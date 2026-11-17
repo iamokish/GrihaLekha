@@ -10,7 +10,7 @@ from grihalekha.ledger import Ledger
 from grihalekha.reports import export_csv, statement_html
 from grihalekha.ui.bill_dialogs import BillAmountDialog
 from grihalekha.ui.bill_table import select_bill
-from grihalekha.ui.dialogs import AmountActionDialog, PostDraftDialog
+from grihalekha.ui.dialogs import AmountActionDialog, PostDraftDialog, TenancyDialog
 from grihalekha.ui.lifecycle_dialogs import CancelUpcomingTenantDialog
 from grihalekha.ui.window import MainWindow, _tenancy_status
 
@@ -156,3 +156,34 @@ def test_cancelled_account_reports_identify_cancellation_and_escape_reason(works
     assert "&lt;script&gt;" in html
     paths = export_csv(snapshot, tmp_path / "csv")
     assert all("cancelled_on" in path.read_text(encoding="utf-8-sig").splitlines()[0] for path in paths)
+
+
+@pytest.mark.parametrize("archived", [False, True])
+def test_cancelled_reservation_can_be_rebooked_from_ui(workspace, monkeypatch, archived):
+    window, ledger, current, upcoming, flat, errors = workspace
+    ledger.cancel_upcoming_tenancy(upcoming, "Booking withdrawn")
+    if archived:
+        ledger.archive_tenancy(upcoming)
+    window.refresh()
+    original = ledger.get_tenancy(upcoming)
+    notices = []
+    monkeypatch.setattr(QMessageBox, "information", lambda *args: notices.append(args[2]))
+
+    def accept(dialog):
+        assert [dialog.flat.itemData(i) for i in range(dialog.flat.count())] == [flat]
+        assert dialog.move_in.iso() == "2024-01-15"
+        dialog.name.setText("Replacement")
+        dialog.move_in.set_iso("2024-02-01")
+        dialog.billing.setValue(1)
+        dialog.rent.set_paise(30_000)
+        dialog.result_data = dialog.validate()
+        return QDialog.DialogCode.Accepted
+
+    monkeypatch.setattr(TenancyDialog, "exec", accept)
+    window.add_tenancy()
+    assert not notices and not errors
+    replacement = ledger.get_tenancy(window._selected_tenancy)
+    assert replacement["tenant_name"] == "Replacement"
+    assert replacement["flat_id"] == flat
+    assert replacement["id"] not in {current, upcoming}
+    assert ledger.get_tenancy(upcoming) == original
