@@ -7,5 +7,5 @@ recursive-include packaging *.py *.md *.iss *.desktop *.in *.txt *.json *.html
 recursive-include scripts *.py *.sh
 recursive-include tests *.py
 recursive-include .github *.yml *.yaml *.md
-include .gitignore .gitattributes
+include .gitignore
 global-exclude *.py[cod]
