@@ -18,7 +18,7 @@ LICENSE_EXPRESSION = "AGPL-3.0-or-later"
 PROJECT_FILES = (
     "pyproject.toml", "uv.lock", "setup.py", "MANIFEST.in", "LICENSE",
     "THIRD_PARTY_NOTICES.md", "README.md", "USER_GUIDE.md", "CONTRIBUTING.md",
-    "SECURITY.md", "CHANGELOG.md", ".gitignore", ".gitattributes",
+    "SECURITY.md", "CHANGELOG.md", ".gitignore",
 )
 FORBIDDEN_PARTS = {
     ".git", ".venv", "venv", "build", "dist", ".audit", ".cache",
