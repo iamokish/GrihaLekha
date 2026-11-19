@@ -5,20 +5,7 @@ Notable changes to GrihaLekha are recorded here. Versions follow
 
 ## [Unreleased]
 
-### Added
-
-- Full Arch Linux CI regression coverage for Python 3.12, 3.13, and 3.14.
-
-### Fixed
-
-- Linux CI setup and Arch build recipes retain LF line endings after Windows edits.
-- Money input preserves exact hundredths under custom Decimal precision settings.
-- Cancelled flat reservations can be rebooked from the tenant setup dialog.
-- Backup validation rejects invalid balance-to-deposit source links and backup
-  creation rejects linked storage folders, including Windows directory junctions.
-- Release verification rejects compiled bundles with stale fonts, icons, or UI assets.
-
-## [0.1.0] - 2026-11-12
+## [0.1.0] - 2026-11-19
 
 The first release of GrihaLekha: offline rent and tenant accounts for Windows
 and Linux, with English, Hindi, and bilingual statements.

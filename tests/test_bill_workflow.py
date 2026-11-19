@@ -1,7 +1,8 @@
-from datetime import date, timedelta
+from datetime import datetime
 
 import pytest
 
+from grihalekha import clock
 from grihalekha.ledger import Ledger
 
 
@@ -85,15 +86,27 @@ def test_legacy_combined_receipts_cannot_accidentally_unpay_other_bills(account)
     assert ledger.balance(tenant)["credit_paise"] == 100_000
 
 
-def test_future_payment_and_payment_to_unreviewed_bill_are_rejected(account):
+@pytest.mark.parametrize("today,tomorrow", [
+    ("2024-02-28", "2024-02-29"),
+    ("2024-02-29", "2024-03-01"),
+    ("2024-12-31", "2025-01-01"),
+])
+def test_future_payment_and_payment_to_unreviewed_bill_are_rejected(account, monkeypatch, today, tomorrow):
+    now = datetime.fromisoformat(f"{today}T00:15:00").replace(tzinfo=clock.IST)
+    monkeypatch.setattr(clock, "now_ist", lambda: now)
     ledger, tenant = account
     ledger.prepare_monthly_drafts("2024-01-01")
     bill = ledger.list_charges(tenant)[0]
     with pytest.raises(ValueError, match="Review"):
         ledger.pay_bill(bill["id"], 100, "2024-01-02", "cash")
     ledger.post_charge(bill["id"], 100)
+    revision = ledger.get_revision()
     with pytest.raises(ValueError, match="future"):
-        ledger.pay_bill(bill["id"], 100, (date.today() + timedelta(days=1)).isoformat(), "cash")
+        ledger.pay_bill(bill["id"], 100, tomorrow, "cash")
+    assert ledger.get_revision() == revision
+    assert ledger.list_payments(tenant) == []
+    ledger.pay_bill(bill["id"], 100, today, "cash")
+    assert ledger.get_bill(bill["id"])["outstanding_paise"] == 0
 
 
 def test_electricity_drafts_follow_shorter_and_extended_departure(account):

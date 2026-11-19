@@ -1,0 +1,3 @@
+# Bash scripts and Arch build recipes must retain LF on every platform.
+*.sh text eol=lf
+packaging/PKGBUILD.in text eol=lf

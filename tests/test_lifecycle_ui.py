@@ -1,12 +1,13 @@
 """Tenant moves and closure preserve identity and keep closed accounts read only."""
 
-from datetime import date, timedelta
+from datetime import timedelta
 
 import pytest
 from PySide6.QtCore import QDate
 from PySide6.QtGui import QFont, QFontDatabase
 from PySide6.QtWidgets import QDialog, QMessageBox, QPushButton
 
+from grihalekha.clock import today_ist
 from grihalekha.dates import cycle_bounds
 from grihalekha.ledger import Ledger
 from grihalekha.paths import asset_dir
@@ -28,7 +29,7 @@ def lifecycle_window(qapp, qtbot, tmp_path, monkeypatch):
     first = ledger.add_building("First house", "First address")
     second = ledger.add_building("Second house", "Second address")
     flats = [ledger.add_flat(first, "101", "Ground", 1), ledger.add_flat(second, "201", "Ground", 1), ledger.add_flat(second, "202", "First", 2)]
-    start = (date.today() - timedelta(days=10)).isoformat()
+    start = (today_ist() - timedelta(days=10)).isoformat()
     tenants = [ledger.add_tenancy(flats[0], "First tenant", start, 1, 100_000),
                ledger.add_tenancy(flats[1], "Second tenant", start, 5, 200_000)]
     window = MainWindow(ledger)
@@ -51,7 +52,7 @@ def test_transfer_dialog_explains_when_optional_rent_changes(lifecycle_window, q
     dialog = TransferDialog(tenancy, window._flats)
     qtbot.addWidget(dialog)
     dialog.flat.setCurrentIndex(dialog.flat.findData(flats[2]))
-    today = date.today()
+    today = today_ist()
     dialog.when.set_iso(today.isoformat())
     assert dialog.validate()["rent_paise"] is None
     dialog.change_rent.setChecked(True)
@@ -70,7 +71,7 @@ def test_transfer_action_keeps_account_and_shows_both_occupancies(lifecycle_wind
 
     def accept(dialog):
         dialog.flat.setCurrentIndex(dialog.flat.findData(flats[2]))
-        dialog.when.set_iso(date.today().isoformat())
+        dialog.when.set_iso(today_ist().isoformat())
         dialog.result_data = dialog.validate()
         return QDialog.DialogCode.Accepted
 
@@ -90,7 +91,7 @@ def test_exchange_action_moves_both_accounts_together(lifecycle_window, monkeypa
 
     def accept(dialog):
         dialog.other.setCurrentIndex(dialog.other.findData(tenants[1]))
-        dialog.when.set_iso(date.today().isoformat())
+        dialog.when.set_iso(today_ist().isoformat())
         dialog.result_data = dialog.validate()
         return QDialog.DialogCode.Accepted
 
@@ -104,7 +105,7 @@ def test_exchange_action_moves_both_accounts_together(lifecycle_window, monkeypa
 
 def test_existing_move_out_can_be_extended_and_shortened(lifecycle_window, monkeypatch):
     window, flats, tenants, errors = lifecycle_window
-    previous = date.today() + timedelta(days=5)
+    previous = today_ist() + timedelta(days=5)
     window.ledger.move_out(tenants[0], previous.isoformat(), 50_000)
     window.refresh()
     seen = []
@@ -131,7 +132,7 @@ def test_existing_move_out_can_be_extended_and_shortened(lifecycle_window, monke
 def test_archive_filter_read_only_bill_and_reopen(lifecycle_window, monkeypatch):
     window, flats, tenants, errors = lifecycle_window
     ledger = window.ledger
-    ledger.move_out(tenants[0], (date.today() - timedelta(days=1)).isoformat(), 0)
+    ledger.move_out(tenants[0], (today_ist() - timedelta(days=1)).isoformat(), 0)
     for charge in ledger.list_charges(tenants[0]):
         if charge["status"] == "draft":
             ledger.post_charge(charge["id"], 0, apply_credit=False)
@@ -211,7 +212,7 @@ def test_moveout_cycle_can_be_months_before_account_opening(qtbot):
 def test_backdated_moveout_previews_returned_balance_and_marks_final_cycle(lifecycle_window, monkeypatch):
     window, flats, tenants, errors = lifecycle_window
     ledger, tenant = window.ledger, tenants[0]
-    today = date.today()
+    today = today_ist()
     later_start = cycle_bounds(today, 1)[1]
     ledger.prepare_monthly_drafts(later_start.isoformat())
     later = next(row for row in ledger.list_charges(tenant) if row["kind"] == "rent" and row["period_start"] == later_start.isoformat())
@@ -245,7 +246,7 @@ def test_backdated_moveout_previews_returned_balance_and_marks_final_cycle(lifec
 
 def test_cancel_planned_moveout_restores_billing_and_disables_action(lifecycle_window, monkeypatch):
     window, flats, tenants, errors = lifecycle_window
-    future = (date.today() + timedelta(days=14)).isoformat()
+    future = (today_ist() + timedelta(days=14)).isoformat()
     window.ledger.move_out(tenants[0], future, 50_000)
     window.refresh()
     assert window.cancel_moveout_action.isEnabled()
@@ -266,7 +267,7 @@ def test_cancel_planned_moveout_restores_billing_and_disables_action(lifecycle_w
 
 def test_declining_planned_moveout_cancellation_preserves_departure(lifecycle_window, monkeypatch):
     window, flats, tenants, errors = lifecycle_window
-    future = (date.today() + timedelta(days=14)).isoformat()
+    future = (today_ist() + timedelta(days=14)).isoformat()
     window.ledger.move_out(tenants[0], future, 50_000)
     window.refresh()
 
@@ -284,7 +285,7 @@ def test_declining_planned_moveout_cancellation_preserves_departure(lifecycle_wi
 
 def test_cancel_planned_exchange_warns_and_removes_both_plans(lifecycle_window, monkeypatch):
     window, flats, tenants, errors = lifecycle_window
-    effective = (date.today() + timedelta(days=14)).isoformat()
+    effective = (today_ist() + timedelta(days=14)).isoformat()
     window.ledger.exchange_tenancies(tenants[0], tenants[1], effective)
     window.refresh()
     assert window.cancel_transfer_action.isEnabled()
@@ -309,7 +310,7 @@ def test_cancel_planned_exchange_warns_and_removes_both_plans(lifecycle_window, 
 
 def test_archive_action_explains_unreviewed_bills(lifecycle_window, monkeypatch):
     window, flats, tenants, errors = lifecycle_window
-    window.ledger.move_out(tenants[0], (date.today() - timedelta(days=1)).isoformat(), 0)
+    window.ledger.move_out(tenants[0], (today_ist() - timedelta(days=1)).isoformat(), 0)
     window.refresh()
     messages = []
     monkeypatch.setattr(QMessageBox, "information", lambda *args: messages.append(args[2]))

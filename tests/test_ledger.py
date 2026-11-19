@@ -1,8 +1,8 @@
 import sqlite3
-from datetime import date
 
 import pytest
 
+from grihalekha.clock import today_ist
 from grihalekha.ledger import Ledger
 from legacy_ledger import cancel_historical_bill
 
@@ -323,13 +323,13 @@ def test_moveout_corrects_posted_rent_and_preserves_previous_tenant(account):
     )
     assert ledger.balance(next_tenant)["net_paise"] == 0
     assert ledger.balance(tenant)["credit_paise"] == 400_000
-    ledger.statement(tenant, "2026-01-05", date.today().isoformat())
+    ledger.statement(tenant, "2026-01-05", today_ist().isoformat())
 
 
 def test_rate_changes_future_boundary_preserve_posted_history(account):
     ledger, tenant, *_ = account
     old = charge(ledger, tenant)
-    future_year = date.today().year + 1
+    future_year = today_ist().year + 1
     effective = f"{future_year}-01-05"
     ledger.change_rent(tenant, effective, 1_200_000)
     ledger.prepare_rent_drafts(effective)
@@ -461,7 +461,7 @@ def test_deposit_reversals_restore_held_funds_and_general_account(account):
 
 def test_cancel_scheduled_rate_recalculates_only_drafts(account):
     ledger, tenant, *_ = account
-    year = date.today().year + 1
+    year = today_ist().year + 1
     effective = f"{year}-01-05"
     ledger.change_rent(tenant, effective, 1_500_000)
     ledger.prepare_rent_drafts(effective)

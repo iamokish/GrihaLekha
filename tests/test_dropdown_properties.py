@@ -1,12 +1,11 @@
 """Building selection and dropdown geometry must match the visible controls."""
 
-from datetime import date
-
 import pytest
 from PySide6.QtCore import QPoint, Qt
 from PySide6.QtGui import QFont, QFontDatabase
 from PySide6.QtWidgets import QComboBox, QDialog, QStyle, QStyleOptionComboBox, QVBoxLayout, QWidget
 
+from grihalekha.clock import today_ist
 from grihalekha.ledger import Ledger
 from grihalekha.paths import asset_dir
 from grihalekha.ui.dialogs import FlatDialog
@@ -97,7 +96,7 @@ def test_empty_or_removed_selected_building_clears_stale_flats(property_window):
 def test_filtered_flat_opens_correct_account_and_add_uses_selected_building(property_window, monkeypatch):
     window, first, second = property_window
     second_flat = next(flat for flat in window._flats if flat["building_id"] == second)
-    tenancy = window.ledger.add_tenancy(second_flat["id"], "Second tenant", date.today().isoformat(), 1, 0)
+    tenancy = window.ledger.add_tenancy(second_flat["id"], "Second tenant", today_ist().isoformat(), 1, 0)
     window.refresh()
     _select_building(window, second)
     window.flats_table.selectRow(0)

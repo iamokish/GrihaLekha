@@ -1,12 +1,13 @@
 """Integration checks for decimal input, selective payments and the desktop ledger."""
 
-from datetime import date, timedelta
+from datetime import timedelta
 from decimal import Inexact, Rounded, localcontext
 
 import pytest
 from PySide6.QtGui import QFont, QFontDatabase
 from PySide6.QtWidgets import QDialog, QFileDialog, QMessageBox
 
+from grihalekha.clock import today_ist
 from grihalekha.ledger import Ledger
 from grihalekha.paths import asset_dir
 from grihalekha.ui.theme import apply_theme
@@ -80,7 +81,7 @@ def test_property_removal_confirm_cancel_and_protected_accounts(qtbot, tmp_path,
     window.flats_table.selectRow(0)
     window.remove_flat()
     assert len(ledger.list_flats()) == 1
-    tenant = ledger.add_tenancy(flat, "Tenant", date.today().isoformat(), 1, 0)
+    tenant = ledger.add_tenancy(flat, "Tenant", today_ist().isoformat(), 1, 0)
     window.refresh()
     monkeypatch.setattr(QMessageBox, "question", lambda *args: QMessageBox.StandardButton.Yes)
     window.flats_table.selectRow(0)
@@ -175,7 +176,7 @@ def test_main_window_renders_real_balances_and_family(qtbot, tmp_path, monkeypat
     ledger = Ledger(tmp_path)
     building = ledger.add_building("कृष्णा निवास", "12 Example Road")
     flat = ledger.add_flat(building, "201", "2", 2)
-    today = date.today()
+    today = today_ist()
     beginning = today.replace(day=1).isoformat()
     tenancy = ledger.add_tenancy(
         flat,
@@ -317,7 +318,7 @@ def test_household_edit_preserves_long_grace_and_optional_relationship(qtbot):
         "building_name": "Example",
         "tenant_name": "अमित",
         "phone": "1234",
-        "move_in": date.today().isoformat(),
+        "move_in": today_ist().isoformat(),
         "billing_day": 1,
         "rent_paise": 1_000_000,
         "grace_days": 270,
@@ -337,7 +338,7 @@ def test_payment_editor_retains_date_and_validates_proof(qtbot, tmp_path):
     dialog = BillPaymentDialog()
     qtbot.addWidget(dialog)
     dialog.amount.setText("100.00")
-    paid = (date.today() - timedelta(days=10)).isoformat()
+    paid = (today_ist() - timedelta(days=10)).isoformat()
     dialog.paid.set_iso(paid)
     assert dialog.validate()["paid_on"] == paid
     dialog.proof.setText(str(tmp_path / "missing.png"))
@@ -351,10 +352,11 @@ def test_refund_and_deposit_corrections_are_available_from_movements(
     qtbot, tmp_path, monkeypatch
 ):
     ledger = Ledger(tmp_path)
-    today = date.today().isoformat()
+    current = today_ist()
+    today = current.isoformat()
     building = ledger.add_building("Example", "Address")
     flat = ledger.add_flat(building, "1", "Ground", 1)
-    tenancy = ledger.add_tenancy(flat, "Tenant", today, date.today().day, 0)
+    tenancy = ledger.add_tenancy(flat, "Tenant", today, current.day, 0)
     ledger.record_payment(tenancy, 100_000, today, "cash", allocations={})
     refund = ledger.refund_credit(tenancy, 20_000, today, "cash", "Entry to correct")
     deposit = ledger.record_deposit(tenancy, 50_000, today, "receive")
@@ -392,7 +394,7 @@ def test_future_rent_is_visible_and_cancellable_without_changing_current_rate(
     from grihalekha.dates import cycle_bounds
 
     ledger = Ledger(tmp_path)
-    today = date.today()
+    today = today_ist()
     building = ledger.add_building("Example", "Address")
     flat = ledger.add_flat(building, "1", "Ground", 1)
     tenancy = ledger.add_tenancy(
@@ -418,7 +420,7 @@ def test_future_rent_is_visible_and_cancellable_without_changing_current_rate(
 
 def test_cancelled_rent_can_be_replaced_from_ui(qtbot, tmp_path, monkeypatch):
     ledger = Ledger(tmp_path)
-    today = date.today()
+    today = today_ist()
     beginning = today.replace(day=1).isoformat()
     building = ledger.add_building("Example", "Address")
     flat = ledger.add_flat(building, "1", "Ground", 1)

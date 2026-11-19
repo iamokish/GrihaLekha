@@ -1,6 +1,6 @@
 """Exercise the actual date popup and keep native date-entry behavior intact."""
 
-from datetime import date, datetime
+from datetime import datetime
 
 import pytest
 from PySide6.QtCore import QDate, QPoint, Qt
@@ -132,10 +132,14 @@ def test_clicking_a_day_updates_field_and_closes_popup(date_field, qtbot):
     assert date_field.hasFocus()
 
 
-def test_today_updates_and_accepts_popup(date_field, qtbot):
+@pytest.mark.parametrize("today", ["2024-02-29", "2024-03-01", "2025-01-01"])
+def test_today_updates_and_accepts_popup(date_field, qtbot, monkeypatch, today):
+    now = datetime.fromisoformat(f"{today}T00:15:00").replace(tzinfo=clock.IST)
+    monkeypatch.setattr(clock, "now_ist", lambda: now)
+    date_field.set_iso("2024-02-15")
     calendar = _open_popup(date_field, qtbot)
     qtbot.mouseClick(calendar.today_button, Qt.MouseButton.LeftButton)
-    assert date_field.iso() == date.today().isoformat()
+    assert date_field.iso() == today
     qtbot.waitUntil(lambda: not calendar.isVisible())
 
 

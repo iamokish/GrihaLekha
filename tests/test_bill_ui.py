@@ -3,6 +3,7 @@ from datetime import date
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QComboBox, QDialog, QMessageBox
 
+from grihalekha.clock import today_ist
 from grihalekha.ledger import Ledger
 from grihalekha.ui.bill_dialogs import BillAmountDialog, BillDialog, BillPaymentDialog, UnpaidDialog
 from grihalekha.ui.bill_table import select_bill
@@ -14,8 +15,9 @@ def test_add_payment_then_pay_full_bill_and_return_to_balance(qtbot, tmp_path, m
     ledger = Ledger(tmp_path / "data")
     building = ledger.add_building("House", "Address")
     flat = ledger.add_flat(building, "1", "1", 1)
-    today = date.today().isoformat()
-    tenant = ledger.add_tenancy(flat, "Tenant", today, date.today().day, 100_000)
+    current = today_ist()
+    today = current.isoformat()
+    tenant = ledger.add_tenancy(flat, "Tenant", today, current.day, 100_000)
     window = MainWindow(ledger)
     errors = []
     monkeypatch.setattr(window, "_error", errors.append)
@@ -103,7 +105,7 @@ def test_cycle_headers_do_not_open_as_bills_and_locks_disable_bill_actions(qtbot
     ledger = Ledger(tmp_path)
     building = ledger.add_building("House", "Address")
     flat = ledger.add_flat(building, "1", "1", 1)
-    today = date.today()
+    today = today_ist()
     current = today.replace(day=1)
     previous = date(current.year - (current.month == 1), 12 if current.month == 1 else current.month - 1, 1)
     tenant = ledger.add_tenancy(flat, "Tenant", previous.isoformat(), 1, 100_000)

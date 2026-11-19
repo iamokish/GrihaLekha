@@ -1,7 +1,9 @@
-from datetime import date, timedelta
+from datetime import datetime, timedelta
 
 import pytest
 
+from grihalekha import clock
+from grihalekha.clock import today_ist
 from grihalekha.ledger import Ledger
 from grihalekha.dates import cycle_bounds
 
@@ -39,7 +41,7 @@ def test_transfer_keeps_account_money_and_dated_property_history(account):
 
 def test_future_transfer_keeps_current_location_until_its_date(account):
     ledger, tenant, first, second = account
-    future = (date.today() + timedelta(days=30)).isoformat()
+    future = (today_ist() + timedelta(days=30)).isoformat()
     ledger.transfer_tenancy(tenant, second, future)
     assert ledger.get_tenancy(tenant)["flat_id"] == first
     assert {item["id"]: item["tenancy_id"] for item in ledger.list_flats()} == {first: tenant, second: None}
@@ -89,7 +91,7 @@ def test_moveout_can_extend_then_shorten_with_traceable_rent_corrections(account
     ledger, tenant, first, _ = account
     ledger.move_out(tenant, "2024-01-15", 50_000)
     original = next(item for item in ledger.list_charges(tenant) if item["kind"] == "rent")
-    ledger.record_payment(tenant, 50_000, date.today().isoformat(), "cash")
+    ledger.record_payment(tenant, 50_000, today_ist().isoformat(), "cash")
     ledger.move_out(tenant, "2024-02-20", 70_000, "Extended stay")
     rents = [item for item in ledger.list_charges(tenant) if item["kind"] == "rent"]
     assert next(item for item in rents if item["id"] == original["id"])["status"] == "void"
@@ -107,7 +109,10 @@ def test_moveout_can_extend_then_shorten_with_traceable_rent_corrections(account
     assert ledger.get_tenancy(next_tenant)["move_in"] == "2024-01-26"
 
 
-def test_archive_requires_departure_review_and_full_settlement_and_can_reopen(account):
+@pytest.mark.parametrize("today", ["2024-02-29", "2024-03-01", "2025-01-01"])
+def test_archive_requires_departure_review_and_full_settlement_and_can_reopen(account, monkeypatch, today):
+    now = datetime.fromisoformat(f"{today}T00:15:00").replace(tzinfo=clock.IST)
+    monkeypatch.setattr(clock, "now_ist", lambda: now)
     ledger, tenant, _, _ = account
     with pytest.raises(ValueError, match="last occupied day"):
         ledger.archive_tenancy(tenant)
@@ -124,7 +129,7 @@ def test_archive_requires_departure_review_and_full_settlement_and_can_reopen(ac
     ledger.archive_tenancy(tenant)
     assert ledger.list_tenancies() == []
     assert ledger.list_tenancies(include_archived=True)[0]["id"] == tenant
-    assert ledger.get_tenancy(tenant)["archived_on"] == date.today().isoformat()
+    assert ledger.get_tenancy(tenant)["archived_on"] == today
     with pytest.raises(ValueError, match="Reopen"):
         ledger.update_tenancy(tenant, "Changed")
     ledger.unarchive_tenancy(tenant)
@@ -134,7 +139,7 @@ def test_archive_requires_departure_review_and_full_settlement_and_can_reopen(ac
 
 def test_planned_transfer_can_be_cancelled_before_shortening_departure(account):
     ledger, tenant, first, second = account
-    today = date.today()
+    today = today_ist()
     future = cycle_bounds(today, 1)[1] + timedelta(days=10)
     original_payment = ledger.record_payment(tenant, 12_345, "2024-01-02", "cash", allocations={})
     original_balance = ledger.balance(tenant)
@@ -157,7 +162,7 @@ def test_planned_transfer_can_be_cancelled_before_shortening_departure(account):
 def test_cancelling_planned_exchange_restores_both_reservations(account):
     ledger, first_tenant, first, second = account
     second_tenant = ledger.add_tenancy(second, "Other tenant", "2024-01-01", 1, 90_000)
-    future = (date.today() + timedelta(days=15)).isoformat()
+    future = (today_ist() + timedelta(days=15)).isoformat()
     ledger.exchange_tenancies(first_tenant, second_tenant, future, 120_000, 110_000)
     assert set(ledger.cancel_scheduled_transfer(second_tenant)) == {first_tenant, second_tenant}
     for tenant, flat in ((first_tenant, first), (second_tenant, second)):
@@ -176,7 +181,7 @@ def test_cannot_cancel_a_transfer_that_has_already_started(account):
 def test_cancelling_exchange_with_posted_rent_requires_unlock_then_rebuilds_bills(account):
     ledger, first_tenant, _, second = account
     second_tenant = ledger.add_tenancy(second, "Other tenant", "2024-01-01", 1, 90_000)
-    future = cycle_bounds(date.today(), 1)[1].isoformat()
+    future = cycle_bounds(today_ist(), 1)[1].isoformat()
     ledger.exchange_tenancies(first_tenant, second_tenant, future, 120_000, 110_000)
     ledger.prepare_rent_drafts(future)
     bill = next(row for row in ledger.list_charges(second_tenant) if row["period_start"] == future)
@@ -199,7 +204,7 @@ def test_cancelling_exchange_with_posted_rent_requires_unlock_then_rebuilds_bill
 
 def test_cancellation_cannot_displace_a_new_reservation(account):
     ledger, tenant, first, second = account
-    future = (date.today() + timedelta(days=10)).isoformat()
+    future = (today_ist() + timedelta(days=10)).isoformat()
     ledger.transfer_tenancy(tenant, second, future)
     ledger.add_tenancy(first, "Incoming household", future, 1, 0)
     with pytest.raises(ValueError, match="overlapping"):
@@ -209,7 +214,7 @@ def test_cancellation_cannot_displace_a_new_reservation(account):
 
 def test_future_departure_can_be_extended_then_shortened(account):
     ledger, tenant, _, _ = account
-    today = date.today()
+    today = today_ist()
     ledger.move_out(tenant, (today + timedelta(days=5)).isoformat(), 50_000)
     ledger.move_out(tenant, (today + timedelta(days=9)).isoformat(), 70_000, "Extended")
     ledger.move_out(tenant, (today + timedelta(days=3)).isoformat(), 70_000, "Shortened")

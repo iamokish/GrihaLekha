@@ -61,7 +61,8 @@ jobs:
             platform: linux
     env:
       QT_QPA_PLATFORM: offscreen
-      TZ: Asia/Kolkata
+      # Windows' CRT needs a numeric offset; IANA names are interpreted as UTC.
+      TZ: ${{ startsWith(matrix.os, 'windows-') && 'IST-5:30' || 'Asia/Kolkata' }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:

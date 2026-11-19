@@ -33,9 +33,11 @@ $env:GRIHALEKHA_PDF_RENDERER = 'native'
 uv run --frozen pytest
 ```
 
-The application uses IST. Several date-sensitive tests use the machine's current
-date, so CI sets its time zone to India Standard Time. For local runs, use that
-time zone or avoid the interval when local and IST dates differ.
+The application uses IST. Date-sensitive tests use its IST clock, with fixed
+dates for boundary checks, so they also work when the machine's date differs.
+CI aligns native runtime clocks with IST too: Linux uses `TZ=Asia/Kolkata`, and
+Windows uses `TZ=IST-5:30` alongside its India Standard Time system setting.
+Windows' C runtime does not support IANA names such as `Asia/Kolkata` in `TZ`.
 
 CI runs the full regression suite on Windows, Ubuntu 22.04, and current Arch Linux
 with each supported Python version (3.12–3.14). Arch tests run as an unprivileged
